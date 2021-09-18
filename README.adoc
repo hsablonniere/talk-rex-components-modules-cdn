@@ -1,0 +1,3 @@
+= Dans cette jungle de l'outillage JavaScript, un retour à la simplicité est-il encore possible ?
+
+Dépôt de travail pour mon talk de 2021 autour de l'outillage JavaScript et du smart CDN de Clever Cloud.
