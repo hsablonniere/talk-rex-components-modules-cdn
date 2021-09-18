@@ -1,0 +1,72 @@
+= Research links
+
+== CDN tools
+
+* https://bundle.js.org/about
+* https://jspm.org/
+* https://www.skypack.dev/
+* https://unpkg.com/
+* https://www.jsdelivr.com/
+
+== Key people
+
+* https://twitter.com/AndyDavies
+* https://twitter.com/patmeenan
+* https://twitter.com/tunetheweb
+* https://twitter.com/youyuxi
+* https://twitter.com/devongovett
+* https://twitter.com/yoavweiss
+
+== Articles about tooling complexity
+
+* https://www.swyx.io/js-third-age/
+* https://lea.verou.me/2020/09/the-failed-promise-of-web-components/
+** https://medium.com/swlh/the-failed-criticism-of-web-components-ee94380f3552
+* https://github.com/thenewobjective/thenewobjective.github.io/blob/master/_posts/web-development/2019-03-18-a-criticism-of-web-components.md
+* https://twitter.com/TheRealNooshu/status/1431905187124371461
+* https://adamsilver.io/blog/the-problem-with-web-components/
+
+== jQuery era
+
+* https://gist.github.com/hsablonniere/2338480
+
+== About ESM vs HTTP/2 or bundling
+
+* https://medium.com/@asyncmax/the-right-way-to-bundle-your-assets-for-faster-sites-over-http-2-437c37efe3ff
+* https://docs.google.com/presentation/d/1r7QXGYOLCh4fcUq0jDdDwKJWNqWK1o4xMtYpKZCJYjM/edit#slide=id.g518e3c87f_0_318
+* https://blog.khanacademy.org/forgo-js-packaging-not-so-fast/
+* https://css-tricks.com/musings-on-http2-and-bundling/
+* https://alistapart.com/article/using-http-2-responsibly-adapting-for-users/
+* https://www.smashingmagazine.com/2016/02/getting-ready-for-http2/#turning-multiple-image-files-into-sprites
+* https://www.sitepoint.com/file-bundling-and-http2/
+* https://sgom.es/posts/2017-06-30-ecmascript-module-loading-can-we-unbundle-yet/
+* https://world.hey.com/dhh/modern-web-apps-without-javascript-bundling-or-transpiling-a20f2755
+** https://webperformance.slack.com/archives/C04BK7K1X/p1628783909042300
+* https://www.youtube.com/watch?v=keKKODs6Z7M
+* https://twitter.com/devongovett/status/1257342736585367552
+* https://twitter.com/devongovett/status/1318238419416272896
+* https://twitter.com/matthewcp/status/1317969394807570433
+* https://twitter.com/_developit/status/1137421351357210624
+* https://twitter.com/mikeal/status/1204920518148673536
+* https://twitter.com/devongovett/status/1344425032374771714
+* https://twitter.com/devongovett/status/1214703578025205760
+* https://twitter.com/samccone/status/912586414713425921
+* https://twitter.com/yoavweiss/status/912608331440771073
+* https://twitter.com/yoavweiss/status/912608116121985024
+* https://twitter.com/AdamRackis/status/1428807170196451339
+
+== HTTP/2 push
+
+* https://www.youtube.com/watch?v=cznVISavm-k&pp=ugMICgJmchABGAE%3D
+
+== To review
+
+* https://www.youtube.com/watch?v=kAD7qKwuJFo&t=7928s
+* https://medium.com/adobetech/optimizing-javascript-through-scope-hoisting-2259ef7f5994
+* https://sirupsen.com/napkin/problem-15/
+* https://twitter.com/TheRealNooshu/status/1433155825724502021
+* https://twitter.com/tommorris/status/1432355845556346880
+* https://twitter.com/tunetheweb/status/1431915693079994368
+* https://twitter.com/TheRealNooshu/status/1431905187124371461
+* https://www.baldurbjarnason.com/2021/single-page-app-morality-play/?utm_source=pocket_mylist
+* https://blog.chriszacharias.com/page-weight-matters?s=09&utm_source=pocket_mylist

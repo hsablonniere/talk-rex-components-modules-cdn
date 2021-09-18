@@ -1,0 +1,120 @@
+SEBI
+j'utilise jquery encore quand je dois faire du front :joy:
+via le CDN avec balise script dans l'ordre puis plugin jQuery
+Ah je fais regulierement du npm/gulp , le plus souvent sur des projets existants, je le mets rarement en place tout seul. Et pour les applis front integrés avec mon back, c'est un peu la plaie en effet de coupler 2 toolchains : maven + npm par exemple.
+oui et le manque de conventions respectées par tous, genre une fois que je veux un "build productisé" je galere à savoir si je dois faire "npm build" ,"npm distrib" "npm ploufplouf"
+mouais y'a des package.json qui sont impinable (désolé pour cette expression sudiste)
+
+FTEYCHENE
+Pour avoir fait parti des equipe aui gere les build et les CI depuis des annees c'est une plaie l'univers du build JS
+J'ai appros et compris avec le temps mais c'est vraiment infernal
+Et sinon packaging sur une toolchain vu avec l'equipe front avec un point d'entre via npm (pour la compat sur les CI et c'est le seul denominateur commun) et genralement c'est des alle retour avec l'equipe front pour la minification / bundling selon ce qu'on a besoin coe CI ou front
+Ce que j;ai vu le plus au final c'est du bundling via webpack depuis qq annee mais apres j'ai vu un peu de tout  :sweat_smile:  (d'ou le cote infernal)
+Et c'est la roulette russe pour savoir ce que tu vas trouver quand tu doit packager un nouveau projet front
+Et en perso je passe souvent par webpack parce que je le connais un peu et que j'ai une flemme de tout les grand nom d'apprendre un nouveau bundler
+En fait ce qui m'emmerde avec le tooling js c'est globalement le mm truc que dans la commu JS pour tout.
+C'est pas le tooling en lui meme, c'est le manque de refelxion de standardisation et d'industrialisation perein entre les projets.
+A chaque fois que j'arrive sur une nouvelle CI avec des projets front c'est ceux qui me font le plus peur parce que je sais que jevais devoir apprendre ces projets specifiquement et que il y a 50% de chance que je puisse oublier ce que je connais
+
+JULIEN LENGRAND LAMBERT
+My only issue is when using things like @QuarkusIO
+with it where I'd need real-time rebuilding.
+oh and to answer your question, I hate all those bundling tools with passion (webpack, rollup, . . .). I understand why they're needed but they're just getting in my way of building stuff. That's why tools like @modern_web_dev or @skypackjs are a godsend
+
+https://twitter.com/4e4c52/status/1430461737409601538
+I use Webpack with Rails but it’s a pain to have to use this kind of tooling. Looks like DHH has some ideas to fix this in the future.
+
+https://twitter.com/dunglas/status/1430462049163878401
+I usually try to avoid JS as much as possible in my non-JS projects. If I need a "heavy" frontend (PWA…), I create a standalone JS project containing all the JS code. If I just need a little amount of JS (e.g. @MercureRealTime
+dev tools), I try to use vanilla JS only.
+> You avoid it because it's a pain to use as a dev?
+> Because you can the minimum amount of JS for the user?
+> Both?
+> When you go vanilla, if you need a dependency for a chart library or something, how do you do it? (npm install, link to CDN...)
+Both!
+If I need a few libraries, I use yarn with these kinds of tricks [https://github.com/api-platform/core/blob/main/update-js.sh]. If I need many libraries, I create a standalone JS project (usually using Next or Nuxt).
+
+https://twitter.com/yannkozon/status/1430462306840981505
+Dans mon cas le plus fréquent (dev custom WordPress ou dev from scratch), le plus simple que j'ai trouvé c'est l'utilisation de prepros (deps, concat, minification, autoreload, testing multi-device...) ça répond à 90% de mes besoins.
+
+https://twitter.com/dascritch/status/1430463108028452866
+I really HATE the whole JS preprod mess. It just clutter my whole working space, it is not reliable, npm loads a ⅓ of internet before working.
+I just cannot.
+Having whole autosuffisent complete packages would be so simplier.
+I have some works with python backend, and some JS, as it is a professionnal internal website, I really do a bare minimum (tests and compression)
+But for my public pet-project, a webcomponent, https://github.com/dascritch/cpu-audio/ , I totally HATE npm. I would like to have only 3 or 4 packages for tests/conformation/delivery; Not having quadrillions to upgrade, each time i change project, it's the same masse
+I made a bash script for building, really simplier for me to handle.
+Yes. Bash. Simplier.
+Completely crazy.
+Try to put a beginner on a js project with npm packages....
+A tool should be complete, simplier, system wide, and not trying to mine cryptocurrencies during my delivery process;
+
+https://twitter.com/cybwn/status/1430466249004290049
+For APIs (go, java, node and php in my experience) and SPAs, always a separate independent project with a standard-ish js toolchain.
+For server side generated webapps, I simply do not work on that kind of project anymore.
+
+https://twitter.com/Pierstoval/status/1430469280945086464
+I sincerely hate the JS ecosystem for its dependency hell.
+But, since I discovered Svelte last year, and we can use Typescript with it, I love how smooth a project becomes when using it.
+But still, I put almost all my logic in a Typescript-based class setup, but it's still hell
+The problem is that I find it really super hard to abstract an entire frontend system and make it not use the "document" variable. With JS, I try to keep my "backend" paradigm, and make sure everything can be server-side-rendered before, and Svelte is great with that
+But with all the async/await/promises stuff, programming is really different than non-async code. So I still struggle. I'm a pure procedural backend dev
+As most of my PHP projects are Symfony ones, I use Encore and it's quite easy to add an external lib this way, so that's pretty much how I do it, and I prefer yarn over npm.
+Other projects using other bundlers (Vite, Rollup) already have a package.json so I add the lib there too
+
+https://twitter.com/Pierstoval/status/1430478813763411968
+Like, I have other choices, but CDN means that I have to rely on third-party services at runtime on production, which I find not acceptable in general
+
+https://twitter.com/vaceletm/status/1430469869930172416
+For @TuleapOpenALM we have a whole "pre-run" build step that uses the native Node.js tools (npm, webpack, vite, etc).
+It's already hard to find the right combination of tools that works well within the JS world itself. Getting out of it is a recipe for disaster IMHO.
+backend stack is PHP
+and front end is diverse, some parts it's server rendered HTML "a l'ancienne", some parts are SPA (for instance to display card board). We also build internal libraries that are re-used in different parts of the front end.
+
+https://twitter.com/bclozel/status/1430470417790218240
+spring.io has been using #springboot (before 1.0) and we've used:
+- grunt+bower+cram
+- grunt -> gulp
+- bower+cram -> JSPM
+- now 100% npm+webpack
+In any case, packaged as a client JAR using a Gradle plugin.
+These days Spring users seem to struggle with the dev->prod transition. JS dev servers can act as proxies (falling back to the backend server); it can be challenging to turn this config around when hosting everything in the Java app.
+That last tweet is not super clear.
+Basically: configuring your app to serve static resources, API endpoints and "falling back" to the index.html page for other requests - effectively flipping a "proxy config" to a "URL route matching" config.
+
+https://twitter.com/yannkozon/status/1430492171258449920
+https://prepros.io/
+
+https://twitter.com/GueriaudJc/status/1430498332212924416
+I'm using @vaadin full Java API or Java / Lit for custom webcomponents.
+Internally it's using npm/pnpm and webpack.
+I like that I don't have to manage it 95%+ of the time (except when something is going wrong) because it's time consuming to deal with this configuration/problem.
+
+https://twitter.com/tut_tuuut/status/1430501596337774592
+J'ai déjà utilisé du npm et du webpack sur mes projets PHP. Grosso modo j'aime pas. Les messages d'erreur n'aident jamais. On se galère à mort avec les versions de node. Il faut rmrf le node_modules 3 fois par mois.
+Donc en général je n'écris pas du JS moderne sur les projets, juste des petits scripts unitaires. Si je peux compiler mon SCSS sans JS, je ferai sans JS (ce qui se fait très bien en Ruby). On ne peut pas dire que je "gère" le JS, du coup.
+
+https://twitter.com/laurent_guigo/status/1430501917688483841
+with PHP/Symfony I use webpack throw
+
+https://twitter.com/thb19/status/1430504651007438848
+Ruby on Rails => webpacker gem (automates webpack installation and configuration) - specific to this ecosystem - love it (especially the Turbolinks / StimulusJS / Hotwire integration).
+
+https://twitter.com/riduidel/status/1430505560064110597
+In an ideal world, I would use absolutely no preprocessing and only pure runtime JS libs (like https://ractive.js.org was - and maybe still is). But in this infuriating world, I would, if forced, use something like https://github.com/aseovic/npm-maven-plugin or https://github.com/eirslett/frontend-maven-plugin
+
+https://twitter.com/jwajsberg/status/1430511018455748610
+https://alexo.github.io/wro4j/
+
+SEBI
+https://tools.jboss.org/blog/2014-04-17-web-resource-optimization-and-profiles.html
+
+https://twitter.com/_anthonymaton/status/1430512037201944581
+Java dev here: We don’t, we separate it to another repo and we use the tool provided by the framework so usually npm, webpack.
+Then we either serve it from Apache http server or for legacy applications with a Jboss servlet serving the released bundle
+
+https://twitter.com/pmauduit/status/1430528637418319873
+frontend-maven-plugin (java), which basically manages the node/npm setup and calls it afterwards in the appropriate directory from the sources.
+
+https://twitter.com/skarboune/status/1430537978229796870
+Dans notre société, on utilise surtout spring boot pour le côté backend ( rest) et on utilise la base de stack nodejs pour le build / minification. c’est le build maven du projet java qui appelle ces outils. pas eu le temps encore de faire un truc + propre au niveau ci.

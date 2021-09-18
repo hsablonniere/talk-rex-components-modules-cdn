@@ -1,0 +1,265 @@
+= Abstract
+
+== Problèmes constatés
+
+* Le monde du frontend/JavaScript s'est énormément complexifié depuis l'arrivée des frameworks JS/SPA avec toute une série d'outils basés sur Node.js/npm (minifier, bundler, transpiler/compilateur...)
+** Cela a forcé beaucoup d'écosystèmes non-JS à s'adapter et adopter ces outils.
+** Cela rend le développement Web beaucoup moins accessible à n'importe qui et c'est triste.
+** Ces outils favorisent parfois le lockin avec notre propre code
+
+== Conclusion
+
+Le monde du JavaScript est devenu un peu fou.
+Cette jungle d'outils est dense et seuls les plus "veille" peuvent s'y retrouver.
+Ça n'est pas une situation acceptable et il faut rester vigilants.
+Entre ceux qui disent que c'était mieux avant et les drogués aux derniers outils à la mode, il faut trouver un juste milieu.
+Il faut chercher le bon curseur pour atteindre des bonnes performances pour les utilisateurs tout en
+.à tel point qu'il devient utile de se poser pour faire le point sur ce vaste écosystème.
+Le Web est bien plus vaste que le petit monde des SPAs codées avec le dernier framework JS à la mode.
+Le Web c'est pour tout le monde et il n'y a pas de raisons que ça devienne un club réservé à une élite californienne.
+Il faut faire attention à ne pas trop se reposer sur nos séries d'outils et éviter les "oui mais ça tout le monde connait".
+
+== Take away
+
+Une personne qui a suivi la présentation repart avec :
+
+* Une meilleure connaissance de l'outillage JavaScript : bundler, minifier, transpiler (compat ES + language JSX/TS)
+* Une meilleure connaissance sur certains leviers/enjeux de webperf : compression, cache, minification, HTTP/2, bundling/concatenation, treeshaking, code splitting
+* Des idées/pistes pour distribuer des dépendances différement en interne ou publiquement (design system ou composants plus haut-niveau)
+* Le bundling n'est pas mort, mais la manière dont on l'entend évolue et les moments et endroits où on peut l'appliquer sont multiples
+
+== Plan
+
+* Précedemment dans le monde du frontend/JS : historique sélectif avec présentation des différents concepts et outils
+** minification
+*** dead code elimination
+*** mangling variable names
+** concaténation
+** bundling
+*** cache busting
+*** tree shaking
+*** scope hoisting
+*** code splitting (chunks)
+** retro transpilation
+** cross transpilation
+* Est-ce que c'était mieux avant ? : digression sur l'utilité et l'impact de ces évolutions
+** On constate les avantages et inconvénients
+* ?? (1) comment réduire la dépendance à nos outils ?
+** Apporter un début de piste
+* ?? (2) comment rendre tout ceci plus accessible ?
+** Différents cas de figures auxquels on pourrait s'intéresser pour simplifier l'expérience de dev mais ici on va se pencher sur :
+* "REX : Comment exposer une bibliothèque de composants / un design system aux devs qui en ont besoin (interne, externe...) ?"
+** contexte Clever Cloud: web components, besoins internes divers, besoins externes
+** explication du mode DIY (Node.js) avec la liste des trucs à faire
+** évocation et exemple de ce qu'on peut faire avec les smart CDN actuels
+** target plus ambitieux de l'API ultime (une seule balise script) => le mode Plug and Play
+** on commence avec les pire perfs et on améliorer au fur
+*** en utilisant les concepts/outils précédents
+*** en utilisant des "nouveaux" standards (HTTP/2, ESM, imports dynamiques, brotli, preload)
+** comparer les perfs
+* Conclusion
+** ouverture sur le déplacement de qui own le bundling ? (as a service)
+** ouverture sur web bundles (new name)
+** ouverture sur le bundling à la volée
+
+== Déroulé pseudo détaillé
+
+* Bonjour à tous
+
+=== Précedemment dans le monde du frontend/JS (et particulièrement chez les SPAs people)
+
+* On commence notre histoire par l'époque jQuery/Prototype/Mootools : c'était mieux avant...
+** On ajoutait quelques balises `<script>` dans le bon ordre et ça "juste marchait"
+* Pour des raisons de confort de dev, on a commencé à séparer nos fichiers
+* Pour des raisons de perf utilisateur, on a voulu : minifier, mais surtout concaténer ces fichiers
+** La minification a proposé des concepts assez marant comme l'élimination de code mort ou le mangling des noms de variable
+* Puis on est passé sur un développement beaucoup plus modulaire se basant sur des imports et non plus sur des variables globales avec un ordre précis avec différents formats de module pour arriver au format standard ESM (tjs en transition)
+** C'est avec ça qu'on est passé de concaténation simple à un bundling structuré (analyser du graph d'interdépendances des modules pour produire un seul fichier)
+** arrivée de browserify, webpack, rollup, parcel
+** sans oublier la phase un peu plus manuelle avec grunt et gulp
+** les bundlers (en particulier via ESM) ont proposé des nouveaux concepts comme le treeshaking ou le code splitting
+** certains amenent aussi le hashing dans les noms de fichier pour le cache (cache busting)
+** on jette à la poubelle une bonne partie des avantages du cache HTTP
+* En parallèle, on a voulu centraliser nos dépendances, on a essayé bower mais finalement, on a tout mis sur npm
+* En parallèle, on a voulu utiliser du JS moderne qui marche dans les vieux navigateurs : arrivée d'outils comme Babel (retro transpilation : JS N+1 to JS N)
+* En parallèle, on a voulu ajouter des choses non standard à JavaScript : arrivée de JSX ou TypeScript (cross transpilation : X to JS)
+** on a aussi des compilations spécifiques à des moteurs de templatings (Angular, Vue SFC, Svelte)
+** et la compilation de langages alternatifs pour HTML (Pug...) et CSS (Sass, Stylus...)
+
+* Bref, à la fin, nos projets sont devenus ultra dépendants à Node.js et tout un écosystème d'outils pas toujours simple à brancher les un avec les autres
+** Du coup, pour avoir la bonne version, il devient vite nécessaire d'avoir un gestionnaire de version de node comme nvm, volta...
+** Notons également qu'en utilisant des syntaxes ou fonctionnalités customs, il devient difficile de se débarasser d'un outil pour switcher sur son concurrent
+* Et encore, là j'ai évité certains sujets :
+** optimisation des assets : image, fonts, CSS, HTML
+** serveurs de dev, live-reload et HMR (souvent intégrés/liés au bundler)
+** système de server side rendering et d'hydratation
+** tests runner
+** linters
+** formatteurs
+** alternatives à npm : yarn ou pnpm
+** audit automatisé de deps
+
+On en arrive à un monde du frontend/JS un peu fou qui s'est accéléré et complexifié avec l'arrivée des frameworks JS pour faire des SPAs.
+
+=== C'était mieux avant ?
+
+Mais du coup, est-ce que c'était mieux avant ?
+
+Constats des avantages/inconvénients :
+
+* Une partie de ces évolutions avait pour but d'améliorer l'expérience utilisateur (perf + rapide tout cela)
+** minification, concaténation/bundling, treeshaking
+* Une partie de ces évolutions avait pour but d'améliorer l'expérience développeur
+** npm, transpilation (babel, JSX, TS), nvm, modules
+* Certaines de ces évolutions sont arrivées pour compenser les déteriorations d'UX amenées par des améliorations de DX
+** SSR+hydratation, bundling (si on réfléchit en mode on pourrait tout coder dans le même fichier), code splitting (point de vue je passe ma logique de routing côté client)
+* Cette diversité et cette complexité d'outils peut amener un couplage/dépendance/adhérence fort entre notre code et les outils qui nous permettent de mettre tout ça en prod
+** Maintenance long terme difficile intégration difficile ?
+* Cette galaxie d'outils est très difficile à comprendre, à utiliser, à brancher/interconnecter, à suivre...
+** Difficile d'accès pour les débutants, c'est pas le Web dont j'ai envie
+** Difficile d'accès pour les devs qui ne baignent pas dans cet écosystème très JS/SPA (intégrateurs HTML/CSS et devs PHP, Ruby, Python, Java...)
+
+=> En fait, c'est pas du tout une question qui amène une réponse binaire "oui/non".
+
+=> It depends :tm:
+
+En fait, il y a deux questions qui m'intéressent beaucoup plus :
+
+?? (1) comment réduire la dépendance à nos outils ?
+// comment faire pour que son propre code source dépende le moins possible d'outils de build qu'il utilise ?
+
+* système custom non standard
+** import de CSS ou d'image dans les bundlers avec les loaders à la webpack
+** se reposer sur process.env via des plugins
+** toutes les spécificités liées au framework (Angular, Vue, Svelte)
+
+=> exemple de la vision du minifieur qui prend du JS standard et sort du JS standard
+=> pièce de puzzle compatibles/incompatibles
+=> quand vous avez des outils qui parsent le JS en AST dans votre chaine, les syntaxes et features possible du langage ne sont plus le navigateur que vous ciblez mais les outils que vous utilisez
+
+?? (2) comment rendre tout ceci plus accessible ?
+=> ou plutôt, est-ce qu'on peut proposer une expérience qui s'approche de ce qu'on avait avant et à quel point ?
+
+là ça dépend de quoi on parle
+
+* cas de figure : je code une SPA avec Angular/React/Vue/Svelte...
+** évoquer que comme on faisait avec jQuery depuis un CDN dans une balise script
+*** on peut faire ça avec Vue
+*** on peut faire ça avec React (mais bon, il faut ramener babel en local pour faire du JSX)
+*** par définition, Svelte se revendique comme un compilateur plus que comme un fwk du coup, c'est pas vraiment possible / fait pour
+*** la situation est assez similaire avec Angular, particulièrement avec la partie TypeScript
+** évoquer les IDE en ligne
+** évoquer des outils comme vite, snowpack ou WDS
+
+Aujourd'hui, j'ai envie de m'intéresser au cas "Comment exposer une bibliothèque de composants / un design system aux devs qui en ont besoin (interne, externe...) ?"
+
+* contexte Clever Cloud: web components, besoins internes divers, besoins externes
+* explication du mode DIY (Node.js) avec la liste des trucs à faire
+* évocation et exemple de ce qu'on peut faire avec les smart CDN actuels
+** avantages/inconvénients
+** tiers (pas de confiance)
+** business model
+** basé sur npm
+** de toute façon, il n'y a plus de partage de cache entre les origines
+* target plus ambitieux de l'API ultime (une seule balise script) => le mode Plug and Play
+* on commence avec les pire perfs et on améliorer au fur
+** en utilisant les concepts/outils précédents
+** en utilisant des "nouveaux" standards (HTTP/2, ESM, imports dynamiques, brotli, preload)
+
+---
+
+Chaque projet à son contexte bien précis : équipe source, utilisateurs cible et enjeux coût/qualité/délais.
+Il est impossible et dangereux d'essayer de trouver des règles générales c'est pourquoi je vous propose plutôt un retour d'expérience sur un système qu'on a mis en place chez CC. L'idée et de vous donner des pistes et partager les réflexions qu'on a eu, la démarche ainsi que les résultats. Le tout en espérant que ça vous permette de vous dire à super dans un contexte similaire je pourrais peut-être faire ça mais avec X en différent. Au pire vous sortirez en mode, ouais OK, j'ai pas du tout ce genre de pb.
+
+---
+
+pour utiliser un composant clever il faut :
+
+* avoir node.js (et npm)
+* npm install @clevercloud/components (avec la bonne version)
+* importer le composant `import '@clevercloud/components/dist/overview/cc-tile-instances.js';`
+* importer le système de traductions `import { addTranslations, setLanguage } from '@clevercloud/components/dist/lib/i18n.js';`
+* importer les traductions pour la bonne langue `import * as fr from '@clevercloud/components/dist/translations/translations.fr.js';`
+* setup le système `addTranslations(fr.lang, fr.translations); setLanguage(fr.lang);`
+* s'assurer qu'il a un setup avec un bundler configuré pour :
+** comprendre les bare imports
+** copier les images utilisées par les composants
+* utiliser le composant dans son HTML/DOM
+
+Nous, on aimerait pouvoir faire :
+
+* ajouter la balise script kivabien :tm:
+* utiliser le composant dans son HTML/DOM
+
+et que ça juste marche
+
+Bonus :
+
+* c'est minifié comme il faut (HTML/CSS/SVG)
+* c'est compressé comme il faut (brotli)
+* c'est découpé (bundlé/chunké) comme il faut
+* c'est servi en HTTP/2 (HTTPS)
+
+* c'est caché comme il faut (header Cache-Control + Etag)
+* c'est servi depuis un CDN (CF)
+* toutes les versions sont accessibles à n'importe quel moment (article de Jake sur le blue green et les version en //)
+* il n'y a pas la version dans l'URL, du coup pour le cache c'est top
+* c'est une origine "de confiance", les assets ne viennent pas d'un tiers (unpkg, jspm...) et dont la stabilité financière est discutable
+
+Conclusion
+
+* ouverture sur le déplacement de qui own le bundling ? (as a service)
+* ouverture sur web bundles (new name)
+* ouverture sur le bundling à la volée
+
+== Abstract
+
+=== FR
+
+Aujourd'hui quand je veux ajouter une dépendance dans mes projets Web, je dois faire des "npm install bidule", des "babel truc" et autres "webpack machin".
+Je dois désormais tenter de survivre dans cette jungle d'outils basés sur Node.js.
+Leur diversité et leur complexité d'usage est devenu assez impressionnante.
+Chacun amène son lot de concepts en -ing : bundling, minifying, transpiling, polyfilling, tree shaking, code splitting.
+La période où il suffisait juste d'ajouter une balise script à la main est loin derrière nous.
+
+Dans le cadre de la bibliothèque de composants sur laquelle je travaille, nous avons tenté de proposer une alternative, une sorte de retour à la simplicité des années jQuery.
+
+Au menu de cette session, nous commencerons par revenir rapidement sur cette jungle d'outils JavaScript et leurs concepts.
+Nous ferons ensuite un retour d'expérience de la solution mis en place pour distribuer et utiliser nos composants chez Clever Cloud.
+Nous essaierons de voir jusqu'à quel point on peut revenir à des bases plus simples en pesant les avantages et inconvénients.
+Ça sera l'occasion d'analyser les enjeux de performance et mesurer concrètement les impacts.
+
+=== EN
+
+
+== Message pour le comité
+
+=== FR
+
+Dans cette session, j'ai envie de partager un retour d'expérience sur ce que nous avons fait pour simplifier l'accès à nos composants.
+
+Une personne qui a suivi la présentation repart avec :
+
+* Une meilleure connaissance de l'outillage JavaScript : bundler, minifier, transpiler (compat ES + language JSX/TS)
+* Une meilleure connaissance sur certains leviers/enjeux de webperf : compression, cache, minification, HTTP/2, bundling/concatenation, treeshaking, code splitting
+* Des idées/pistes pour distribuer des dépendances différement en interne ou publiquement (design system ou composants plus haut-niveau)
+* Le bundling n'est pas mort, mais la manière dont on l'entend évolue et les moments et endroits où on peut l'appliquer sont multiples
+
+=== EN
+
+== Idées de titre
+
+* Le monde du JavaScript est devenu fou
+* Le monde du JavaScript est devenu fou, une complexité nécessaire ?
+* Le monde du JavaScript est devenu fou, la simplicité est possible ?
+* Le monde du JavaScript est devenu fou, un retour à la simplicité est-il encore possible ?
+* Le monde du JavaScript est devenu fou, un retour à la simplicité...
+* Le monde du JavaScript est devenu fou, simplicité volontaire
+* Face au JavaScript devenu fou, la simplicité est encore possible
+* Face au JavaScript devenu fou, la simplicité est-elle encore possible ?
+* La jungle des outils JavaScript, une complexité nécessaire ?
+* La jungle de l'outillage JavaScript, une complexité nécessaire ?
+* Dans cette jungle de l'outillage JavaScript, un retour à la simplicité est-il encore possible ?
+* Dans la jungle des outils JavaScript, un retour à la simplicité est-il encore possible ?
+
+=== Autres
