@@ -50,11 +50,14 @@ body {
 }
 
 body > * {
-  background-color: #fff;
   box-sizing: border-box;
   flex-grow: 0;
   flex-shrink: 0;
   height: var(--slide-height);
   overflow: hidden;
   width: var(--slide-width);
+}
+
+body > :not(:defined) {
+  background-color: #fff;
 }

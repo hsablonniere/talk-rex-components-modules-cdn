@@ -5,12 +5,19 @@ import { entriesToObject, toCamelCase, trim } from '../utils.js';
 export const defaultSlideStyles = css`
   :host {
     display: block;
+    background-color: #fff;
   }
 `;
 
-export function defineSlideType (slideType, render, styles = []) {
+export function defineSlideType (slideType, options) {
 
   window.customElements.define(slideType, class extends LitElement {
+
+    static get properties () {
+      return {
+        position: { type: String, attribute: 'data-position', reflect: true },
+      };
+    }
 
     render () {
 
@@ -24,13 +31,25 @@ export function defineSlideType (slideType, render, styles = []) {
 
       const content = (this.innerHTML !== '') ? this.innerHTML : null;
 
-      return render({ attrs, content });
+      return options.render({ attrs, content });
+    }
+
+    update (changedProperties) {
+      super.update(changedProperties);
+      if (changedProperties.has('position')) {
+        if (this.position === 'current' && options.onEnter != null) {
+          options.onEnter();
+        }
+        if (this.position !== 'current' && options.onLeave != null) {
+          options.onLeave(this.position);
+        }
+      }
     }
 
     static get styles () {
       return [
         defaultSlideStyles,
-        styles,
+        options.styles ?? '',
       ];
     }
   });
