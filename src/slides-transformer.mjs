@@ -8,6 +8,8 @@ export function transformSlides (pseudoMarkdown) {
   const frontmatterData = [];
   let title = '';
 
+  let comment = false;
+
   let currentSlide;
   const allSlides = [];
 
@@ -24,6 +26,16 @@ export function transformSlides (pseudoMarkdown) {
       if (frontmatter) {
         const [rawName, rawValue] = line.split(':');
         frontmatterData.push([rawName.trim(), rawValue.trim()]);
+        return;
+      }
+      if (line.startsWith('<!--')) {
+        comment = true;
+      }
+      if (comment && line.endsWith('-->')) {
+        comment = false;
+        return;
+      }
+      if (comment) {
         return;
       }
       if (line.startsWith('# ')) {
@@ -57,7 +69,7 @@ export function transformSlides (pseudoMarkdown) {
     });
 
   const slideTypes = unique(allSlides.map((slide) => slide.type)).sort();
-  const slideTypesScripts = slideTypes.map((slideType) => `<script src="src/js/slide-types/slide-${slideType}.js" type="module"></script>`)
+  const slideTypesScripts = slideTypes.map((slideType) => `<script src="src/js/slide-types/slide-${slideType}.js" type="module"></script>`);
 
   const htmlLines = allSlides
     .map((slide) => getSlideLines(slide))
