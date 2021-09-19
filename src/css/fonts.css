@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,700;1,700&display=swap');
+
+/* https://www.cufonfonts.com/font/tintin */
+@font-face {
+  font-family: tintin;
+  src: url("../fonts/tintin.woff") format("woff");
+}
+
