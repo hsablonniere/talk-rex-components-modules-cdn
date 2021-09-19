@@ -31,7 +31,9 @@ export function defineSlideType (slideType, options) {
 
       const content = (this.innerHTML !== '') ? this.innerHTML : null;
 
-      return options.render({ attrs, content });
+      return options.render
+        ? options.render({ attrs, content })
+        : '';
     }
 
     update (changedProperties) {
