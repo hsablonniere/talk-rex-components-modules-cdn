@@ -49,7 +49,7 @@ export default function configurePlugin () {
         const { state, enabled } = commandArgs;
         deck.fire('toggle-slide-deck-state', { slideIndex: deck.slide(), state, enabled });
       }
-      console.debug(`unknown protocol command ${command} with args`, commandArgs);
+      // console.debug(`unknown protocol command ${command} with args`, commandArgs);
     });
   };
 }
