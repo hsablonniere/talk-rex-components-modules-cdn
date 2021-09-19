@@ -23,7 +23,13 @@ body {
   background-color: #000;
 }
 
-[data-position="before"],
-[data-position="after"] {
+[data-position="before"] {
   display: none;
+}
+
+[data-position="after"] {
+  /* Make sure the slide exist so transitions are triggered */
+  display: block !important;
+  position: absolute;
+  visibility: hidden;
 }
