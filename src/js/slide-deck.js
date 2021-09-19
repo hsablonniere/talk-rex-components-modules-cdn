@@ -7,13 +7,11 @@ import multimedia from './bespoke-multimedia.js';
 // import multilang from './bespoke-multilang.js';
 import navKbd from './bespoke-nav-kbd.js';
 import protocol from './bespoke-protocol.js';
-import toggleState from './bespoke-toggle-state.js';
 
 const deck = bespoke.from({ parentSelector: 'body', slidesSelector: 'body > :not(.notes)' }, [
   navKbd(),
   classes(),
   multimedia(),
-  toggleState(),
   // should be last
   hash(),
   protocol(),
