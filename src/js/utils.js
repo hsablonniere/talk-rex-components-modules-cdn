@@ -4,9 +4,10 @@ export function toCamelCase (text) {
 
 export function markup (text) {
   return text
-    .replace(/\*(.*)\*/g, '<strong>$1</strong>')
-    .replace(/_(.*)_/g, '<em>$1</em>')
-    .replace(/#(.*)#/g, '<mark>$1</mark>');
+    .replace(/\*(.*?)\*/g, '<strong>$1</strong>')
+    .replace(/`(.*?)`/g, '<code>$1</code>')
+    .replace(/_(.*?)_/g, '<em>$1</em>')
+    .replace(/#(.*?)#/g, '<mark>$1</mark>');
 }
 
 export function balance (text) {
@@ -28,7 +29,7 @@ export function entriesToObject (a, b, index, all) {
 }
 
 export function getTitle () {
-  return document.title;
+  return document.querySelector('title').textContent;
 }
 
 export function getMeta () {
@@ -40,4 +41,12 @@ export function getMeta () {
       return [name, content];
     })
     .reduce(entriesToObject);
+}
+
+export function pipeline (input, ...fns) {
+  let tmp = input;
+  for (const fn of fns) {
+    tmp = fn(tmp);
+  }
+  return tmp;
 }
