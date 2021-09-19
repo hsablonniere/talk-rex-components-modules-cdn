@@ -37,11 +37,15 @@ export function defineSlideType (slideType, options) {
     update (changedProperties) {
       super.update(changedProperties);
       if (changedProperties.has('position')) {
+        const elements = Array
+          .from(this.shadowRoot.querySelectorAll('[id]'))
+          .map((node) => [node.id, node])
+          .reduce(entriesToObject, []);
         if (this.position === 'current' && options.onEnter != null) {
-          options.onEnter();
+          options.onEnter(elements);
         }
         if (this.position !== 'current' && options.onLeave != null) {
-          options.onLeave(this.position);
+          options.onLeave(this.position, elements);
         }
       }
     }
@@ -53,4 +57,10 @@ export function defineSlideType (slideType, options) {
       ];
     }
   });
+}
+
+export function play (audio) {
+  audio.pause();
+  audio.currentTime = 0;
+  audio.play();
 }
