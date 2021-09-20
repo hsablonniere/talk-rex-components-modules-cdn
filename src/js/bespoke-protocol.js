@@ -37,13 +37,16 @@ export default function configurePlugin () {
         const { cursor } = commandArgs;
         deck.slide(Number(cursor));
         let theSlide = deck.slides[deck.slide()];
-        const viewport = theSlide.dataset.viewport || '0';
+        const viewport = theSlide.dataset.viewport;
 
         const ts = new Date().getTime();
         events.push({ ts: ts - recordingTs, cursor });
         // localStorage.setItem(`recording-${recordingTs}`, JSON.stringify(events));
 
-        return source.postMessage({ event: 'set-viewport', eventData: { viewport } }, '*');
+        if (viewport != null) {
+          return source.postMessage({ event: 'set-viewport', eventData: { viewport } }, '*');
+        }
+        return;
       }
       if (command === 'toggle-slide-deck-state') {
         const { state, enabled } = commandArgs;

@@ -1,3 +1,5 @@
+import { markup } from './js/utils.mjs';
+
 export function transformSlides (pseudoMarkdown) {
 
   const lines = pseudoMarkdown
@@ -108,6 +110,7 @@ function getSlideLines (slide) {
   const notesLines = slide.notesLines
     .map((line) => line.trim())
     .filter((line) => line !== '')
+    .map((line) => markup(line))
     .map((line) => `${line}<br>`);
 
   const hasNotes = (notesLines.length > 0);

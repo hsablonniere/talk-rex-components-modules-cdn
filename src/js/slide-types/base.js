@@ -1,5 +1,5 @@
 import { css, LitElement } from 'lit';
-import { entriesToObject, toCamelCase, trim } from '../utils.js';
+import { entriesToObject, toCamelCase, trim } from '../utils.mjs';
 
 // language=CSS
 export const defaultSlideStyles = css`

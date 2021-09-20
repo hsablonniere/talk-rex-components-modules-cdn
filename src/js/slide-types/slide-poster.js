@@ -1,7 +1,7 @@
 import { css, html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { defineSlideType } from './base.js';
-import { getMeta, getTitle, markup, pipeline } from '../utils.js';
+import { getMeta, getTitle, markup, pipeline } from '../utils.mjs';
 
 defineSlideType('slide-poster', {
   render ({ attrs, content }) {
