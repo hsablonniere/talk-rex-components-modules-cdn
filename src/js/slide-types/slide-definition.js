@@ -1,115 +1,113 @@
 import { css, html } from 'lit';
-import { defineSlideType } from './base.js';
+import { defineSlideType, play } from './base.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 defineSlideType('slide-definition', {
   render ({ content }) {
     console.log(content);
-    const [title, ...lines] = content
-      .split('\n')
-      .filter((line) => line.trim() !== '')
+
+    const [title] = content.split('\n')
+      .filter((line) => line.trim() !== '');
+
+    const details = content.split('\n')
+      .filter((line) => line.trim().startsWith('* '))
       .map((line) => line.replace(/^\* /, ''))
-      .map((line) => html`
-        <div class="item">${line}</div>
+      .map((detail) => html`
+        <div class="detail">${unsafeHTML(detail)}</div>
       `);
 
+    const images = content.split('\n')
+      .filter((line) => line.trim().startsWith('<img '))
+      .map((img) => unsafeHTML(img));
+
     return html`
-      <div class="sign-wrapper">
-        <div class="sign">${title}</div>
+      <audio id="stabilo" src="/src/music/stabilo.ogg"></audio>
+      <div class="title">
+        ${title}
+        <div class="stabilo"></div>
       </div>
-      <div class="details">
-        ${lines}
+      <div class="body">
+        ${details}
+        ${images}
       </div>
     `;
   },
+  onEnter ({ stabilo }) {
+    setTimeout(() => play(stabilo), 500);
+  },
   // language=CSS
   styles: css`
-    @keyframes drop {
+    @keyframes stabilo {
       0% {
-        transform: rotate(-10deg) translateY(-400%);
-      }
-      50% {
-        transform: rotate(-10deg) translateY(-500%);
-      }
-      95% {
-        transform: rotate(-3deg) translateY(-5%);
+        transform: scaleX(0);
       }
       100% {
-        transform: rotate(-3deg) translateY(0%);
+        transform: scaleX(1);
       }
     }
-
+    
     :host {
       align-items: center;
-      /*background-image: radial-gradient(transparent, transparent 0 %, #000 80 %), url('/src/img/jungle.svg');*/
-      /*background-size: cover;*/
-      background-color: #3babfd !important;
-      /*background-color: #deb78c !important;*/
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr min-content;
+      grid-template-rows: min-content 1fr;
       justify-content: center;
     }
 
-    .sign-wrapper {
+    .title {
       justify-self: center;
-      /*background-color: #cb9c64;*/
-      /*border: 0.55 rem solid #865930;*/
-      /*box-shadow: 0 0 1 rem #000, inset 0 0 0.25 rem #000;*/
-      /*background-color: #85a365;*/
-      /*background-color: #c2ce2f;*/
-      /*background-color: #f49a39;*/
-      /*background-color: #ecff7e;*/
-      /*border-radius: 1 rem;*/
-      /*border: 0.55 rem solid #506547;*/
-      /*border: 0.55 rem solid #0d0e1f;*/
-      /*border: 0.55 rem solid #2e1c43;*/
-      color: #2e1c43;
-      /*box-shadow: 0 0 1 rem #2e1c43;*/
-      font-family: tintin, sans-serif;
-      border-image-source: url(/src/img/empty-sign.svg);
-      border-image-slice: 60 60 60 60;
-      border-style: solid;
-      border-width: 1rem;
-      /*background-size: auto 12 rem;*/
-      /*background-position: center center;*/
-      /*background-repeat: no-repeat;*/
-      font-size: 4rem;
+      color: #3babfd;
+      color: #0082ff;
+      /*border-bottom: 0.25rem solid #3babfd;*/
+      position: relative;
+      padding: 0 0.5rem;
+      padding: 0 1rem;
+      margin: 3rem 0 0;
+      font-family: skranji, sans-serif;
+      font-size: 3.5rem;
       font-weight: bold;
       transform: rotate(-1deg) translateY(0%);
-      filter: drop-shadow(0 0 1rem #2e1c43);
+      z-index: 2;
+    }
+    
+    .stabilo {
+      content: '';
+      display: block;
+      height: 1.5rem;
+      background-color:#ff0;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 1rem;
+      z-index: -1;
+      transform-origin: left center;
+    }
+    
+    :host([data-position="current"]) .stabilo {
+      transform: scaleX(0);
+      animation: 500ms ease-in-out 500ms stabilo;
+      animation-fill-mode: forwards;
     }
 
-    :host([data-position="current"]) .sign-wrapper {
-      animation: 500ms ease-in-out drop;
-    }
-
-    .sign {
-      background-color: #ecff7e;
-      padding: 0.1rem 1rem;
-      margin: -2px;
-      text-align: center;
-    }
-
-    .details {
-      /*background-color: #f0fce8;*/
-      /*background-image: url(/src/img/empty-map.svg);*/
-      /*background-size: 100 % auto;*/
-      /*border-color: #60a555;*/
-      /*color: #000;*/
-      background-color: #43854a;
-      background-position: top center;
-      border-color: #fff;
-      border-style: solid;
-      border-width: 0.25rem 0 0 0;
-      box-shadow: 0 0 0.5rem #777;
+    .body {
+      align-content: center;
+      align-self: stretch;
       box-sizing: border-box;
-      color: #fff;
+      color: #43854a;
       display: grid;
-      font-family: skranji, sans-serif;
+      font-family: PT Sans, sans-serif;
       font-size: 2rem;
       font-weight: bold;
       justify-content: center;
-      padding: 2rem;
+      position: relative;
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      position: absolute;
       width: 100%;
     }
   `,

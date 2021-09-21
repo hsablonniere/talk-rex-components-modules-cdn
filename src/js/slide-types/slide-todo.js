@@ -1,5 +1,6 @@
 import { css, html } from 'lit';
 import { defineSlideType } from './base.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 defineSlideType('slide-todo', {
   render ({ content }) {
@@ -8,7 +9,7 @@ defineSlideType('slide-todo', {
       .filter((line) => line !== '')
       .map((rawLine) => {
         return html`
-          <mark>${rawLine}</mark>
+          <mark>${unsafeHTML(rawLine)}</mark>
         `;
       });
   },

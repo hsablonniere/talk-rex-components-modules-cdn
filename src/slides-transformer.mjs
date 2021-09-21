@@ -40,7 +40,7 @@ export function transformSlides (pseudoMarkdown) {
       if (comment) {
         return;
       }
-      if (line.startsWith('# ')) {
+      if (line.startsWith('# ') && title === '') {
         title = line.replace(/^# /, '').trim();
         return;
       }
@@ -60,7 +60,7 @@ export function transformSlides (pseudoMarkdown) {
           if (currentSlide.notesLineIndex == null) {
             currentSlide.notesLineIndex = lineIndex + 1;
           }
-          const [_, note] = /^> (.*)?$/.exec(line);
+          const [_, note = ''] = /^> (.*)?$/.exec(line);
           currentSlide.notesLines.push(note);
         }
         else {

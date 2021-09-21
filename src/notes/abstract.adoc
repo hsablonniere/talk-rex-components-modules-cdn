@@ -70,9 +70,9 @@ Une personne qui a suivi la présentation repart avec :
 
 * On commence notre histoire par l'époque jQuery/Prototype/Mootools : c'était mieux avant...
 ** On ajoutait quelques balises `<script>` dans le bon ordre et ça "juste marchait"
-* Pour des raisons de confort de dev, on a commencé à séparer nos fichiers
 * Pour des raisons de perf utilisateur, on a voulu : minifier, mais surtout concaténer ces fichiers
 ** La minification a proposé des concepts assez marant comme l'élimination de code mort ou le mangling des noms de variable
+* Pour des raisons de confort de dev, on a commencé à séparer nos fichiers
 * Puis on est passé sur un développement beaucoup plus modulaire se basant sur des imports et non plus sur des variables globales avec un ordre précis avec différents formats de module pour arriver au format standard ESM (tjs en transition)
 ** C'est avec ça qu'on est passé de concaténation simple à un bundling structuré (analyser du graph d'interdépendances des modules pour produire un seul fichier)
 ** arrivée de browserify, webpack, rollup, parcel

@@ -70,6 +70,7 @@ defineSlideType('slide-section', {
       font-weight: bold;
       transform: rotate(-1deg) translateY(0%);
       filter: drop-shadow(0 0 1rem #2e1c43);
+      margin: 0 5rem;
     }
 
     :host([data-position="current"]) .sign-wrapper {

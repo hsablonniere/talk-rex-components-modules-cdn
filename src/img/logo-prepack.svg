@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="600"
+   viewBox="0 0 600 600"
+   version="1.1"
+   id="svg28"
+   sodipodi:docname="logo-prepack.svg"
+   inkscape:version="1.0.2 (1.0.2+r75+1)">
+  <metadata
+     id="metadata32">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Prepack Logo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1406"
+     id="namedview30"
+     showgrid="false"
+     inkscape:zoom="0.793"
+     inkscape:cx="502.52207"
+     inkscape:cy="500"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg28" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.a{fill:#1eb168;}.b{fill:#fff;}</style>
+  </defs>
+  <title
+     id="title6">Prepack Logo</title>
+  <rect
+     class="a"
+     x="2.2900133"
+     y="2.2900133"
+     width="595.41998"
+     height="595.41998"
+     rx="167.64999"
+     ry="167.64999"
+     id="rect8" />
+  <path
+     class="b"
+     d="m 383.40002,299.91002 -95.58,-145.53 h -142.28 l 95.7,145.71 -117.07,174.06 h -34.39 l 117.22,-174.24 -114.34,-174.06 h 210.56 q 57.21,87.15 114.44,174.24 z"
+     id="path10" />
+  <path
+     class="b"
+     d="m 301.17002,299.91002 m 0,0 -95.7,145.71 h 199.34 c 31.86,-48.51 95.58,-145.71 95.58,-145.71 l 34.26,0.18 c 0,0 -76.29,116 -114.44,174.06 h -267.62 l 114.32,-174.06 z"
+     id="path12" />
+  <path
+     class="b"
+     d="m 324.00002,299.91002 -114.34,-174.06 h 210.55 l 114.44,174.24 -34.26,-0.18 -95.58,-145.53 h -142.28 l 95.71,145.71 z"
+     id="path14" />
+  <path
+     class="b"
+     d="m 382.38002,154.38002 95.7,145.62 -34.26,-0.09 -114.32,-174.06"
+     id="path16" />
+  <rect
+     class="a"
+     x="2.2900133"
+     y="2.2900133"
+     width="595.41998"
+     height="595.41998"
+     rx="167.64999"
+     ry="167.64999"
+     id="rect18" />
+  <path
+     class="b"
+     d="m 383.40002,299.91002 -95.58,-145.53 h -142.28 l 95.7,145.71 -117.07,174.06 h -34.39 l 117.22,-174.24 -114.34,-174.06 h 210.56 q 57.21,87.15 114.44,174.24 z"
+     id="path20" />
+  <path
+     class="b"
+     d="m 301.17002,299.91002 m 0,0 -95.7,145.71 h 199.34 c 31.86,-48.51 95.58,-145.71 95.58,-145.71 l 34.26,0.18 c 0,0 -76.29,116 -114.44,174.06 h -267.62 l 114.32,-174.06 z"
+     id="path22" />
+  <path
+     class="b"
+     d="m 324.00002,299.91002 -114.34,-174.06 h 210.55 l 114.44,174.24 -34.26,-0.18 -95.58,-145.53 h -142.28 l 95.71,145.71 z"
+     id="path24" />
+  <path
+     class="b"
+     d="m 382.38002,154.38002 95.7,145.62 -34.26,-0.09 -114.32,-174.06"
+     id="path26" />
+</svg>

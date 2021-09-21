@@ -70,3 +70,5 @@
 * https://twitter.com/TheRealNooshu/status/1431905187124371461
 * https://www.baldurbjarnason.com/2021/single-page-app-morality-play/?utm_source=pocket_mylist
 * https://blog.chriszacharias.com/page-weight-matters?s=09&utm_source=pocket_mylist
+* https://github.com/uhub/awesome-javascript
+* https://github.com/Protectator/jsx-tsx-logos
