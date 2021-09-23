@@ -72,3 +72,6 @@
 * https://blog.chriszacharias.com/page-weight-matters?s=09&utm_source=pocket_mylist
 * https://github.com/uhub/awesome-javascript
 * https://github.com/Protectator/jsx-tsx-logos
+* https://www.youtube.com/watch?v=MgPwbal1LaA
+* https://www.youtube.com/watch?v=M3uWx-fhjUc
+* https://www.youtube.com/watch?v=yp_9q3tgDnQ

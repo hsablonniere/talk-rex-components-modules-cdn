@@ -1,0 +1,11 @@
+= Définitions
+
+* Minification
+* Concaténation
+* Bundling
+* Scope hoisting
+* Tree shaking
+* Code splitting
+* Import hoisting
+* Content hashing
+* Transpiling

@@ -1,14 +1,18 @@
+export function $$ (root, selector) {
+  return Array.from(root.querySelectorAll(selector));
+}
+
 export function toCamelCase (text) {
   return text.replace(/-(.)/g, (all, letter) => letter.toUpperCase());
 }
 
 export function markup (text) {
+  console.log(text);
   return text
     .replace(/\*(.*?)\*/g, '<strong>$1</strong>')
     .replace(/`(.*?)`/g, '<code>$1</code>')
     .replace(/_(.*?)_/g, '<em>$1</em>')
-    .replace(/#(.*?)#/g, '<mark>$1</mark>')
-    .replace('=> ', '➡️ ');
+    .replace(/#(.*?)#/g, '<mark>$1</mark>');
 }
 
 export function balance (text) {

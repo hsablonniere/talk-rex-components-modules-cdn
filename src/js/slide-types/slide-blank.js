@@ -30,6 +30,10 @@ defineSlideType('slide-blank', {
       background-repeat: no-repeat;
     }
 
+    :host([white]) {
+      background: #fff;
+    }
+
     :host([black]) {
       background: #000;
     }

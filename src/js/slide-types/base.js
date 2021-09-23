@@ -7,6 +7,26 @@ export const defaultSlideStyles = css`
     display: block;
     background-color: #fff;
   }
+
+  :host([todo]) {
+    position: relative;
+  }
+
+  .todo-banner,
+  :host([todo])::after {
+    content: 'TODO';
+    display: block;
+    position: absolute;
+    left: 0;
+    background-color: #ff0;
+    border-style: solid;
+    border-color: #000;
+    border-width: 0.1rem 0;
+    font-family: Arial, sans-serif;
+    padding: 0 5rem;
+    top: 0;
+    transform: translateX(-35%) translateY(60%) rotate(-45deg);
+  }
 `;
 
 export function defineSlideType (slideType, options) {
@@ -62,6 +82,9 @@ export function defineSlideType (slideType, options) {
 }
 
 export function play (audio) {
+  if (audio == null) {
+    return;
+  }
   audio.pause();
   audio.currentTime = 0;
   audio.play();

@@ -62,21 +62,23 @@ PAF + son horn
 > Et surtout, quand êtes vous ?
 
 ## todo
-Calendrier
+2021
+<!-- http://www.int33h.com/test/tc/ -->
 > #Voix dramatique#
 > Vous venez de débarquer en 2021 où le chaos s'est installé :
 
-## todo
-Nadal
+## media
+<!-- <img src="src/img/nadal-02.webp" style="object-fit: contain; width: 100%; height: 100%; display: block;"> -->
+<img src="src/img/tennis.jpg">
 > #Rapide#
 > => Nadal a perdu 4 fois Roland Garros.
 
-## todo
-Lost
+## media
+<img src="src/img/lost-02.jpg">
 > => La fin de Lost était nulle.
 
-## todo
-Indiana Jones
+## media
+<img src="src/img/indiana-02.webp">
 > => Il y a des rumeurs d'un 5ème Indiana Jones pour 2022 ... n'im-por-te quoi.
 
 <!-- ## todo
@@ -87,12 +89,15 @@ brexit
 comparatif fusées
 > => On continue à dérégler le climat mais pendant ce temps là, on a des milliardaires qui font un concours de "fusée". -->
 
-## todo
-pangolin
+## media
+<img src="src/img/pangolin.jpg">
 > => Et pour coroner le tout, depuis qu'un mec a bouffé un pangolin à l'autre bout de la planète,
 
-## todo
-vaccins + QR code
+## media
+<img src="src/img/antenna.jpg">
+
+## media
+<img src="src/img/qrcode.jpg">
 > on s'est tous fait injecter la 5G et on voit des QR code partout.
 > #Pause#
 > Ouais je sais, c'est dingue mais vous pouvez me croire, j'ai fais mes propres recherches.
@@ -116,56 +121,57 @@ Firefox 5%
 > En pendant ce temps là, notre petit panda roux adoré est tombé sous la barre des 5%.
 > C'est tellement triste, mais attends il y a pire : -->
 
-## todo
-RIP jQuery
+## media
+<img src="src/img/rip-jquery.svg">
 > #Voix sidérée#
 > jQuery c'est devenu has been, genre has been de ouf.
 > Maintenant, le framework à la mode,
 
-## todo
+## media
+<img src="src/img/party-react.png">
 > c'est React et tout le monde fait des Single Page Application.
 > Du coup, tu peux oublier la simplicité plug-and-play de l'ère jQuery.
 
 ## image-grid
-<img src="src/img/logo-autoprefixer.svg" class="">
-<img src="src/img/logo-ava.svg" class="">
-<img src="src/img/logo-babel.svg" class="">
-<img src="src/img/logo-bower.svg" class="">
-<img src="src/img/logo-broccoli.svg" class="">
-<img src="src/img/logo-browserify.svg" class="">
-<img src="src/img/logo-brunch.svg" class="">
-<img src="src/img/logo-closure.svg" class="">
-<img src="src/img/logo-deno.svg" class="">
-<img src="src/img/logo-esbuild.svg" class="">
-<img src="src/img/logo-eslint.svg" class="">
-<img src="src/img/logo-grunt.svg" class="">
-<img src="src/img/logo-gulp.svg" class="">
-<img src="src/img/logo-jest.svg" class="">
-<img src="src/img/logo-karma.svg" class="">
-<img src="src/img/logo-lerna.png" class="">
-<img src="src/img/logo-less.svg" class="">
-<img src="src/img/logo-mocha.svg" class="">
-<img src="src/img/logo-nodejs.svg" class="">
-<img src="src/img/logo-npm.svg" class="">
-<img src="src/img/logo-parcel.svg" class="">
-<img src="src/img/logo-playwright.png" class="">
-<img src="src/img/logo-postcss.svg" class="">
-<img src="src/img/logo-prepack.svg" class="">
-<img src="src/img/logo-prettier.svg" class="">
-<img src="src/img/logo-puppeteer.svg" class="">
-<img src="src/img/logo-rollup.svg" class="">
-<img src="src/img/logo-rome.svg" class="">
-<img src="src/img/logo-sass.svg" class="">
-<img src="src/img/logo-snowpack.svg" class="">
-<img src="src/img/logo-svgo.svg" class="">
-<img src="src/img/logo-swc.svg" class="">
-<img src="src/img/logo-terser.svg" class="">
-<img src="src/img/logo-traceur.svg" class="">
-<img src="src/img/logo-typescript.svg" class="">
-<img src="src/img/logo-vitejs.svg" class="">
-<img src="src/img/logo-webpack.svg" class="">
-<img src="src/img/logo-yarn.svg" class="">
-<img src="src/img/logo-yeoman.svg" class="">
+<img src="src/img/logo-closure.svg">
+<img src="src/img/logo-nodejs.svg">
+<img src="src/img/logo-npm.svg">
+<img src="src/img/logo-browserify.svg">
+<img src="src/img/logo-bower.svg">
+<img src="src/img/logo-brunch.svg">
+<img src="src/img/logo-grunt.svg">
+<img src="src/img/logo-gulp.svg">
+<img src="src/img/logo-broccoli.svg">
+<img src="src/img/logo-webpack.svg">
+<img src="src/img/logo-traceur.svg">
+<img src="src/img/logo-typescript.svg">
+<img src="src/img/logo-babel.svg">
+<img src="src/img/logo-terser.svg">
+<img src="src/img/logo-rollup.svg">
+<img src="src/img/logo-parcel.svg">
+<img src="src/img/logo-swc.svg">
+<img src="src/img/logo-esbuild.svg">
+<img src="src/img/logo-snowpack.svg">
+<img src="src/img/logo-vitejs.svg">
+<img src="src/img/logo-rome.svg">
+<!-- <img src="src/img/logo-prepack.svg"> -->
+<!-- <img src="src/img/logo-autoprefixer.svg"> -->
+<!-- <img src="src/img/logo-ava.svg"> -->
+<!-- <img src="src/img/logo-deno.svg"> -->
+<!-- <img src="src/img/logo-eslint.svg"> -->
+<!-- <img src="src/img/logo-jest.svg"> -->
+<!-- <img src="src/img/logo-karma.svg"> -->
+<!-- <img src="src/img/logo-lerna.png"> -->
+<!-- <img src="src/img/logo-less.svg"> -->
+<!-- <img src="src/img/logo-mocha.svg"> -->
+<!-- <img src="src/img/logo-playwright.png"> -->
+<!-- <img src="src/img/logo-postcss.svg"> -->
+<!-- <img src="src/img/logo-prettier.svg"> -->
+<!-- <img src="src/img/logo-puppeteer.svg"> -->
+<!-- <img src="src/img/logo-sass.svg"> -->
+<!-- <img src="src/img/logo-svgo.svg"> -->
+<!-- <img src="src/img/logo-yarn.svg"> -->
+<!-- <img src="src/img/logo-yeoman.svg"> -->
 
 > Non... maintenant, pour ajouter une dépendance et l'utiliser, il te faut Node.js, npm, un task runner, un bundler, un transpiler, un minifier, un linter, un formatter...
 > En vrai, faut un bac+17 pour t'y retrouver dans tous ces outils JavaScript.
@@ -178,6 +184,7 @@ RIP jQuery
 > J'm'appelle Hubert Sablonnière,
 > J'suis développeur Web chez #Clever Cloud# et aujourd'hui, j'ai envie de vous parler de jungle et d'outils JavaScript.
 > On va d'abord revenir sur certains concepts et termes inventés ou popularisés par ces outils.
+> D'ailleurs, on va se concentrer sur le build JavaScript, sinon on en a pour la semaine.
 > Et ensuite, on verra au travers d'un retour d'expérience, si c'est possible de revenir à un système plus simple,
 > comment... ?
 > et qu'est ce que ça implique ?
@@ -198,179 +205,262 @@ Guide de survie
 <!-- terme + impact : on expliquer à quoi ça sert -->
 <!-- terme + logos -->
 
-## definition
+## definition animation
+Minification
+> ...minification.
+
+## definition todo
 Minification
 <img src="/src/img/definition-minification.png">
-> ...minification.
-> L'idée : on prend un fichier JS, on enlève les espaces, les commentaires...
+> *L'idée :* on prend un fichier JS, on enlève les espaces, les commentaires...
 > bref tout ce qu'on peut pour que ça continue à fonctionner pareil mais avec moins de code.
 > C'est une sorte de compression avec perte de données.
 
 ## definition
 Minification
-* Réduire la quantité de code
-* charger + parser + exécuter
-> Le but : reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
+* Moins de code
+* _(charger + parser + exécuter)_
+> *Le but :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
 > C'est pas nouveau du tout hein.
 
 <!-- https://www.fusioncharts.com/blog/5-excellent-javascript-minification-tools-to-improve-your-code-performance/ -->
-## image-grid style="--min-w: 10rem"
-<div class="text">jsmin</div>
-<div class="text">packer</div>
-<div class="text">YUI compressor</div>
+## definition
+Minification (regex)
+* 200?: jsmin <img src="">
+* 200?: Packer <img src="">
+* 200?: YUI compressor <img src="">
 > Les moins jeunes d'entre nous se rappelleront de jsmin, Packer (jQuery), ou YUI compressor.
 
-## image-grid style="--min-w: 10rem"
-<img src="src/img/logo-closure.svg" class="">
-<div class="text">uglify</div>
-<div class="text">babel minify</div>
+## definition
+Minification (parseur)
+* 2009: Closure<br>compiler <img src="src/img/logo-closure.svg">
+* 2011: Uglify <img>
+* 2017: Babel minify <img>
 > Depuis 2008, on a eu pas mal de nouveau outils pour ça...
 
-## image-grid style="--min-w: 10rem"
-<img src="src/img/logo-terser.svg" class="">
-<img src="src/img/logo-esbuild.svg" class="">
-<img src="src/img/logo-swc.svg" class="">
+## definition
+Minification (parseur)
+* _"mangling"_ de noms de variable
+* &nbsp;
+> Ce qui est amusant c'est que si on passe la version minifiée d'un jQuery de 2008 dans Terser, on passe de 55kB à 46kB
+<!-- curl -s https://code.jquery.com/jquery-1.2.6.min.js | gzip | human-size -->
+
+## definition
+Minification (parseur)
+* _"mangling"_ de noms de variable
+* élimination de code mort (DCE)
+> Ce qui est amusant c'est que si on passe la version minifiée d'un jQuery de 2008 dans Terser, on passe de 55kB à 46kB
+<!-- curl -s https://code.jquery.com/jquery-1.2.6.min.js | gzip | human-size -->
+
+## definition
+Minification (parseur)
+* 2018: Terser (JS) <img src="src/img/logo-terser.svg">
+* 2019: swc (Rust) <img src="src/img/logo-swc.svg">
+* 2020: esbuild (go) <img src="src/img/logo-esbuild.svg">
 > ...et en ce moment, on est plutôt sur Terser qui se fait talloner par esbuild et SWC.
 <!-- pourquoi pas ajouter le logo de rust et go par dessus -->
 
-## definition
-Minification
-* RegExp => parseur
-* mangling de nom de variable
-* élimination de code mort
-> Ce qui est amusant c'est que si on passe la version minifiée d'un jQuery de 2008 dans Terser, on passe de 55kB à 46kB
 
-## blank
+## blank white
 > Pour des raisons de confort de dev, on a commencé à séparer nos fichiers.
-> Tant qu'on les chargeait dans le bon ordre, en gros tant qu'on mettait jQuery avant les plugins jQuery etc... ça se passait bien.
-> Du coup, pour pas déteriorer les perfs, on a commencé à faire de la...
+> Tant qu'on les chargeait dans le bon ordre,
+> en gros tant qu'on mettait jQuery avant les plugins jQuery etc...
+> ça se passait bien.
+> Du coup, pour pas déteriorer les perfs et l'expérience utilisateur, on a commencé à faire de la...
 
-## definition
+## definition animation
+Concaténation
+
+## definition todo
 Concaténation
 <img src="/src/img/definition-concatenation.png">
 > ...Concaténation.
-> L'idée : on prend plusieurs fichiers et on les assemble en un seul fichier en respectant l'ordre.
+> *L'idée :* on prend plusieurs fichiers et on les assemble en un seul fichier en respectant l'ordre.
 
 ## definition
 Concaténation
-* Réduire le nombre de requêtes HTTP
-> Le but : réduire le nombre de requêtes HTTP, en HTTP 1.1, un navigateur ne peut pas faire + de 6/8 requêtes en parallèle vers le même site
-> On fait ça pendant longtemps, j'me rappelle que sur un projet angular.js en 2014, on avait du grunt puis du gulp pour faire ça.
-> Respecter l'odre des fichiers, c'était un peu fragile du coup, on a commencé à faire des modules et à expliciter les dépendances.
+* Moins de requêtes HTTP
+> *Le but :* réduire le nombre de requêtes HTTP.
+> En HTTP 1.1, un navigateur ne peut pas faire + de 6/8 requêtes en parallèle vers le même site.
+> On a fait ça pendant longtemps, j'me rappelle que sur un projet angular.js en 2014, on avait du grunt puis du gulp pour faire ça.
+
+## definition
+Task runners / Pipeline
+* 2011/2012: Brunch <img src="src/img/logo-brunch.svg">
+* 2012: Grunt <img src="src/img/logo-grunt.svg">
+* 2013: Gulp <img src="src/img/logo-gulp.svg">
+* 2014: Broccoli <img src="src/img/logo-broccoli.svg">
+> Ça rend en partie obsolète beaucoup de choses qu'on faisait manuellement avec des outils comme grunt gulp etc...
+> Où on devait lui expliquer qui allait avec qui.
+
+## blank white
+> Respecter l'odre des fichiers, c'était un peu fragile du coup, on a commencé utiliser des systèmes de modules pour expliciter les dépendances.
 > Module machin a besoin de module truc qui lui a besoin de module chose.
 > Après avoir joué avec différents systèmes de modules, une bonne partie de la communauté a opté pour le système CommonJS (polularisé par Node.js).
 > C'est là qu'on est passé au niveau supérieur de la concaténation...
 <!-- requirejs et quoi d'autres -->
 <!-- logo cjs/esm https://github.com/wessberg/cjstoesm -->
 
-## definition
+## definition animation
+Bundling
+
+## definition todo
 Bundling
 > ...le bundling.
 <img src="/src/img/definition-bundling.png">
-> L'idée : on prend un fichier source, on analyse les dépendance et on assemble ces dépendances dans le bon ordre, dans un seul fichier et avec un peu de glue pour que ça continue à fonctionner.
+> *L'idée :* on prend un fichier source, on analyse les dépendances et on assemble ces dépendances dans le bon ordre, dans un seul fichier et avec un peu de glue pour que ça continue à fonctionner.
 > C'est une sorte de concaténation ++ qui connait le système de modules et qui se base sur le graphe de dépendances.
 
 ## definition
 Bundling
-* réduire le nombre de requêtes HTTP
-> Le but : réduire le nombre de requêtes HTTP, en HTTP 1.1, un navigateur ne peut pas faire + de 6/8 requêtes en parallèle vers le même site
-
-## definition
-Bundling
-> C'est la partie centrale des outils qu'on qualifie de bundler
+* Moins de requêtes HTTP
+> *Le but :* toujours réduire le nombre de requêtes HTTP.
+> En HTTP 1.1, un navigateur ne peut pas faire + de 6/8 requêtes en parallèle vers le même site
 > Le graphe de dépendances se limite pas au JavaScript, certains d'entre eux analyse le HTML, le CSS, les images, les polices...
 
-## image-grid
-<img src="src/img/logo-broccoli.svg" class="">
-<img src="src/img/logo-brunch.svg" class="">
-<img src="src/img/logo-grunt.svg" class="">
-<img src="src/img/logo-gulp.svg" class="">
-> Ça rend en partie obsolète beaucoup de choses qu'on faisait manuellement avec des outils comme grunt gulp etc...
-> Où on devait lui expliquer qui allait avec qui.
+<!-- https://github.com/google/closure-compiler/blob/7ff6e25843097791416d1544c88dc8711f6be64a/src/com/google/javascript/jscomp/deps/DepsGenerator.java -->
+## definition
+Bundling (précurseurs)
+* 2009: Closure<br>compiler <img src="src/img/logo-closure.svg">
+<!-- * 2010: Dojo Toolkit <img src="src/img/logo-dojo.svg"> -->
+* 2010: r.js<br>(requirejs) <img src="src/img/logo-requirejs.svg">
+* 2011: Browserify <img src="src/img/logo-browserify.svg">
+<!-- difficile de savoir s'il faut citer Dojo -->
+<!-- https://dojotoolkit.org/documentation/tutorials/1.6/build/index.html -->
 
-## image-grid style="--min-w: 12rem"
-<img src="src/img/logo-browserify.svg" class="">
-<img src="src/img/logo-webpack.svg" class="">
-<img src="src/img/logo-rollup.svg" class="">
-<img src="src/img/logo-parcel.svg" class="">
-<img src="src/img/logo-esbuild.svg" class="">
-<img src="src/img/logo-rome.svg" class="">
-<img src="src/img/logo-snowpack.svg" class="">
-<img src="src/img/logo-vitejs.svg" class="">
+<!-- https://github.com/google/closure-compiler/blob/7ff6e25843097791416d1544c88dc8711f6be64a/src/com/google/javascript/jscomp/deps/DepsGenerator.java -->
+## definition
+Bundling
+* 2014: Webpack <img src="src/img/logo-webpack.svg">
+* 2015: Rollup <img src="src/img/logo-rollup.svg">
+* 2018: Parcel <img src="src/img/logo-parcel.svg">
 > Ça a clairement commencé avec Browserify
 > Le plus connu, c'est probablement Webpack
 > Perso j'aime bcp Rollup car il est fort en ESM
 > alors que sur mon site j'utilise Parcel qui est balaise avec HTML
 
-## image-grid style="--min-w: 12rem"
-<img src="src/img/logo-browserify.svg" class="">
-<img src="src/img/logo-webpack.svg" class="">
-<img src="src/img/logo-rollup.svg" class="">
-<img src="src/img/logo-parcel.svg" class="">
-> C'est clairement Browserify qui a commencé
-> mais le plus connu, c'est probablement Webpack
-> Perso j'aime bcp Rollup car il est fort en ESM
-> alors que sur mon site j'utilise Parcel qui est balaise avec HTML
-
-## image-grid style="--min-w: 12rem"
-<img src="src/img/logo-esbuild.svg" class="">
-<img src="src/img/logo-rome.svg" class="">
-> Dans les petits nouveaux, on retrouve esbuild qui envoie de lourd au niveau perfs
+## definition
+Bundling (next gen)
+* 2020: esbuild (go) <img src="src/img/logo-esbuild.svg">
+* 2020: Spack (rust) <img src="src/img/logo-swc.svg">
+* 2020/2021: Rome (JS/rust) <img src="src/img/logo-rome.svg">
+> Dans les petits nouveaux, on retrouve esbuild qui envoie du lourd au niveau perfs
 > (montrer le site de esbuild)
-> On a Rome qui se vend comme un outil qui fait tout mais ils ont levé des millions et du coup, ils jettent tout pour tout refaire en Rust alors on sait pas trop.
+> On a aussi Rome qui se vend comme un outil qui fait tout mais ils ont levé des millions et du coup, ils jettent tout pour tout refaire en Rust alors on sait pas trop quand ça sort ni si ça sera bien mais on attend.
 
-## image-grid style="--min-w: 12rem"
-<img src="src/img/logo-snowpack.svg" class="">
-<img src="src/img/logo-vitejs.svg" class="">
+## todo
+<video src="src/videos/esbuild-timeline.mp4" autoplay style="object-fit: contain; width: 100%; height: 100%; display: block;">
+
+## definition
+Serveurs de dev
+* 2020: WDS <img src="src/img/logo-modernweb.svg">
+* 01/2020: Snowpack <img src="src/img/logo-snowpack.svg">
+* 04/2020: Vite <img src="src/img/logo-vitejs.svg">
 > Ce qui est marrant c'est qu'on a deux outils comparables qui sont sortis récemment
 > Il se focalise sur la partie serveur de dev en utilisant esbuild sous le capot
 > et quand vous voulez partir en prod, il vont utiliser rollup sous le capot
-> TODO transition, les bundlers d'aujourd'hui apportent pas mal de trucs ... vers le cache busting
+
+## blank white
+
+## blank white
+> Tous ces bundlers ne se limitent pas à simplement lire un graphe de dépendance et regrouper des fichiers.
+> Ils vont apporter d'autres concept pour améliorer les performances utilisateur.
+> Par exemple avec...
 
 ## definition
-Bundling / Cache busting
-* Garder en cache ce qu'on a déjà
+Scope hoisting
+* Réduire la glue
+
+## blank white
+> Tous ces bundlers ne se limitent pas à simplement lire un graphe de dépendance et regrouper des fichiers.
+> Ils vont apporter d'autres concept pour améliorer les performances utilisateur.
+> Par exemple avec...
+
+## definition animation
+Tree shaking
+<!-- il faut une vidéo de moi qui secoue un arbre -->
 
 ## definition
-Bundling / Cache busting
-<img src="/src/img/definition-cache-busting.png">
-
-## definition
-Bundling / Tree shaking
-* Moins de code à transférer
-* Moins de code à parser
-* Moins de code à éxécuter
-
-## definition
-Bundling / Tree shaking
+Tree shaking
 <img src="/src/img/definition-tree-shaking.png">
+> ...le tree shaking
+> C'est une technique qu'on applique au moment du bundling.
+> *L'idée :* on prend un fichier source, on analyse ses dépendances et surtout on analyse précisémment ce qu'il importe des dépendances qu'il utilise pour ne garder que ces parties dans le bundle finale.
 
 ## definition
-Bundling / Scope hoisting
-* Réduire le bruit
+Tree shaking
+* Moins de code
+* _(charger + parser + exécuter)_
+> *Le but :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
+
+## blank white
+
+## definition animation
+Code splitting
 
 ## definition
-Bundling / Import hoisting
-* Réduire l'effet escalier du chargement
-
-## definition
-Bundling / Code splitting
-* Charger uniquement à la demande
-* Moins de code à charger
-* Moins de code à parser
-* Moins de code à éxécuter
-
-## definition
-Bundling / Code splitting
+Code splitting
 <img src="/src/img/definition-code-splitting.png">
+> *L'idée :* on prend un fichier JS, on enlève les espaces, les commentaires...
+
+## definition
+Code splitting
+* Chargement à la demande
+> bla bla avec le routeur
+> les imports dynamiques
+
+## definition
+Import hoisting
+* Effet escalier
+
+## definition animation
+Content hashing
+
+## definition
+Content hashing
+<img src="/src/img/definition-content-hashing.png">
+> ...le Content hashing.
+> *L'idée :* on prend le contenu de chaque fichier, on calcule un hash et on l'ajoute dans le nom du fichier.
+> On a aussi appelé ça du revving à l'époque de grunt/gulp.
+
+## definition
+Content hashing
+* Aider les caches
+* &nbsp;
+
+## definition
+Content hashing
+* Aider les caches
+* _(navigateur, proxy, CDN...)_
+> *Le but :* Pousser les caches à considérer les fichiers comme immutables
+> Si un navigateur ou un proxy cache voit passer un fichier, il peut théoriquement que tel nom correspondra toujours à tel contenu.
+> Ici on vient améliorer l'expérience des visites répétées.
+
+## definition animation
+Transpiling
 
 ## definition
 Transpiling
-* .coffee => .js
-* .jsx => .js
-* .ts => .js
-* .tsx => .js
-* new.js => old.js
+* Langage (JSX, TS...)
+* &nbsp;
+
+## definition
+Transpiling
+* Langage (JSX, TS...)
+* Syntaxes/fonctionnalités JS _"moderne"_
+
+## definition
+Transpiling
+* 2009: CoffeeScript <img src="src/img/logo-coffeescript.svg">
+* 2014: Traceur <img src="src/img/logo-traceur.svg">
+* 2014: TypeScript <img src="src/img/logo-typescript.svg">
+* 2014: Babel<br>(6-to-5) <img src="src/img/logo-babel.svg">
+
+## definition
+Transpiling (next gen)
+* 2020: esbuild (go) <img src="src/img/logo-esbuild.svg">
+* 2020: SWC (rust) <img src="src/img/logo-swc.svg">
+* 2020/2021: Rome (JS/rust) <img src="src/img/logo-rome.svg">
 
 ## section
 C'était mieux avant ?
@@ -410,14 +500,13 @@ C'était mieux avant ?
 > * ?? (2) comment rendre tout ceci plus accessible ?
 > ** Différents cas de figures auxquels on pourrait s'intéresser pour simplifier l'expérience de dev mais ici on va se pencher sur :
 
-## section
-Guide de survie
-> On commence tout de suite par un petit guide de survie.
-> Expliquer comment les concepts/termes sont arrivés et à quoi tout cela sert
+## blank
 
 ## section
 <!-- Un nouvel espoir... -->
-Retour d'expérience chez Clever
+<!-- Retour d'expérience -->
+<!-- Vers la simplicité<br>et au delà ? -->
+Retour aux sources ?
 > Question de ce que ça fait de revenir à ce qu'on avait avant?
 
 ## todo
@@ -462,10 +551,11 @@ DIY vs Plug-and-Play
 > maintenant c'est supporté dans les browsers
 > du coup, ça marche sans rien faire
 
-## image-grid
-<img src="src/img/logo-chrome.svg" class="">
-<img src="src/img/logo-firefox.svg" class="">
-<img src="src/img/logo-safari.svg" class="">
+## Definition
+Exemple support
+* 89: Chrome <img src="src/img/logo-chrome.svg">
+* 89: Firefox <img src="src/img/logo-firefox.svg">
+* 89: Safari <img src="src/img/logo-safari.svg">
 
 ## todo
 > par contre, on doit quant même demander à nos utilisateurs de mettre une balise script par composant
@@ -520,7 +610,7 @@ DIY vs Plug-and-Play
 > expliquer la mise en place du Cellar + endpoint dynamique chez CF
 
 ## section
-à suivre...
+Et après ?
 > en fait, de la même manière qu'avec notre plateforme Cloud, on essaye de convaincre les gens de pas se prendre la tête avec les serveurs, les mises à jour, la sécu tout ça et de nous le déléguer car on sait faire
 > ici on vient déplacer la connaissance et la complexité de "prodification" de l'app qui consomme à celui qui expose un lib de composants
 > comme vous l'avez vu, c'est pas forcément la meilleure solution, mais on trouve que dans pas mal de cas, le résultat est sufisant comparer à cout de mise en place et maintenance
@@ -557,6 +647,11 @@ Liens :
 Images :
 
 * Fond jungle : https://www.vexels.com/vectors/preview/70035/tropical-frame-styled-jungle-background
+* Fond fête : https://www.vecteezy.com/vector-art/237001-party-crowd
+* Tennis : https://unsplash.com/photos/OtcRKNgWWQ4
+* Pangolin : https://unsplash.com/photos/mtTpAM2uaRM
+* Antenne : https://unsplash.com/photos/31JqyCVndUM
+* QR code : https://unsplash.com/photos/2HWkORIX3II
 
 Polices :
 

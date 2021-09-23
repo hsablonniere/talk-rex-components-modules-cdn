@@ -2,31 +2,37 @@
 
 <!-- https://www.swyx.io/js-third-age/ -->
 
-* 2009 nodejs https://github.com/nodejs/node
-* 2012 grunt https://github.com/gruntjs/grunt
-* 2012 webpack
-* 2014 gulp
-* 2014 typescript
-* 2015 babel
-* 2016 rollup
-* 2018 parcel
-* 2020 deno
-* 2020 rome
-* autoprefixer
+* 2007 Dojo https://github.com/google/closure-compiler
+* 2009 Closure compiler https://github.com/google/closure-compiler
+* 2009 Node.js https://github.com/nodejs/node
+* 2009 npm
+* 2011 Uglify https://github.com/mishoo/UglifyJS
+* 2011: Browserify https://github.com/browserify/browserify
 * 2012 bower https://github.com/bower/bower
-* broccoli
-* 2011 browserify https://github.com/browserify/browserify
-* brunch https://github.com/brunch/brunch
-* esbuild https://github.com/evanw/esbuild
+* 2012: Brunch https://github.com/brunch/brunch
+* 2012: Grunt https://github.com/gruntjs/grunt
+* 2013: Gulp https://github.com/gulpjs/gulp
+* 2014: Broccoli https://github.com/broccolijs/broccoli
+* 2014: Webpack https://github.com/webpack/webpack
+* 2014: Traceur https://github.com/google/traceur-compiler
+* 2014: TypeScript https://github.com/microsoft/TypeScript
+* 2014: Babel (6-to-5) https://github.com/babel/babel/
+* 2016: Rollup https://github.com/rollup/rollup
+* 2016: fuse-box https://github.com/fuse-box/fuse-box
+* 2018: terser https://github.com/terser/terser
+* 2018: parcel https://github.com/parcel-bundler/parcel
+* 2019: swc
+* 2020: deno
+* 2020: rome
+* 2020: Web Dev Server https://modern-web.dev/docs/dev-server/overview/
+* 2020: esbuild https://github.com/evanw/esbuild
+* autoprefixer
 * eslint https://github.com/eslint/eslint
 * less
-* 2009 npm
 * postcss
 * prettier
 * sass
 * snowpack
-* swc
-* terser
 * vitejs
 * yarn
 * yeoman https://github.com/yeoman/yo
@@ -40,11 +46,9 @@
 * https://github.com/svg/svgo
 * https://github.com/jasmine/jasmine
 * https://github.com/facebook/prepack
-* https://github.com/mishoo/UglifyJS
 * https://github.com/karma-runner/karma
 * https://github.com/uncss/uncss
 * https://github.com/sinonjs/sinon
 * https://github.com/jshint/jshint
-* https://github.com/google/traceur-compiler
 * https://github.com/puppeteer/puppeteer/
 * unpkg

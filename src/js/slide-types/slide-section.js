@@ -1,12 +1,14 @@
 import { css, html } from 'lit';
 import { defineSlideType, play } from './base.js';
+import { markup } from '../utils.mjs';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 defineSlideType('slide-section', {
   render ({ content }) {
     return html`
       <audio id="marimba" src="/src/music/marimba.ogg"></audio>
       <div class="sign-wrapper">
-        <div class="sign">${content}</div>
+        <div class="sign">${unsafeHTML(content)}</div>
       </div>
     `;
   },

@@ -1,39 +1,94 @@
 import { css, html } from 'lit';
 import { defineSlideType, play } from './base.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { $$, markup } from '../utils.mjs';
+
+const TIMELINE_REGEX = /^\* ([^:]*): (.*) (<img.*)$/;
 
 defineSlideType('slide-definition', {
-  render ({ content }) {
-    console.log(content);
+  render ({ content, attrs }) {
 
-    const [title] = content.split('\n')
-      .filter((line) => line.trim() !== '');
+    const title = content.split('\n')
+      .filter((line) => line.match(/^[a-zA-Z0-9]/) != null)
+      .join(' ');
 
-    const details = content.split('\n')
-      .filter((line) => line.trim().startsWith('* '))
+    const facts = content.split('\n')
+      .filter((line) => line.startsWith('* '))
+      .filter((line) => line.match(TIMELINE_REGEX) == null)
       .map((line) => line.replace(/^\* /, ''))
-      .map((detail) => html`
-        <div class="detail">${unsafeHTML(detail)}</div>
+      .map((fact) => html`
+        <div class="fact">${unsafeHTML(markup(fact))}</div>
+      `);
+
+    const timeline = content.split('\n')
+      .map((line) => line.match(TIMELINE_REGEX)?.slice(1))
+      .filter((matches) => matches != null)
+      .map(([year, name, image]) => html`
+        <div class="timeline-item">
+          ${unsafeHTML(image)}
+          <div class="marker">
+            <div class="line"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="name">${unsafeHTML(name)}</div>
+          <div class="year">${year}</div>
+        </div>
       `);
 
     const images = content.split('\n')
-      .filter((line) => line.trim().startsWith('<img '))
+      .filter((line) => line.startsWith('<img '))
       .map((img) => unsafeHTML(img));
 
     return html`
-      <audio id="stabilo" src="/src/music/stabilo.ogg"></audio>
+      ${attrs.animation != null ? html`
+        <audio id="stabilo" src="/src/music/stabilo.ogg"></audio>
+      ` : ''}
       <div class="title">
-        ${title}
-        <div class="stabilo"></div>
+        ${title.length > 0 ? html`
+          ${title}
+          <div class="stabilo"></div>
+        ` : ''}
       </div>
-      <div class="body">
-        ${details}
-        ${images}
-      </div>
+      ${images.length ? html`
+        <div class="image-wrapper">
+          ${images}
+        </div>
+      ` : ''}
+      ${facts.length ? html`
+        <div class="fact-list">
+          ${facts}
+        </div>
+      ` : ''}
+      ${timeline.length ? html`
+        <div class="timeline" id="timeline">
+          ${timeline}
+        </div>
+      ` : ''}
     `;
   },
-  onEnter ({ stabilo }) {
+  onEnter ({ stabilo, timeline }) {
     setTimeout(() => play(stabilo), 500);
+    if (timeline != null) {
+      timeline.__animations = [];
+      $$(timeline, '.timeline-item').forEach((item, i) => {
+        $$(item, 'img, .dot, .name, .year').forEach((element) => {
+          timeline.__animations.push(element.animate([
+            { opacity: '0', transform: 'translateX(5rem)' },
+            { opacity: '1', transform: 'translateX(0)' },
+          ], {
+            easing: 'ease-in-out',
+            fill: 'forwards',
+            delay: i * 75 + 500,
+            duration: 150,
+          }));
+        });
+      });
+    }
+  },
+  onLeave (position, { timeline }) {
+    if (timeline != null && timeline.__animations != null) {
+      timeline.__animations.forEach((anim) => anim.cancel());
+    }
   },
   // language=CSS
   styles: css`
@@ -45,7 +100,7 @@ defineSlideType('slide-definition', {
         transform: scaleX(1);
       }
     }
-    
+
     :host {
       align-items: center;
       display: grid;
@@ -56,25 +111,24 @@ defineSlideType('slide-definition', {
 
     .title {
       justify-self: center;
-      color: #3babfd;
       color: #0082ff;
       /*border-bottom: 0.25rem solid #3babfd;*/
       position: relative;
-      padding: 0 0.5rem;
       padding: 0 1rem;
-      margin: 3rem 0 0;
+      /*margin: 3rem 0 0;*/
+      margin: 2rem 0;
       font-family: skranji, sans-serif;
       font-size: 3.5rem;
       font-weight: bold;
       transform: rotate(-1deg) translateY(0%);
       z-index: 2;
     }
-    
+
     .stabilo {
       content: '';
       display: block;
       height: 1.5rem;
-      background-color:#ff0;
+      background-color: #ff0;
       width: 100%;
       position: absolute;
       left: 0;
@@ -82,33 +136,122 @@ defineSlideType('slide-definition', {
       z-index: -1;
       transform-origin: left center;
     }
-    
-    :host([data-position="current"]) .stabilo {
+
+    :host([data-position="current"][animation]) .stabilo {
       transform: scaleX(0);
       animation: 500ms ease-in-out 500ms stabilo;
       animation-fill-mode: forwards;
     }
 
-    .body {
-      align-content: center;
+    .image-wrapper {
       align-self: stretch;
-      box-sizing: border-box;
-      color: #43854a;
-      display: grid;
-      font-family: PT Sans, sans-serif;
-      font-size: 2rem;
-      font-weight: bold;
-      justify-content: center;
       position: relative;
     }
 
-    img {
+    .image-wrapper img {
       display: block;
       height: 100%;
       object-fit: contain;
       object-position: center center;
       position: absolute;
       width: 100%;
+    }
+
+    .fact-list {
+      align-content: center;
+      align-self: stretch;
+      box-sizing: border-box;
+      display: grid;
+      justify-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 0 4rem;
+    }
+
+    .fact {
+      color: #43854a;
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+
+    .timeline {
+      display: grid;
+      /*grid-template-columns: repeat(auto-fit, minmax(var(--min-w, 6rem), 1fr));*/
+      grid-auto-flow: column;
+      grid-template-rows: 1fr auto auto auto;
+      justify-items: center;
+    }
+
+    .timeline-item {
+      --space: 2rem;
+      display: contents;
+    }
+
+    .timeline-item:first-child {
+      --space-l: var(--space);
+    }
+
+    .timeline-item:last-child {
+      --space-r: var(--space);
+    }
+
+    .timeline img,
+    .name,
+    .dot,
+    .year {
+      margin-left: var(--space-l);
+      margin-right: var(--space-r);
+      opacity: 0;
+    }
+
+    .timeline img {
+      align-self: center;
+      max-height: 6rem;
+    }
+
+    .marker {
+      display: grid;
+      grid-template-areas: "marker";
+      width: 100%;
+      justify-items: center;
+      align-items: center;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .line {
+      grid-area: marker;
+      height: 0.5rem;
+      background-color: #009452;
+      width: 100%;
+    }
+
+    .dot {
+      --size: 1rem;
+      border: 0.25rem solid #000;
+      grid-area: marker;
+      height: var(--size);
+      width: var(--size);
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    .name {
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      line-height: 1.25;
+      text-align: center;
+      align-self: center;
+    }
+
+    .year {
+      font-family: monospace;
+      color: #555;
+      font-size: 1.5rem;
+      /*font-weight: bold;*/
+      font-style: italic;
     }
   `,
 });

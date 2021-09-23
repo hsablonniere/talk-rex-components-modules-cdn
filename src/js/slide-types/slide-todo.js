@@ -4,7 +4,7 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 defineSlideType('slide-todo', {
   render ({ content }) {
-    return (content ?? '')
+    let text = (content ?? '')
       .split('\n')
       .filter((line) => line !== '')
       .map((rawLine) => {
@@ -12,10 +12,12 @@ defineSlideType('slide-todo', {
           <mark>${unsafeHTML(rawLine)}</mark>
         `;
       });
+    return html`${text} <div class="todo-banner">TODO</div>`;
   },
   // language=CSS
   styles: css`
     :host {
+      position: relative;
       display: grid;
       align-items: center;
       justify-content: center;
