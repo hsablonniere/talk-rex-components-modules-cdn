@@ -1,4 +1,5 @@
 import { markup } from './js/utils.mjs';
+import hljs from 'highlight.js';
 
 export function transformSlides (pseudoMarkdown) {
 
@@ -121,9 +122,19 @@ function getSlideLines (slide) {
     `data-line-index="${slide.slideLineIndex}"`,
   ].filter((a) => a != null).join(' ');
 
+  const contentLinesWithCode = contentLines
+    .join('\n')
+    .replace(/```(.*?)\n(.*?)\n```/gs, (_, header, rawCode) => {
+      const [lang, ...rawAttrs] = header.split(' ');
+      const attrs = rawAttrs.join(' ');
+      const code = hljs.highlight(lang, rawCode).value;
+      return `<pre data-lang="${lang}" ${rawAttrs}>${code}</pre>`;
+    })
+    .split('\n');
+
   return [
     `<${openTag}>`,
-    ...contentLines,
+    ...contentLinesWithCode,
     `</slide-${slide.type}>`,
     ...(hasNotes ? [
       `<div class="notes" data-line-index="${slide.notesLineIndex}">`,

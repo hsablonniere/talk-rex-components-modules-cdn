@@ -1,16 +1,23 @@
 import { css, html } from 'lit';
-import { defineSlideType, play } from './base.js';
+import { defineSlideType, playMedia, stopMedia } from './base.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { $$, markup } from '../utils.mjs';
 
 const TIMELINE_REGEX = /^\* ([^:]*): (.*) (<img.*)$/;
 
+function select (html, selector) {
+  const tpl = document.createElement('template');
+  tpl.innerHTML = html;
+  return Array.from(tpl.content.querySelectorAll(selector));
+}
+
 defineSlideType('slide-definition', {
   render ({ content, attrs }) {
 
-    const title = content.split('\n')
-      .filter((line) => line.match(/^[a-zA-Z0-9]/) != null)
-      .join(' ');
+    const title = content
+        .split('\n')
+        .find((line) => line.match(/^[a-zA-Z0-9]/) != null)
+      ?? '';
 
     const facts = content.split('\n')
       .filter((line) => line.startsWith('* '))
@@ -39,6 +46,8 @@ defineSlideType('slide-definition', {
       .filter((line) => line.startsWith('<img '))
       .map((img) => unsafeHTML(img));
 
+    const codeBlocks = select(content, 'pre');
+
     return html`
       ${attrs.animation != null ? html`
         <audio id="stabilo" src="/src/music/stabilo.ogg"></audio>
@@ -64,10 +73,20 @@ defineSlideType('slide-definition', {
           ${timeline}
         </div>
       ` : ''}
+      ${codeBlocks.length > 0 ? html`
+        <div class="code" id="code">
+          ${codeBlocks}
+        </div>
+      ` : ''}
+      ${attrs.terminal != null ? html`
+        <div class="terminal-wrapper">
+          <div class="terminal" id="termial"></div>
+        </div>
+      ` : ''}
     `;
   },
-  onEnter ({ stabilo, timeline }) {
-    setTimeout(() => play(stabilo), 500);
+  onEnter ({ stabilo, timeline, termial }) {
+    playMedia(stabilo, 500);
     if (timeline != null) {
       timeline.__animations = [];
       $$(timeline, '.timeline-item').forEach((item, i) => {
@@ -84,8 +103,12 @@ defineSlideType('slide-definition', {
         });
       });
     }
+    if (termial) {
+      console.log(termial.getBoundingClientRect())
+    }
   },
-  onLeave (position, { timeline }) {
+  onLeave (position, { stabilo, timeline }) {
+    stopMedia(stabilo, 500);
     if (timeline != null && timeline.__animations != null) {
       timeline.__animations.forEach((anim) => anim.cancel());
     }
@@ -110,6 +133,7 @@ defineSlideType('slide-definition', {
     }
 
     .title {
+      text-align: center;
       justify-self: center;
       color: #0082ff;
       /*border-bottom: 0.25rem solid #3babfd;*/
@@ -173,6 +197,7 @@ defineSlideType('slide-definition', {
       font-family: 'Yanone Kaffeesatz', sans-serif;
       font-size: 4rem;
       font-weight: bold;
+      text-align: center;
     }
 
     .timeline {
@@ -252,6 +277,38 @@ defineSlideType('slide-definition', {
       font-size: 1.5rem;
       /*font-weight: bold;*/
       font-style: italic;
+    }
+
+    .code {
+      display: grid;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    pre {
+      background-color: #f5f5f5;
+      white-space: pre-wrap;
+      margin: 0 2rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    pre[invisible] {
+      opacity: 0;
+    }
+
+    .terminal-wrapper {
+      display: grid;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .terminal {
+      background-color: #000;
+      height: 10rem;
+      width: 50rem;
+      /*border-radius: 0.25rem;*/
+      box-shadow: 0 0 0.5rem #777;
     }
   `,
 });

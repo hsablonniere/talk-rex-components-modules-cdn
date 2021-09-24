@@ -1,6 +1,7 @@
 import { css, html } from 'lit';
 import { defineSlideType } from './base.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { $$ } from '../utils.mjs';
 
 defineSlideType('slide-image-grid', {
   render ({ content }) {
@@ -12,6 +13,24 @@ defineSlideType('slide-image-grid', {
           ${unsafeHTML(img)}
         `;
       });
+  },
+  onEnter ({ host }) {
+    host.__animations = $$(host, 'img').map((element, i) => {
+      return element.animate([
+        { opacity: '0' },
+        { opacity: '1' },
+      ], {
+        easing: 'ease-in-out',
+        fill: 'forwards',
+        delay: i * 25 + 500,
+        duration: 100,
+      });
+    });
+  },
+  onLeave (position, { host }) {
+    if (host.__animations != null) {
+      host.__animations.forEach((anim) => anim.cancel());
+    }
   },
   // language=CSS
   styles: css`
@@ -26,6 +45,7 @@ defineSlideType('slide-image-grid', {
     }
 
     img {
+      opacity: 0;
       height: 100%;
       max-height: 10rem;
       width: 100%;

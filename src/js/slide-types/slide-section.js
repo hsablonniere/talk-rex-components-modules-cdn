@@ -1,6 +1,5 @@
 import { css, html } from 'lit';
-import { defineSlideType, play } from './base.js';
-import { markup } from '../utils.mjs';
+import { defineSlideType, playMedia, stopMedia } from './base.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 defineSlideType('slide-section', {
@@ -13,7 +12,10 @@ defineSlideType('slide-section', {
     `;
   },
   onEnter ({ marimba }) {
-    setTimeout(() => play(marimba), 500);
+    playMedia(marimba, 500);
+  },
+  onLeave (position, { marimba }) {
+    stopMedia(marimba);
   },
   // language=CSS
   styles: css`
@@ -40,7 +42,7 @@ defineSlideType('slide-section', {
       grid-template-rows: 1fr min-content;
       justify-content: center;
     }
-    
+
     audio {
       display: none;
     }

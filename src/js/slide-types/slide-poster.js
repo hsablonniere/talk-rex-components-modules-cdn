@@ -35,6 +35,7 @@ defineSlideType('slide-poster', {
       background-color: #6fc6aa !important;
       background-image: radial-gradient(transparent, transparent 60%, #000 100%), url('/src/img/jungle.svg');
       background-repeat: no-repeat;
+      background-position: center, center;
       background-size: cover;
       display: grid;
       grid-template-columns: 1fr;

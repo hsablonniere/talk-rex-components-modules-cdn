@@ -6,11 +6,15 @@
     "start:nodemon": "nodemon -x wds -w src/slides-transformer.mjs"
   },
   "dependencies": {
+    "highlight.js": "^11.2.0",
     "lit": "^2.0.0-rc.4"
   },
   "devDependencies": {
     "@web/dev-server": "^0.1.22",
-    "nodemon": "^2.0.12"
+    "chokidar": "^3.5.2",
+    "fs-extra": "^10.0.0",
+    "nodemon": "^2.0.12",
+    "puppeteer": "^10.4.0"
   },
   "volta": {
     "node": "12.22.1",

@@ -51,25 +51,22 @@ date: 29 septembre 2021
 > #Voix admirative#
 > C'est beau.
 > Cette simplicité vous appaise et vous vous endormez paisiblement.
-
-## todo
-PAF + son horn
-<!-- https://www.youtube.com/watch?v=coQN8zJQE04 -->
-> #Voix énergique#
+> #pause#
 > Et soudain, PAF, vous ouvrez les yeux !!
+> #Voix énergique et craintive#
 > Que se passe t-il ?
 > Mais où êtes vous ?
 > Et surtout, quand êtes vous ?
 
-## todo
-2021
-<!-- http://www.int33h.com/test/tc/ -->
-> #Voix dramatique#
+## media contain
+<!-- music predator ?? https://www.youtube.com/watch?v=oXnAxydhZ8M -->
+<audio src="src/music/horn.ogg">
+<img src="src/img/calendar-2021.jpg">
+> #voix grave#
 > Vous venez de débarquer en 2021 où le chaos s'est installé :
 
 ## media
-<!-- <img src="src/img/nadal-02.webp" style="object-fit: contain; width: 100%; height: 100%; display: block;"> -->
-<img src="src/img/tennis.jpg">
+<img src="src/img/nadal.jpg">
 > #Rapide#
 > => Nadal a perdu 4 fois Roland Garros.
 
@@ -121,7 +118,7 @@ Firefox 5%
 > En pendant ce temps là, notre petit panda roux adoré est tombé sous la barre des 5%.
 > C'est tellement triste, mais attends il y a pire : -->
 
-## media
+## media white
 <img src="src/img/rip-jquery.svg">
 > #Voix sidérée#
 > jQuery c'est devenu has been, genre has been de ouf.
@@ -154,24 +151,6 @@ Firefox 5%
 <img src="src/img/logo-snowpack.svg">
 <img src="src/img/logo-vitejs.svg">
 <img src="src/img/logo-rome.svg">
-<!-- <img src="src/img/logo-prepack.svg"> -->
-<!-- <img src="src/img/logo-autoprefixer.svg"> -->
-<!-- <img src="src/img/logo-ava.svg"> -->
-<!-- <img src="src/img/logo-deno.svg"> -->
-<!-- <img src="src/img/logo-eslint.svg"> -->
-<!-- <img src="src/img/logo-jest.svg"> -->
-<!-- <img src="src/img/logo-karma.svg"> -->
-<!-- <img src="src/img/logo-lerna.png"> -->
-<!-- <img src="src/img/logo-less.svg"> -->
-<!-- <img src="src/img/logo-mocha.svg"> -->
-<!-- <img src="src/img/logo-playwright.png"> -->
-<!-- <img src="src/img/logo-postcss.svg"> -->
-<!-- <img src="src/img/logo-prettier.svg"> -->
-<!-- <img src="src/img/logo-puppeteer.svg"> -->
-<!-- <img src="src/img/logo-sass.svg"> -->
-<!-- <img src="src/img/logo-svgo.svg"> -->
-<!-- <img src="src/img/logo-yarn.svg"> -->
-<!-- <img src="src/img/logo-yeoman.svg"> -->
 
 > Non... maintenant, pour ajouter une dépendance et l'utiliser, il te faut Node.js, npm, un task runner, un bundler, un transpiler, un minifier, un linter, un formatter...
 > En vrai, faut un bac+17 pour t'y retrouver dans tous ces outils JavaScript.
@@ -190,10 +169,12 @@ Firefox 5%
 > et qu'est ce que ça implique ?
 > Allez, c'est parti !
 
+<!-- Use this when we do the REX -->
+<!-- ## media logo -->
+<!-- <img src="src/img/logo-clever-cloud.svg"> -->
+
 ## section
 Guide de survie
-<!-- Glossaire -->
-<!-- Historique Sélectif -->
 > On commence tout de suite par un petit guide simplifié de termes à connaitre pour survivre en milieu JavaScript.
 > Depuis le début des années 2000, quand on voulait améliorer les performances d'une page Web qui charge du JS, on faisait appel à la...
 <!-- > Depuis 2008, on a vu arriver pas mal de nouveaux termes.
@@ -243,14 +224,12 @@ Minification (parseur)
 * _"mangling"_ de noms de variable
 * &nbsp;
 > Ce qui est amusant c'est que si on passe la version minifiée d'un jQuery de 2008 dans Terser, on passe de 55kB à 46kB
-<!-- curl -s https://code.jquery.com/jquery-1.2.6.min.js | gzip | human-size -->
 
 ## definition
 Minification (parseur)
 * _"mangling"_ de noms de variable
 * élimination de code mort (DCE)
 > Ce qui est amusant c'est que si on passe la version minifiée d'un jQuery de 2008 dans Terser, on passe de 55kB à 46kB
-<!-- curl -s https://code.jquery.com/jquery-1.2.6.min.js | gzip | human-size -->
 
 ## definition
 Minification (parseur)
@@ -260,6 +239,64 @@ Minification (parseur)
 > ...et en ce moment, on est plutôt sur Terser qui se fait talloner par esbuild et SWC.
 <!-- pourquoi pas ajouter le logo de rust et go par dessus -->
 
+## definition todo terminal
+Minification (parseur)
+<!-- curl -s https://code.jquery.com/jquery-1.2.6.min.js | human-size -->
+<!-- curl -s https://code.jquery.com/jquery-1.2.6.min.js | terser --compress --mangle | human-size -->
+<!-- curl -s https://code.jquery.com/jquery-3.6.0.min.js | human-size -->
+<!-- curl -s https://code.jquery.com/jquery-3.6.0.min.js | terser --compress --mangle | human-size -->
+
+## definition todo
+```js foo
+// Source
+const FORD_YEAR = 1942;
+
+function canPlayIndianaJones (name, year) {
+    const age = 2021 - year;
+    if (age > 50) {
+        console.log('NO, too old!');
+    }
+    else {
+        console.log('Yep ;-)');
+    }
+}
+
+canPlayIndianaJones('Harrison Ford', FORD_YEAR);
+```
+
+## definition todo
+```js
+const FORD_YEAR=1942;function canPlayIndianaJones(name,year){const age=2021-year;if(age>50)console.log("NO, too old!");else console.log("Yep ;-)")}canPlayIndianaJones("Harrison Ford",FORD_YEAR);
+```
+
+```js invisible
+const o=1942;function n(o,n){const l=2021-n;if(l>50)console.log("NO, too old!");else console.log("Yep ;-)")}n("Harrison Ford",o);
+```
+
+```js
+2021-1942>50?console.log("NO, too old!"):console.log("Yep ;-)");
+```
+
+```js
+console.log("NO, too old!");
+```
+
+## definition todo
+```js
+const FORD_YEAR=1942;function canPlayIndianaJones(name,year){const age=2021-year;if(age>50)console.log("NO, too old!");else console.log("Yep ;-)")}canPlayIndianaJones("Harrison Ford",FORD_YEAR);
+```
+
+```js
+const o=1942;function n(o,n){const l=2021-n;if(l>50)console.log("NO, too old!");else console.log("Yep ;-)")}n("Harrison Ford",o);
+```
+
+```js
+2021-1942>50?console.log("NO, too old!"):console.log("Yep ;-)");
+```
+
+```js
+console.log("NO, too old!");
+```
 
 ## blank white
 > Pour des raisons de confort de dev, on a commencé à séparer nos fichiers.
@@ -267,6 +304,10 @@ Minification (parseur)
 > en gros tant qu'on mettait jQuery avant les plugins jQuery etc...
 > ça se passait bien.
 > Du coup, pour pas déteriorer les perfs et l'expérience utilisateur, on a commencé à faire de la...
+
+## todo
+TERSER:
+It's not well known, but whitespace removal and symbol mangling accounts for 95% of the size reduction in minified code for most JavaScript - not elaborate code transforms. One can simply disable compress to speed up Terser builds by 3 to 4 times.
 
 ## definition animation
 Concaténation
@@ -340,7 +381,7 @@ Bundling
 > alors que sur mon site j'utilise Parcel qui est balaise avec HTML
 
 ## definition
-Bundling (next gen)
+Bundling (nouvelle génération)
 * 2020: esbuild (go) <img src="src/img/logo-esbuild.svg">
 * 2020: Spack (rust) <img src="src/img/logo-swc.svg">
 * 2020/2021: Rome (JS/rust) <img src="src/img/logo-rome.svg">
@@ -348,8 +389,8 @@ Bundling (next gen)
 > (montrer le site de esbuild)
 > On a aussi Rome qui se vend comme un outil qui fait tout mais ils ont levé des millions et du coup, ils jettent tout pour tout refaire en Rust alors on sait pas trop quand ça sort ni si ça sera bien mais on attend.
 
-## todo
-<video src="src/videos/esbuild-timeline.mp4" autoplay style="object-fit: contain; width: 100%; height: 100%; display: block;">
+## media top
+<img src="src/img/screenshot-esbuild.jpg" screenshot-url="https://esbuild.github.io/">
 
 ## definition
 Serveurs de dev
@@ -361,20 +402,22 @@ Serveurs de dev
 > et quand vous voulez partir en prod, il vont utiliser rollup sous le capot
 
 ## blank white
-
-## blank white
-> Tous ces bundlers ne se limitent pas à simplement lire un graphe de dépendance et regrouper des fichiers.
-> Ils vont apporter d'autres concept pour améliorer les performances utilisateur.
+> Transition blabla, les bundlers moderns ont ajouté des techniques au fur et a mesure
 > Par exemple avec...
 
 ## definition
-Scope hoisting
-* Réduire la glue
+Bare imports
 
-## blank white
-> Tous ces bundlers ne se limitent pas à simplement lire un graphe de dépendance et regrouper des fichiers.
-> Ils vont apporter d'autres concept pour améliorer les performances utilisateur.
-> Par exemple avec...
+## definition animation
+Scope hoisting
+
+## definition todo
+Scope hoisting
+* Réduire le bruit
+
+## definition todo
+Scope hoisting
+* exemple de code
 
 ## definition animation
 Tree shaking
@@ -513,6 +556,12 @@ Retour aux sources ?
 Les composants chez Clever Cloud
 > contexte Clever Cloud: web components, besoins internes divers, besoins externes
 
+## media
+<img src="src/img/screenshot-clever-components-storybook.jpg" screenshot-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%8F%A0-home-readme--page">
+
+## media
+<img src="src/img/screenshot-clever-components-github.jpg" screenshot-url="https://github.com/CleverCloud/clever-components">
+
 ## todo
 > Pour les utiliser dans la console, une SPA, il faut : (lister toutes les étapes avec node.js machin)
 > parler aussi des étapes de mise en prod :
@@ -545,13 +594,22 @@ DIY vs Plug-and-Play
 > jspm, unpkg, skypack
 > l'autre truc qui a changé, c'est qu'on ne peut plus se reposer sur le cache partagé d'un CDN
 
+## media
+<img src="src/img/screenshot-jspm.jpg" screenshot-url="https://jspm.org/">
+
+## media
+<img src="src/img/screenshot-unpkg.jpg" screenshot-url="https://unpkg.com/">
+
+## media
+<img src="src/img/screenshot-skypack.jpg" screenshot-url="https://www.skypack.dev/">
+
 ## todo
 > mais du coup, qu'est ce que ça implique dans notre cas particulier ce mode plug and play ?
 > expliquer qu'on utilise ESM et on publie sur npm en ESM
 > maintenant c'est supporté dans les browsers
 > du coup, ça marche sans rien faire
 
-## Definition
+## definition
 Exemple support
 * 89: Chrome <img src="src/img/logo-chrome.svg">
 * 89: Firefox <img src="src/img/logo-firefox.svg">
@@ -647,8 +705,9 @@ Liens :
 Images :
 
 * Fond jungle : https://www.vexels.com/vectors/preview/70035/tropical-frame-styled-jungle-background
+* Calendrier 2021 : https://unsplash.com/photos/F32jPy9SMaw
+* 2021 masques : https://unsplash.com/photos/q5BnGgt2Y_E
 * Fond fête : https://www.vecteezy.com/vector-art/237001-party-crowd
-* Tennis : https://unsplash.com/photos/OtcRKNgWWQ4
 * Pangolin : https://unsplash.com/photos/mtTpAM2uaRM
 * Antenne : https://unsplash.com/photos/31JqyCVndUM
 * QR code : https://unsplash.com/photos/2HWkORIX3II

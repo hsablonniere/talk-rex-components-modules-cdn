@@ -7,9 +7,10 @@ export function toCamelCase (text) {
 }
 
 export function markup (text) {
-  console.log(text);
   return text
     .replace(/\*(.*?)\*/g, '<strong>$1</strong>')
+    .replace(/^```(.+)$/g, '<pre><code data-lang="$1">')
+    .replace(/^```$/g, '</code></pre>')
     .replace(/`(.*?)`/g, '<code>$1</code>')
     .replace(/_(.*?)_/g, '<em>$1</em>')
     .replace(/#(.*?)#/g, '<mark>$1</mark>');
