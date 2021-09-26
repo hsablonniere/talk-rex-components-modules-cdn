@@ -1,0 +1,51 @@
+= Install methods from popular libraries
+
+* https://github.com/nosir/cleave.js
+** npm, jsDelivr, cdnjs.com, DL dist
+* https://momentjs.com/
+** npm, cdnjs.com, jsDelivr, bower, requirejs, nuget, browserify, webpack, TS, system.js
+* https://masonry.desandro.com/#install
+** Download, unpkg, npm, bower
+* https://popper.js.org/
+** npm, unpkg
+* https://threejs.org/docs/index.html#manual/en/introduction/Installation
+** npm, skypack
+* https://github.com/date-fns/date-fns
+** npm
+* https://github.com/iamkun/dayjs
+** cdnjs.com, unpkg, jsDelivr
+* https://immerjs.github.io/immer/installation
+** yarn, unpkg, jsDelivr
+* https://moment.github.io/luxon/#/install
+** DL, npm, AMD, Webpack
+* https://github.com/ramda/ramda
+** npm, cdnjs, jsDelivr
+* https://redux.js.org/introduction/installation
+** npm, yarn, unpkg (en petit)
+* https://mobx.js.org/installation.html
+** yarn, npm, cdnjs, unpkg
+* https://github.com/d3/d3/blob/main/README.md#installing
+** npm, jsdelivr, skypack
+* https://leafletjs.com/download.html
+** unpkg, cdnjs, jsDelivr, npm
+* https://www.chartjs.org/docs/latest/getting-started/installation.html
+** npm, cdnjs, jsDelivr
+* https://lodash.com/
+** DL, jsDelivr, npm
+* https://socket.io/docs/v4/client-installation/
+** cdnjs, jsDelivr, unpkg, npm+webpack
+* https://www.i18next.com/overview/getting-started
+** npm, unpkg, cdnjs
+* https://github.com/axios/axios
+** npm, bower, yarn, jsDelivr, unpkg
+* https://github.com/visionmedia/superagent
+** npm, yarn, jsdelivr, unpkg
+* https://github.com/soldair/node-qrcode
+** npm, webpack
+
+== dans les écosystèmes frameworks
+
+* react => npm, yarn
+* vue => npm, yarn
+* angular => npm, yarn
+* svelte => npm, yarn, (1 unpkg)

@@ -65,6 +65,8 @@
 * https://medium.com/adobetech/optimizing-javascript-through-scope-hoisting-2259ef7f5994
 * https://sirupsen.com/napkin/problem-15/
 * https://twitter.com/TheRealNooshu/status/1433155825724502021
+
+
 * https://twitter.com/tommorris/status/1432355845556346880
 * https://twitter.com/tunetheweb/status/1431915693079994368
 * https://twitter.com/TheRealNooshu/status/1431905187124371461
@@ -75,3 +77,8 @@
 * https://www.youtube.com/watch?v=MgPwbal1LaA
 * https://www.youtube.com/watch?v=M3uWx-fhjUc
 * https://www.youtube.com/watch?v=yp_9q3tgDnQ
+* https://www.youtube.com/watch?v=8BhGC7Rs3ec
+* https://web.archive.org/web/20071011011003/http://www.julienlecomte.net/blog/2007/08/13/introducing-the-yui-compressor/
+* https://web.archive.org/web/20080214082325/http://yuiblog.com/blog/2008/02/11/helping-the-yui-compressor/
+* https://web.archive.org/web/20080315031621/http://dojotoolkit.org/docs/shrinksafe
+* https://web.archive.org/web/20040603075422/http://dean.edwards.name/packer/

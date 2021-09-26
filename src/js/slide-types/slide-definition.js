@@ -1,6 +1,7 @@
 import { css, html } from 'lit';
 import { defineSlideType, playMedia, stopMedia } from './base.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { classMap } from 'lit/directives/class-map.js';
 import { $$, markup } from '../utils.mjs';
 
 const TIMELINE_REGEX = /^\* ([^:]*): (.*) (<img.*)$/;
@@ -18,6 +19,8 @@ defineSlideType('slide-definition', {
         .split('\n')
         .find((line) => line.match(/^[a-zA-Z0-9]/) != null)
       ?? '';
+
+    const noTitle = title.trim() === '';
 
     const facts = content.split('\n')
       .filter((line) => line.startsWith('* '))
@@ -52,7 +55,7 @@ defineSlideType('slide-definition', {
       ${attrs.animation != null ? html`
         <audio id="stabilo" src="/src/music/stabilo.ogg"></audio>
       ` : ''}
-      <div class="title">
+      <div class="title ${classMap({ noTitle })}">
         ${title.length > 0 ? html`
           ${title}
           <div class="stabilo"></div>
@@ -78,15 +81,11 @@ defineSlideType('slide-definition', {
           ${codeBlocks}
         </div>
       ` : ''}
-      ${attrs.terminal != null ? html`
-        <div class="terminal-wrapper">
-          <div class="terminal" id="termial"></div>
-        </div>
-      ` : ''}
     `;
   },
-  onEnter ({ stabilo, timeline, termial }) {
+  onEnter ({ stabilo, timeline }) {
     playMedia(stabilo, 500);
+    console.log(timeline.classList);
     if (timeline != null) {
       timeline.__animations = [];
       $$(timeline, '.timeline-item').forEach((item, i) => {
@@ -102,9 +101,6 @@ defineSlideType('slide-definition', {
           }));
         });
       });
-    }
-    if (termial) {
-      console.log(termial.getBoundingClientRect())
     }
   },
   onLeave (position, { stabilo, timeline }) {
@@ -146,6 +142,11 @@ defineSlideType('slide-definition', {
       font-weight: bold;
       transform: rotate(-1deg) translateY(0%);
       z-index: 2;
+    }
+
+    .title.noTitle {
+      margin: 0;
+      padding: 0;
     }
 
     .stabilo {
@@ -295,20 +296,6 @@ defineSlideType('slide-definition', {
 
     pre[invisible] {
       opacity: 0;
-    }
-
-    .terminal-wrapper {
-      display: grid;
-      align-content: center;
-      justify-content: center;
-    }
-
-    .terminal {
-      background-color: #000;
-      height: 10rem;
-      width: 50rem;
-      /*border-radius: 0.25rem;*/
-      box-shadow: 0 0 0.5rem #777;
     }
   `,
 });

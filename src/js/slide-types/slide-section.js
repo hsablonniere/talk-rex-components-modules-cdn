@@ -1,21 +1,23 @@
 import { css, html } from 'lit';
 import { defineSlideType, playMedia, stopMedia } from './base.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { markup } from '../utils.mjs';
 
 defineSlideType('slide-section', {
   render ({ content }) {
+    console.log({ content })
     return html`
       <audio id="marimba" src="/src/music/marimba.ogg"></audio>
       <div class="sign-wrapper">
-        <div class="sign">${unsafeHTML(content)}</div>
+        <div class="sign">${unsafeHTML(markup(content))}</div>
       </div>
     `;
   },
   onEnter ({ marimba }) {
-    playMedia(marimba, 500);
+    // playMedia(marimba, 500);
   },
   onLeave (position, { marimba }) {
-    stopMedia(marimba);
+    // stopMedia(marimba);
   },
   // language=CSS
   styles: css`
@@ -60,8 +62,8 @@ defineSlideType('slide-section', {
       /*border: 0.55 rem solid #506547;*/
       /*border: 0.55 rem solid #0d0e1f;*/
       /*border: 0.55 rem solid #2e1c43;*/
-      color: #2e1c43;
-      /*box-shadow: 0 0 1 rem #2e1c43;*/
+      color: #000;
+      /*box-shadow: 0 0 1 rem #000;*/
       font-family: tintin, sans-serif;
       border-image-source: url(/src/img/empty-sign.svg);
       border-image-slice: 60 60 60 60;
@@ -73,7 +75,7 @@ defineSlideType('slide-section', {
       font-size: 3.5rem;
       font-weight: bold;
       transform: rotate(-1deg) translateY(0%);
-      filter: drop-shadow(0 0 1rem #2e1c43);
+      filter: drop-shadow(0 0 1rem #000);
       margin: 0 5rem;
     }
 
@@ -86,6 +88,7 @@ defineSlideType('slide-section', {
       padding: 0.1rem 1rem;
       margin: -2px;
       text-align: center;
+      line-height: 1.3;
     }
   `,
 });

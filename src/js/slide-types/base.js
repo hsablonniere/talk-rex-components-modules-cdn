@@ -5,7 +5,11 @@ import { $$, entriesToObject, toCamelCase, trim } from '../utils.mjs';
 export const defaultSlideStyles = css`
   @import "/node_modules/highlight.js/styles/atom-one-light.css";
   @import "/node_modules/highlight.js/styles/vs.css";
-  
+
+  .hljs-built_in, .hljs-class .hljs-title, .hljs-title.class_ {
+    color: #7b5502;
+  }
+
   :host {
     display: block;
     background-color: #fff;
@@ -34,6 +38,36 @@ export const defaultSlideStyles = css`
   audio,
   video {
     display: none;
+  }
+`;
+
+// language=CSS
+export const codeBlocksStyles = css`
+
+  .code-blocks {
+    align-content: center;
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  pre {
+    background-color: #f5f5f5;
+    white-space: pre-wrap;
+    margin: 0 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-family: "Operator Mono Book", monospace;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  pre[invisible] {
+    opacity: 0;
+  }
+
+  pre[dim] {
+    opacity: 0.5;
   }
 `;
 
@@ -90,6 +124,7 @@ export function defineSlideType (slideType, options) {
     static get styles () {
       return [
         defaultSlideStyles,
+        codeBlocksStyles,
         options.styles ?? '',
       ];
     }

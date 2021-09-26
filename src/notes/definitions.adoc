@@ -8,4 +8,5 @@
 * Code splitting
 * Import hoisting
 * Content hashing
+* Module resolving
 * Transpiling

@@ -9,11 +9,11 @@ export function toCamelCase (text) {
 export function markup (text) {
   return text
     .replace(/\*(.*?)\*/g, '<strong>$1</strong>')
-    .replace(/^```(.+)$/g, '<pre><code data-lang="$1">')
-    .replace(/^```$/g, '</code></pre>')
     .replace(/`(.*?)`/g, '<code>$1</code>')
     .replace(/_(.*?)_/g, '<em>$1</em>')
-    .replace(/#(.*?)#/g, '<mark>$1</mark>');
+    .replace(/#(.*?)#/g, '<mark>$1</mark>')
+    .replace(/@(.*?)@/g, '<span class="time">$1</span>')
+    .replace(/\$(.*?)\$/g, '<span class="question">$1</span>');
 }
 
 export function balance (text) {
@@ -56,3 +56,13 @@ export function pipeline (input, ...fns) {
   }
   return tmp;
 }
+
+import twemoji from 'twemoji';
+
+function emoji(text) {
+  return twemoji.parse(text, (icon, options, variant) => {
+    return '/src/emoji/' + icon + '.svg';
+  });
+}
+
+

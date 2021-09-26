@@ -7,23 +7,31 @@ event: Devoxx France
 date: 29 septembre 2021
 ---
 
+<script type="module" src="https://components.clever-cloud.com/load.js?version=7.1.0&lang=en&components=cc-input-text"></script>
+
 # _Dans cette_ *Jungle de  l'outillage JavaScript*, _un retour à la simplicité est-il encore possible ?_
 
-## poster
+## poster fade-from
+> @00:00:00@
 > Slide poster pour commencer
 
-## blank black
+## blank black fade-to
 > #Fondu au noir#
-> #Voix grave, lente (Fabrice Drouelle)#
+> #Voix grave et lente#
 > Détendez vous...
 > Fermez les yeux...
+> #Voix narrative (Fabrice Drouelle)#
 > Vous êtes en juin 2008...
 > Nadal vient de remporter son 4ème Roland Garros face à Roger Federer et on va pas s'mentir, le match était vraiment chiant.
 > Vous hésitez à vous faire un ciné mais vous ne croyez *pas* à cette rumeur d'un 4ème Indiana Jones.
 > À la place, vous décidez de regarder le season finale de Lost saison 4.
-> #Voix enthousiaste#
+
+## blank black
+> #Chuchoter#
 > Putain, il y a machin dans un cercueil !!
-> #Voix grave, lente (Fabrice Drouelle)#
+
+## blank black 
+> #Voix narrative (Fabrice Drouelle)#
 > Du coup : impossible de dormir.
 > Vous pensez à votre semaine de boulot qui reprend demain.
 > Vous aimez votre poste de dev frontend.
@@ -40,6 +48,8 @@ date: 29 septembre 2021
 <!-- > Côté framework JavaScript, vous avez testé Mootools et Prototype mais depuis quelques temps, vous êtes plutôt team jQuery. -->
 > Vous avez essayé plusieurs frameworks JavaScript mais vous êtes plutôt team jQuery.
 > Grâce à lui, les bugs d'IE ne vous font presque plus peur.
+
+## blank black
 > Vous avez besoin d'un plugin ? trop facile...
 > une petite recherche et hop :
 > => vous tombez sur Google Code,
@@ -48,11 +58,15 @@ date: 29 septembre 2021
 > => et le tour est joué.
 > Les jours de flemme vous référencez directement l'URL du CDN et ça "juste marche".
 > Pas besoin de téléchargement local.
-> #Voix admirative#
+
+## blank black
+> #Voix apaisée et lente#
 > C'est beau.
 > Cette simplicité vous appaise et vous vous endormez paisiblement.
-> #pause#
-> Et soudain, PAF, vous ouvrez les yeux !!
+
+## blank black
+> #PAUSE#
+> Vous vous reveillez en sursaut et vous ouvrez les yeux !!
 > #Voix énergique et craintive#
 > Que se passe t-il ?
 > Mais où êtes vous ?
@@ -62,40 +76,45 @@ date: 29 septembre 2021
 <!-- music predator ?? https://www.youtube.com/watch?v=oXnAxydhZ8M -->
 <audio src="src/music/horn.ogg">
 <img src="src/img/calendar-2021.jpg">
-> #voix grave#
+> #Voix grave et diabolique#
 > Vous venez de débarquer en 2021 où le chaos s'est installé :
 
 ## media
 <img src="src/img/nadal.jpg">
-> #Rapide#
-> => Nadal a perdu 4 fois Roland Garros.
+> #Voix rapide#
+> Nadal a perdu 4 fois Roland Garros.
 
 ## media
 <img src="src/img/lost-02.jpg">
-> => La fin de Lost était nulle.
+> La fin de Lost était nulle.
 
 ## media
 <img src="src/img/indiana-02.webp">
-> => Il y a des rumeurs d'un 5ème Indiana Jones pour 2022 ... n'im-por-te quoi.
+> Il y a des rumeurs d'un 5ème Indiana Jones pour 2022
+> #Voix Costello Lopez#
+n'im-por-te quoi là.
+> #Voix rapide#
+> Et pour coroner le tout, depuis qu'un mec a...
 
 <!-- ## todo
 brexit
-> => Le Royaume Uni est sorti de l'UE. -->
+> Le Royaume Uni est sorti de l'UE. -->
 
 <!-- ## todo
 comparatif fusées
-> => On continue à dérégler le climat mais pendant ce temps là, on a des milliardaires qui font un concours de "fusée". -->
+> On continue à dérégler le climat mais pendant ce temps là, on a des milliardaires qui font un concours de "fusée". -->
 
 ## media
 <img src="src/img/pangolin.jpg">
-> => Et pour coroner le tout, depuis qu'un mec a bouffé un pangolin à l'autre bout de la planète,
+> ...bouffé un pangolin à l'autre bout de la planète,
 
 ## media
 <img src="src/img/antenna.jpg">
+> on a tous la 5G et on voit...
 
 ## media
 <img src="src/img/qrcode.jpg">
-> on s'est tous fait injecter la 5G et on voit des QR code partout.
+> ...des QR code partout.
 > #Pause#
 > Ouais je sais, c'est dingue mais vous pouvez me croire, j'ai fais mes propres recherches.
 > #Clin d'oeil#
@@ -128,6 +147,7 @@ Firefox 5%
 <img src="src/img/party-react.png">
 > c'est React et tout le monde fait des Single Page Application.
 > Du coup, tu peux oublier la simplicité plug-and-play de l'ère jQuery.
+> Noooooonnnn... maintenant, pour ajouter une dépendance et l'utiliser...
 
 ## image-grid
 <img src="src/img/logo-closure.svg">
@@ -151,40 +171,43 @@ Firefox 5%
 <img src="src/img/logo-snowpack.svg">
 <img src="src/img/logo-vitejs.svg">
 <img src="src/img/logo-rome.svg">
-
-> Non... maintenant, pour ajouter une dépendance et l'utiliser, il te faut Node.js, npm, un task runner, un bundler, un transpiler, un minifier, un linter, un formatter...
-> En vrai, faut un bac+17 pour t'y retrouver dans tous ces outils JavaScript.
+> ...il te faut Node.js, npm, un task runner, un bundler, un transpiler, un minifier, un linter, un formatter...
+> En vrai, faut un bac+17 pour s'y r'trouver dans tous ces outils JavaScript.
 > #Ralentir#
 > C'est devenu la jungle et j'crois vraiment qu'le moment est venu de faire le point sur la question.
 
 ## poster
-> #mode normal (et énergique)#
+> @00:02:30@
+> #Voix normale et heureuse#
 > Bonjour à *toutes* et à tous !
 > J'm'appelle Hubert Sablonnière,
-> J'suis développeur Web chez #Clever Cloud# et aujourd'hui, j'ai envie de vous parler de jungle et d'outils JavaScript.
-> On va d'abord revenir sur certains concepts et termes inventés ou popularisés par ces outils.
-> D'ailleurs, on va se concentrer sur le build JavaScript, sinon on en a pour la semaine.
-> Et ensuite, on verra au travers d'un retour d'expérience, si c'est possible de revenir à un système plus simple,
+> J'suis développeur Web chez *Clever Cloud* et aujourd'hui, j'ai envie de vous parler de jungle et d'outils JavaScript.
+> #Pause#
+> On va d'abord revenir sur certains concepts et termes inventés _ou_ popularisés par ces outils.
+> D'ailleurs, on va se concentrer sur l'ajout de dépendances et le build, sinon on en a pour la s'maine.
+> Ensuite, on verra au travers d'un retour d'expérience, si c'est possible de revenir à un système plus simple...
 > comment... ?
 > et qu'est ce que ça implique ?
-> Allez, c'est parti !
+> #Pause#
+> Allez, c'est parti, on commence tout de suite par un...
 
-<!-- Use this when we do the REX -->
-<!-- ## media logo -->
-<!-- <img src="src/img/logo-clever-cloud.svg"> -->
-
+<!--
+Cette section sert à expliquer des termes.
+Il s'agit de techniques et fonctionnalités proposées par les outils de build/bundler/transpiler...
+L'idée est de (ré)expliquer leur fonctionnement et leur but/utilité finale.
+En soit, c'est une information intéressante.
+De plus, ça resservira dans la deuxième partie.
+-->
 ## section
 Guide de survie
-> On commence tout de suite par un petit guide simplifié de termes à connaitre pour survivre en milieu JavaScript.
-> Depuis le début des années 2000, quand on voulait améliorer les performances d'une page Web qui charge du JS, on faisait appel à la...
-<!-- > Depuis 2008, on a vu arriver pas mal de nouveaux termes.
-> Bon l'idée, c'est pas de vous les lister un par un ni de décrire en détails ce qu'ils font ou ne font pas.
-> C'qui m'intéresse aujourd'hui, c'est plutôt de revenir chronologiquement sur l'arrivée de certains concepts et expliquer en quoi c'est utile.
-> D'ailleurs, on va mettre de côté tout ce qui concerne l'optimisation images, les préprocesseur CSS, les test-runner... -->
+> ...petit guide de termes à connaitre pour survivre en milieu outils JavaScript.
+> Dans les années 2000, quand on voulait améliorer les performances d'une page Web qui charge du JS, on faisait appel à la...
 
-<!-- terme + schema (progressif) : on explique ce que ça fait -->
-<!-- terme + impact : on expliquer à quoi ça sert -->
-<!-- terme + logos -->
+<!-- Pour chaque terme, on va le mettre en contexte et énoncer ce qui a amené le besoin d'une telle fonctionnalité -->
+<!-- terme animé -->
+<!-- terme + schema (progressif) : L'IDÉE => on explique ce que ça fait -->
+<!-- terme + impact en text : LE BUT => on explique à quoi ça sert -->
+<!-- terme + logos : on explique qui a amené le concept et quand -->
 
 ## definition animation
 Minification
@@ -192,138 +215,129 @@ Minification
 
 ## definition todo
 Minification
+<!-- TODO en étapes et en mettant en évidence des lignes bleues, des commentaires en gris et des espaces en blank -->
 <img src="/src/img/definition-minification.png">
-> *L'idée :* on prend un fichier JS, on enlève les espaces, les commentaires...
-> bref tout ce qu'on peut pour que ça continue à fonctionner pareil mais avec moins de code.
+> *L'IDÉE :* on prend un fichier JS,
+> on enlève les espaces, les commentaires... bref,
+> tout ce qu'on peut pour que ça continue à fonctionner pareil,
+> mais avec moins de code.
+> #Pause#
 > C'est une sorte de compression avec perte de données.
 
 ## definition
 Minification
 * Moins de code
 * _(charger + parser + exécuter)_
-> *Le but :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
+> *LE BUT :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
+> #Pause#
 > C'est pas nouveau du tout hein.
 
 <!-- https://www.fusioncharts.com/blog/5-excellent-javascript-minification-tools-to-improve-your-code-performance/ -->
 ## definition
 Minification (regex)
-* 200?: jsmin <img src="">
-* 200?: Packer <img src="">
-* 200?: YUI compressor <img src="">
-> Les moins jeunes d'entre nous se rappelleront de jsmin, Packer (jQuery), ou YUI compressor.
+* 2001: JSMin <img src="">
+* 2004: Packer <img src="">
+> Les moins jeunes se souviendront de cette première génération d'outils basés sur des regex.
+> C'est à partir de 2007, qu'on a vu apparaître...
 
 ## definition
 Minification (parseur)
+* 2007: ShrinkSafe <img src="src/img/logo-dojo.svg">
+* 2007: YUI<br>compressor <img src="src/img/logo-yui.png">
 * 2009: Closure<br>compiler <img src="src/img/logo-closure.svg">
 * 2011: Uglify <img>
-* 2017: Babel minify <img>
-> Depuis 2008, on a eu pas mal de nouveau outils pour ça...
+> ...des outils plus avancés qui parse le code pour le minifier.
+> Avant l'arrivée de Node.js en 2009, ces outils étaient souvent codés en Java et utilisaient Rhino comme parseur.
+> C'est avec eux qu'on a commencé à faire...
 
 ## definition
 Minification (parseur)
 * _"mangling"_ de noms de variable
 * &nbsp;
-> Ce qui est amusant c'est que si on passe la version minifiée d'un jQuery de 2008 dans Terser, on passe de 55kB à 46kB
+> ...du mangling de noms variables,
+> ou encore de...
 
 ## definition
 Minification (parseur)
 * _"mangling"_ de noms de variable
-* élimination de code mort (DCE)
-> Ce qui est amusant c'est que si on passe la version minifiée d'un jQuery de 2008 dans Terser, on passe de 55kB à 46kB
+* élimination de code mort
+ <!-- (DCE) -->
+> ...l'élimination de code mort.
+> Aujourd'hui, les outils modernes...
 
 ## definition
-Minification (parseur)
+Minification
 * 2018: Terser (JS) <img src="src/img/logo-terser.svg">
 * 2019: swc (Rust) <img src="src/img/logo-swc.svg">
 * 2020: esbuild (go) <img src="src/img/logo-esbuild.svg">
-> ...et en ce moment, on est plutôt sur Terser qui se fait talloner par esbuild et SWC.
-<!-- pourquoi pas ajouter le logo de rust et go par dessus -->
+> ...sont devenus hyper puissants et rapides, surtout les p'tits nouveaux codés en Rust et en go.
+<!-- > D'ailleurs si on prend le jQuery de juin 2008 minifié avec Packer, il fait 54 kilo. -->
+<!-- > alors que si on le passe dans terser, il fait 45 kilo. -->
 
-## definition todo terminal
-Minification (parseur)
+<!-- ## todo
+TERSER:
+It's not well known, but whitespace removal and symbol mangling accounts for 95% of the size reduction in minified code for most JavaScript - not elaborate code transforms. One can simply disable compress to speed up Terser builds by 3 to 4 times. -->
+
 <!-- curl -s https://code.jquery.com/jquery-1.2.6.min.js | human-size -->
 <!-- curl -s https://code.jquery.com/jquery-1.2.6.min.js | terser --compress --mangle | human-size -->
 <!-- curl -s https://code.jquery.com/jquery-3.6.0.min.js | human-size -->
 <!-- curl -s https://code.jquery.com/jquery-3.6.0.min.js | terser --compress --mangle | human-size -->
 
-## definition todo
-```js foo
-// Source
+<!-- ## code todo
+```js
+const FORD_NAME = 'Harrison';
 const FORD_YEAR = 1942;
 
-function canPlayIndianaJones (name, year) {
-    const age = 2021 - year;
+function playIndianaJones (currentYear, name, year) {
+    const age = currentYear - year;
     if (age > 50) {
-        console.log('NO, too old!');
+        console.log('NOOOO, ' + name + ' is too old!');
     }
     else {
-        console.log('Yep ;-)');
+        console.log('NOOOO, the trilogy is enough.');
     }
 }
 
-canPlayIndianaJones('Harrison Ford', FORD_YEAR);
-```
+playIndianaJones(2021, FORD_NAME, FORD_YEAR);
+``` -->
 
-## definition todo
+<!-- 
+{
+  module: true,
+  compress: {
+    passes: 2,
+  },
+}
+-->
+
+<!-- ## code todo
 ```js
-const FORD_YEAR=1942;function canPlayIndianaJones(name,year){const age=2021-year;if(age>50)console.log("NO, too old!");else console.log("Yep ;-)")}canPlayIndianaJones("Harrison Ford",FORD_YEAR);
-```
-
-```js invisible
-const o=1942;function n(o,n){const l=2021-n;if(l>50)console.log("NO, too old!");else console.log("Yep ;-)")}n("Harrison Ford",o);
-```
-
-```js
-2021-1942>50?console.log("NO, too old!"):console.log("Yep ;-)");
-```
-
-```js
-console.log("NO, too old!");
-```
-
-## definition todo
-```js
-const FORD_YEAR=1942;function canPlayIndianaJones(name,year){const age=2021-year;if(age>50)console.log("NO, too old!");else console.log("Yep ;-)")}canPlayIndianaJones("Harrison Ford",FORD_YEAR);
-```
-
-```js
-const o=1942;function n(o,n){const l=2021-n;if(l>50)console.log("NO, too old!");else console.log("Yep ;-)")}n("Harrison Ford",o);
-```
-
-```js
-2021-1942>50?console.log("NO, too old!"):console.log("Yep ;-)");
-```
-
-```js
-console.log("NO, too old!");
-```
+console.log("NOOOO, Harrison Ford is too old!");
+``` -->
 
 ## blank white
 > Pour des raisons de confort de dev, on a commencé à séparer nos fichiers.
 > Tant qu'on les chargeait dans le bon ordre,
-> en gros tant qu'on mettait jQuery avant les plugins jQuery etc...
+> en gros tant qu'on mettait jQuery d'abord et les plugins jQuery ensuite etc...
 > ça se passait bien.
 > Du coup, pour pas déteriorer les perfs et l'expérience utilisateur, on a commencé à faire de la...
 
-## todo
-TERSER:
-It's not well known, but whitespace removal and symbol mangling accounts for 95% of the size reduction in minified code for most JavaScript - not elaborate code transforms. One can simply disable compress to speed up Terser builds by 3 to 4 times.
-
 ## definition animation
 Concaténation
+> ...Concaténation.
 
 ## definition todo
 Concaténation
+<!-- TODO en étapes et en mettant en évidence des lignes dans les fichiers -->
 <img src="/src/img/definition-concatenation.png">
-> ...Concaténation.
-> *L'idée :* on prend plusieurs fichiers et on les assemble en un seul fichier en respectant l'ordre.
+> *L'IDÉE :* on prend plusieurs fichiers et on les assemble en un seul fichier en respectant l'ordre.
 
 ## definition
 Concaténation
 * Moins de requêtes HTTP
-> *Le but :* réduire le nombre de requêtes HTTP.
-> En HTTP 1.1, un navigateur ne peut pas faire + de 6/8 requêtes en parallèle vers le même site.
-> On a fait ça pendant longtemps, j'me rappelle que sur un projet angular.js en 2014, on avait du grunt puis du gulp pour faire ça.
+> *LE BUT :* réduire le nombre de requêtes HTTP.
+> Avec HTTP 1.1, un navigateur ne peut pas faire + de 6/8 requêtes en parallèle vers le même site.
+> Pour automatiser ça, on a commencé à dégainer des...
 
 ## definition
 Task runners / Pipeline
@@ -331,43 +345,43 @@ Task runners / Pipeline
 * 2012: Grunt <img src="src/img/logo-grunt.svg">
 * 2013: Gulp <img src="src/img/logo-gulp.svg">
 * 2014: Broccoli <img src="src/img/logo-broccoli.svg">
-> Ça rend en partie obsolète beaucoup de choses qu'on faisait manuellement avec des outils comme grunt gulp etc...
-> Où on devait lui expliquer qui allait avec qui.
+> ...task runners et autres outils orientés pipeline.
+> J'ai envie de dire, c'est le bon vieux temps, mais je bosse encore aujourd'hui sur une app qui utilise grunt donc bon.
 
 ## blank white
-> Respecter l'odre des fichiers, c'était un peu fragile du coup, on a commencé utiliser des systèmes de modules pour expliciter les dépendances.
-> Module machin a besoin de module truc qui lui a besoin de module chose.
-> Après avoir joué avec différents systèmes de modules, une bonne partie de la communauté a opté pour le système CommonJS (polularisé par Node.js).
+> Respecter l'odre des fichiers, c'était un peu fragile du coup,
+> on a commencé utiliser des systèmes de modules pour expliciter les dépendances.
+> Le module A a besoin de module B qui lui a besoin de module C.
 > C'est là qu'on est passé au niveau supérieur de la concaténation...
-<!-- requirejs et quoi d'autres -->
-<!-- logo cjs/esm https://github.com/wessberg/cjstoesm -->
 
 ## definition animation
 Bundling
+> ...le bundling.
 
 ## definition todo
 Bundling
-> ...le bundling.
+<!-- TODO en étapes et en mettant en évidence des lignes dans les fichiers et les imports, ajouter de la glue en jaune -->
 <img src="/src/img/definition-bundling.png">
-> *L'idée :* on prend un fichier source, on analyse les dépendances et on assemble ces dépendances dans le bon ordre, dans un seul fichier et avec un peu de glue pour que ça continue à fonctionner.
+> *L'IDÉE :* on prend un fichier source, on analyse les dépendances et on assemble ces dépendances dans le bon ordre, dans un seul fichier et avec un peu de glue pour que ça continue à fonctionner.
 > C'est une sorte de concaténation ++ qui connait le système de modules et qui se base sur le graphe de dépendances.
 
 ## definition
 Bundling
 * Moins de requêtes HTTP
-> *Le but :* toujours réduire le nombre de requêtes HTTP.
-> En HTTP 1.1, un navigateur ne peut pas faire + de 6/8 requêtes en parallèle vers le même site
-> Le graphe de dépendances se limite pas au JavaScript, certains d'entre eux analyse le HTML, le CSS, les images, les polices...
+> *LE BUT :* toujours réduire le nombre de requêtes HTTP.
+> Le graphe de dépendances se limite pas à JavaScript, certains outils sont capable d'analyse les dépendances entres des fichiers HTML, des CSS, des images, des polices, etc.
+<!-- requirejs et quoi d'autres -->
+<!-- logo cjs/esm https://github.com/wessberg/cjstoesm -->
 
 <!-- https://github.com/google/closure-compiler/blob/7ff6e25843097791416d1544c88dc8711f6be64a/src/com/google/javascript/jscomp/deps/DepsGenerator.java -->
 ## definition
 Bundling (précurseurs)
 * 2009: Closure<br>compiler <img src="src/img/logo-closure.svg">
-<!-- * 2010: Dojo Toolkit <img src="src/img/logo-dojo.svg"> -->
+* 2010: Builder<br>(Dojo Toolkit) <img src="src/img/logo-dojo.svg">
 * 2010: r.js<br>(requirejs) <img src="src/img/logo-requirejs.svg">
 * 2011: Browserify <img src="src/img/logo-browserify.svg">
-<!-- difficile de savoir s'il faut citer Dojo -->
-<!-- https://dojotoolkit.org/documentation/tutorials/1.6/build/index.html -->
+> On est passé par des systèmes de modules customs, puis AMD et ensuite une bonne partie de la communauté a opté pour le système CommonJS (polularisé par Node.js).
+> C'est avec l'arrivée de...
 
 <!-- https://github.com/google/closure-compiler/blob/7ff6e25843097791416d1544c88dc8711f6be64a/src/com/google/javascript/jscomp/deps/DepsGenerator.java -->
 ## definition
@@ -375,45 +389,60 @@ Bundling
 * 2014: Webpack <img src="src/img/logo-webpack.svg">
 * 2015: Rollup <img src="src/img/logo-rollup.svg">
 * 2018: Parcel <img src="src/img/logo-parcel.svg">
-> Ça a clairement commencé avec Browserify
-> Le plus connu, c'est probablement Webpack
-> Perso j'aime bcp Rollup car il est fort en ESM
-> alors que sur mon site j'utilise Parcel qui est balaise avec HTML
+> ...Webpack et ses amis qu'on a commencé à avoir du support pour les modules standard ECMAScript.
+> Le plus connu, c'est probablement Webpack,
+> Perso j'aime bcp Rollup car il est fort en module ECMAScript.
+> Après, Parcel est balaise avec le HTML, du coup j'utilise celui là sur mon site.
+
+<!-- peut-être à la fin -->
+## media todo
+https://bundlers.tooling.report/
+<img src="src/img/screenshot-bundlers-tooling-report.jpg" screenshot-url="https://bundlers.tooling.report/#overview">
+> Si vous voulez en savoir plus sur ces outils, les équipes devrel de Google on fait un site un peu comparatif avec des tableaux de qui sait faire quoi.
+> Comme pour la minification...
 
 ## definition
 Bundling (nouvelle génération)
 * 2020: esbuild (go) <img src="src/img/logo-esbuild.svg">
-* 2020: Spack (rust) <img src="src/img/logo-swc.svg">
+* 2020: Spack (Rust) <img src="src/img/logo-swc.svg">
 * 2020/2021: Rome (JS/rust) <img src="src/img/logo-rome.svg">
-> Dans les petits nouveaux, on retrouve esbuild qui envoie du lourd au niveau perfs
-> (montrer le site de esbuild)
-> On a aussi Rome qui se vend comme un outil qui fait tout mais ils ont levé des millions et du coup, ils jettent tout pour tout refaire en Rust alors on sait pas trop quand ça sort ni si ça sera bien mais on attend.
+> ...on retrouve les petits nouveaux codés en go ou en Rust et qui envoie du lourd au niveau perfs.
 
 ## media top
 <img src="src/img/screenshot-esbuild.jpg" screenshot-url="https://esbuild.github.io/">
+> Quand je dis lourd, c'est du très lourd hein.
+> C'est un benchmark hein, mais esbuild est 100 fois plus rapide pour minifier et bundler.
+> C'est tellement performance qu'on a vu arriver l'année dernière...
 
-## definition
+<!-- TODO cette partie, ça va pas -->
+## definition todo
 Serveurs de dev
-* 2020: WDS <img src="src/img/logo-modernweb.svg">
+<!-- * 2020: WDS <img src="src/img/logo-modernweb.svg"> -->
 * 01/2020: Snowpack <img src="src/img/logo-snowpack.svg">
 * 04/2020: Vite <img src="src/img/logo-vitejs.svg">
-> Ce qui est marrant c'est qu'on a deux outils comparables qui sont sortis récemment
-> Il se focalise sur la partie serveur de dev en utilisant esbuild sous le capot
-> et quand vous voulez partir en prod, il vont utiliser rollup sous le capot
+> Des outils qui utilisent esbuild sous le capot pour proposer une expérience de dev ultra performante,
+> et Rollup pour le build de prod un peu plus complexe.
 
 ## blank white
 > Transition blabla, les bundlers moderns ont ajouté des techniques au fur et a mesure
 > Par exemple avec...
 
-## definition
-Bare imports
+## definition animation
+Module resolving
+
+<!-- TODO un exemple de code pour ça, c'est mieux que le text -->
+## definition todo
+Module resolving
+* bare imports
+* Les imports sans URL
+* avec un nom de *npm*
 
 ## definition animation
 Scope hoisting
 
 ## definition todo
 Scope hoisting
-* Réduire le bruit
+* Réduire la glue
 
 ## definition todo
 Scope hoisting
@@ -428,15 +457,16 @@ Tree shaking
 <img src="/src/img/definition-tree-shaking.png">
 > ...le tree shaking
 > C'est une technique qu'on applique au moment du bundling.
-> *L'idée :* on prend un fichier source, on analyse ses dépendances et surtout on analyse précisémment ce qu'il importe des dépendances qu'il utilise pour ne garder que ces parties dans le bundle finale.
+> *L'IDÉE :* on prend un fichier source, on analyse ses dépendances et surtout on analyse précisémment ce qu'il importe des dépendances qu'il utilise pour ne garder que ces parties dans le bundle finale.
 
 ## definition
 Tree shaking
 * Moins de code
 * _(charger + parser + exécuter)_
-> *Le but :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
+> *LE BUT :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
 
 ## blank white
+> La transition peut se faire sur le fait qu'on a fait des méga fat bundle avec ça
 
 ## definition animation
 Code splitting
@@ -444,11 +474,12 @@ Code splitting
 ## definition
 Code splitting
 <img src="/src/img/definition-code-splitting.png">
-> *L'idée :* on prend un fichier JS, on enlève les espaces, les commentaires...
+> *L'IDÉE :* on prend un fichier JS, on enlève les espaces, les commentaires...
 
 ## definition
 Code splitting
 * Chargement à la demande
+* plusieurs petits bundles
 > bla bla avec le routeur
 > les imports dynamiques
 
@@ -463,7 +494,7 @@ Content hashing
 Content hashing
 <img src="/src/img/definition-content-hashing.png">
 > ...le Content hashing.
-> *L'idée :* on prend le contenu de chaque fichier, on calcule un hash et on l'ajoute dans le nom du fichier.
+> *L'IDÉE :* on prend le contenu de chaque fichier, on calcule un hash et on l'ajoute dans le nom du fichier.
 > On a aussi appelé ça du revving à l'époque de grunt/gulp.
 
 ## definition
@@ -475,10 +506,11 @@ Content hashing
 Content hashing
 * Aider les caches
 * _(navigateur, proxy, CDN...)_
-> *Le but :* Pousser les caches à considérer les fichiers comme immutables
+> *LE BUT :* Pousser les caches à considérer les fichiers comme immutables
 > Si un navigateur ou un proxy cache voit passer un fichier, il peut théoriquement que tel nom correspondra toujours à tel contenu.
 > Ici on vient améliorer l'expérience des visites répétées.
 
+<!-- confort du dev -->
 ## definition animation
 Transpiling
 
@@ -505,8 +537,524 @@ Transpiling (next gen)
 * 2020: SWC (rust) <img src="src/img/logo-swc.svg">
 * 2020/2021: Rome (JS/rust) <img src="src/img/logo-rome.svg">
 
+<!-- recap -->
+## todo fade-from
+* Pour l'utilisateur
+  * moins de code
+    * minification
+    * scope hoisting
+    * tree shaking
+    * code splitting
+  * moins de requêtes
+    * concatenation
+    * bundling
+  * meilleur cache
+    * content hashing
+    * code splitting
+  * moins d'escalier
+    * import hoisting
+* Pour le développeur
+  * transpiling
+
+<!-- 
+Côté serveur
+* Pour l'utilisateur
+  * moins de requêtes
+  * moins de code
+    * compression
+  * meilleur cache
+    * header de cache
+  * moins d'escalier
+    * domain sharding
+    * HTTP/2 pipelining
+    * preload
+    * HTTP/2 push
+ -->
+
+<!--
+Cette section sert à...
+* la comlexité des outils (JavaScript) existe
+  * trop de choix
+  * difficile à brancher entre eux
+  * ça rend le dev frontend moins accesibles au nouveaux
+* ces outils sont arrivées via le monde des fwk JS et SPA (le full front)
+  * cela force les autres dev frontend à adopter Node.js + npm ...
+* pour autant les fonctionnalités apportés par ces outils ont une utilité
+> * Est-ce que c'était mieux avant ? : digression sur l'utilité et l'impact de ces évolutions
+> ** On constate les avantages et inconvénients
+> * ?? (1) comment réduire la dépendance à nos outils ?
+> ** Apporter un début de piste
+> * ?? (2) comment rendre tout ceci plus accessible ?
+> ** Différents cas de figures auxquels on pourrait s'intéresser pour simplifier l'expérience de dev mais ici on va se pencher sur :
+> * analogie des pizzas
+-->
+
+## blank black fade-to
+> #Pause#
+> #Gestes des mains de la tête qui explose#
+> J'sais pas vous mais quand j'vois tous ces outils et ces termes, j'ai une p'tite voix d'boomer dans ma tête qui fait :
+> #Voix de p'tit vieux#
+> Oh bah franchement...
+
 ## section
-C'était mieux avant ?
+C'était mieux avant
+> ...c'était mieux avant.
+> #Malaise, voix gênée#
+> Euuuuuuh......
+> Faut fait attention à la nostalgie, c'est comme l'alcool, ça peut faire dire pas mal de bêtises quand même.
+> Du coup, on va tenter de rester sérieux et on va se...
+
+## text
+🤔
+> ...poser objectivement la question.
+> #Pause#
+> D'un côté, quand j'vois cette complexité...
+
+## text
+👍
+<!-- 👍 Oui -->
+> ...j'ai envie de répondre oui.
+> On ne compte plus les...
+
+## media
+<img src="src/img/screenshot-medium-js-fatigue.jpg" screenshot-url="https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4">
+> ...articles qui parlent de JavaScript fatigue et qui décrivent souvent la même réalité.
+> Il y a beaucoup d'outils et certains font plus ou moins la même chose, du coup...
+
+## text
+😕 Choix difficiles
+> ...les choix sont difficiles.
+> Niveau compatibilité, c'est pas évident de les brancher entre eux, du coup...
+
+## text
+🤬 MàJ compliquées
+> ...les mises à jour sont compliquées.
+> Heureusement,
+
+## definition
+* : Angular <img src="src/img/logo-angular.svg">
+* : Ember <img src="src/img/logo-ember.svg">
+* : React <img src="src/img/logo-react.svg">
+* : Svelte <img src="src/img/logo-svelte.svg">
+* : Vue <img src="src/img/logo-vue.svg">
+> les frameworks JS proposent leur propre ligne de commande ou des générateurs de projets pre-configurés.
+> C'est bien hein.
+> C'est d'ailleurs pour ça qu'on choisit un framework, pour qu'il fasse des choix à notre place et...
+
+## text
+⏱️ Gagner du temps
+> ...gagner du temps.
+> Par contre, comme avec n'importe quelle couche d'abstraction, on accepte...
+
+## text
+🔐 Abandonner le contrôle
+> ...d'abandonner le contrôle de la chaîne de build.
+> Ça implique...
+
+## text
+🔒 Couplage code/outils fort
+> un couplage fort entre notre code et les outils.
+> À tel point qu'aujourd'hui, plusieurs de ces frameworks ne peuvent pas être utilisés sans la suite d'outils qui va avec.
+<!-- Le premier qui me dit, bah si tu peux faire du React sans JSX -->
+<!-- > D'ailleurs, si on regarde les dépendances proposées par les communautés respectives de ces frameworks (plugins, composants...), -->
+<!-- > la quasi totalité des projets ne proposent qu'une seule méthode d'installation : `npm install` + bundler. -->
+<!-- détailler la méthode d'installation -->
+
+## blank white
+> Au fur et à mesure des années, je me suis habitué aux règles de cette bulle JavaScript.
+> Du coup, quand on a commencé nôtre bibliothèque de composants chez Clever,
+> j'étais un peu du genre :
+> "Tu veux utiliser nos composants ?"
+
+## definition
+* : Node.js <img src="src/img/logo-nodejs.svg">
+* : npm <img src="src/img/logo-npm.svg">
+* : Webpack <img src="src/img/logo-webpack.svg">
+> C'est sur npm, débrouille toi avec ton bundler.
+
+## blank white
+> La détail important, c'est qu'on a fait le choix d'exposer des Web Components.
+> Un standard du Web qui permet de dire :
+
+## code
+```js
+class MyComponent extends HTMLElement {
+  // ...
+}
+```
+```js invisible
+customElements.define('my-component', MyComponent);
+```
+```html invisible
+<my-component></my-component>
+```
+> je définis le comportement de mon composant dans une classe,
+
+## code
+```js dim
+class MyComponent extends HTMLElement {
+  // ...
+}
+```
+```js
+customElements.define('my-component', MyComponent);
+```
+```html invisible
+<my-component></my-component>
+```
+> J'associe cette classe à une balise HTML spécifique,
+
+## code
+```js dim
+class MyComponent extends HTMLElement {
+  // ...
+}
+```
+```js dim
+customElements.define('my-component', MyComponent);
+```
+```html
+<my-component foo="something">Hello</my-component>
+```
+> et du coup, mes utilisateurs peuvent l'utiliser comme n'importe quelle autre balise.
+
+<!-- ## definition
+* 2016: Chrome <img src="src/img/logo-chrome.svg">
+* 2017: Safari <img src="src/img/logo-safari.svg">
+* 2018: Firefox <img src="src/img/logo-firefox.svg"> -->
+> Ça marche dans tous les navigateurs modernes,
+<!-- https://caniuse.com/template -->
+
+<!-- ## definition
+* : Angular <img src="src/img/logo-angular.svg">
+* : Ember <img src="src/img/logo-ember.svg">
+* : React <img src="src/img/logo-react.svg">
+* : Svelte <img src="src/img/logo-svelte.svg">
+* : Vue <img src="src/img/logo-vue.svg"> -->
+> avec tous les frameworks,
+
+<!-- ## media
+<img src="src/img/screenshot-custom-elements-everywhere-angular.jpg" screenshot-url="https://custom-elements-everywhere.com/#angular">
+
+## media
+<img src="src/img/screenshot-custom-elements-everywhere-vue.jpg" screenshot-url="https://custom-elements-everywhere.com/#vue">
+
+## media
+<img src="src/img/screenshot-custom-elements-everywhere-svelte.jpg" screenshot-url="https://custom-elements-everywhere.com/#svelte">
+
+## media
+<img src="src/img/screenshot-custom-elements-everywhere-react.jpg" screenshot-url="https://custom-elements-everywhere.com/#react"> -->
+> (sauf avec React où il faut ajouter de la glue).
+
+> Ça marche aussi avec des sites statiques écrit en Markdown,
+> des sites multi pages codés en Java/PHP/Ruby qui font du templating côté serveur.
+<!-- ça marche même dans des slides HTML -->
+
+## text
+😍 Web Components partout !
+> Bref, ça marche partout quoi.
+<!-- > Il n'y a pas que le JavaScript dans la vie. (je répète) -->
+> Du coup, c'est un peu culotté d'imposer cette...
+
+<!-- ## definition
+* : Node.js <img src="src/img/logo-nodejs.svg">
+* : npm <img src="src/img/logo-npm.svg">
+* : Webpack <img src="src/img/logo-webpack.svg"> -->
+> ...taxe "Node.js + npm + bundler" à des professionnels du Web dont le socle ne tourne pas autour de JavaScript.
+
+## code
+```html
+<script src="https://code.jquery.com/jquery-1.2.6.min.js"></script>
+```
+> Donc oui, d'une certaines manière, c'était mieux avant quand on mettais juste une balise vers le CDN de jQuery.
+<!-- > C'est d'ailleurs ce que font la majorité des bilbiothèques : moment, charts.js,  -->
+
+## text
+👎
+<!-- 👎 Non -->
+> De l'autre côté ... quand je regarde les gains de perf qu'apportent tous ces outils, j'ai envie de répondre non, c'était *pas* mieux avant.
+<!-- jquery terser -->
+> Ma bibliothèque de composants, c'est pas juste une seule fichier.
+> Si une personne veut utiliser uniquement le composant `<cc-input-text>`, en français,
+> son bundler va appliquer toutes les techniques qu'on a évoqué pour produire le plus petit morceau de code possible et assurer les meilleurs perfs pour l'utilisateur.
+> En mode CDN, je fais quoi ?
+> #Pause#
+> Je vais être obligé de dire :
+> "Tiens, voici un méga fichier avec tous les composants, toutes leurs dépendances et toutes les langues. Amuse toi bien !".
+> Les perfs vont être nulles.
+> En plus, quand cette personne passera sur une nouvelle version, il y aura des nouveaux composants, ça sera encore plus lourd.
+
+## blank white
+> En fait, elle est relou cette question.
+> Nous ce qu'on veut savoir, c'est :
+> est-ce que c'est possible de retrouver...
+
+## text
+🍕 Simplicité
+> ...la simplicité du mode balise script vers un CDN,
+
+## text
+👨‍🍳 Performances
+> mais avec les mêmes performances que si on avait utilisé un bundler et tous ces machins.
+> C'est ce qu'on a essayé de faire chez Clever Cloud, petit retour d'expérience
+
+## section
+Retour à la simplicité...
+
+
+> Si je mets notre bibliothèque de composants sur un CDN, les perfs vont être nulles.
+> personne va utiliser ça.
+
+> Si je reviens au mode jQuery + CDN.
+> Si je fais ça, l'utilisateur ne beneficiera pas des toutes les techniques que j'ai évoqué, personne va faire ça, les perfs vont etre naz, on peut pas savoir à l'avance quels composants il va utiliser et en quelle langue
+> Si je me la joue jQuery et que je mets tous mes composants dans un seul fichier sur un CDN, la personne qui veut juste le composant de toggle, il va se foutre de ma gueule.
+> les améliorations de performance qu'apportent ces outils, 
+> on a envie de répondre non.
+> Si 
+> D'un autre côté, je suis dit non c'était pas mieux avant, si on fait un mode CDN à la jquery de l'époque, lutilisateur beneficiera pas des toutes les techniques que j'ai évoqué, personne va faire ça, les perfs vont etre naz, on peut pas savoir à l'avance quels composants il va utiliser et en quelle langue
+
+
+> En même temps, le challenge est intrigant du coup, je me suis demandé si c'était possible de retrouver la simplicité d'avant sans perdre en performance par rapport à un dev qui aurait utilisé un bundlers...
+
+> analogie clever cloud
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> Heureusement, pour nous faciliter la vie la plupart des frameworks JS proposent leur propre ligne de commande ou des templates de projets pre-configurés.
+> C'est bien hein.
+> C'est d'ailleurs pour ça qu'on choisit un framework, pour qu'il fasse des choix à notre place et...
+> ...gagner du temps.
+> Par contre, en faisant ça, forcément, on va...
+> ...limiter le contrôle qu'on a sur ce qu'il se passe et...
+> ...renforcer le couplage entre notre code et les outils.
+<!-- > À tel point qu'aujourd'hui, le code JSX d'un projet React ne fonctionne pas dans un navigateur sans avoir été transformé par un outil comme Babel. -->
+
+> Quand j'ai commencé à bosser sur notre bibliothèque de composants chez Clever Cloud, j'étais tout content d'utiliser des Web Components.
+> J'me disais, wow, trop cool, des standards.
+> On va pouvoir les utiliser partout
+
+
+
+
+
+
+
+
+
+
+
+
+
+> Cette complexité, elle s'applique à tout le monde.
+> Même quand on baigne tous les jours dedans, c'est chaud, alors imaginez...
+> ...la courbe d'apprentissage pour un débutant. 🎓
+> Et encore, là on parle que des gens qui font des Single Page Application avec React, Vue et compagnie,
+> mais attention, *BREAKING NEWS* :
+<!-- > D'ailleurs, j'en profite pour faire passer un message : -->
+> Il n'y a pas que le JavaScript dans la vie. (je répète)
+> Le monde du frontend, c'est aussi et surtout des professionels qui maitrisent HTML et l'accessibilité,
+> des gens qui parlent courament flexbox et de grilles CSS,
+> des gens qui bossent avec PHP, Ruby, dans des écosystèmes CMS ou e-commerce.
+> Aujourd'hui, si on veut utiliser une lib JS, le tarif de base c'est
+> * node
+> * npm
+> * ...
+> * 
+
+
+> il faut orienter le trucs sur le fait que ça fait des années que je suis plongé dans les fwks JS que j'en ai oublié les gens qui n'utilisent pas ces fwk
+
+
+
+
+> Au final, cette stack Node.js + npm et compagnie s'est aussi imposé à eux quand ils veulent ajouter une 
+
+> De l'autre côté, ces outils sont pas là pour rien
+
+> => DIY / PnP
+
+## text
+🚨 Il n'y a pas que<br>le JavaScript dans la vie
+
+## text
+🚨 frontend `!==` JS
+<!-- 📣 dev frontend `!==` JS -->
+
+
+> Heureusement, pour nous faciliter la vie...
+> ...la plupart des frameworks JS proposent leur propre ligne de commande ou des templates de projets pre-configurés.
+> C'est bien hein.
+> C'est d'ailleurs pour ça qu'on choisit un framework, pour qu'il fasse des choix à notre place et...
+> ...gagner du temps.
+> Par contre, en faisant ça, forcément, on va...
+> ...limiter le contrôle qu'on a sur ce qu'il se passe et...
+> ...renforcer le couplage entre notre code et les outils.
+> À tel point qu'aujourd'hui, le code JSX d'un projet React ne fonctionne pas dans un navigateur sans avoir été transformé par un outil comme Babel.
+
+## text
+🤯 Beaucoup d'outils
+> Il y a beaucoup d'outils et ils font plus ou moins la même chose, du coup...
+
+## text
+<!-- 🤔 Choix difficiles -->
+<!-- 🤯 Choix difficiles -->
+🤔 Choix difficiles
+<!-- diagramme de venn -->
+> ...les choix sont difficiles.
+> Les outils sont...
+
+## text
+🔌 Pas tjs compatibles
+> ...pas toujours bien compatibles entre eux, du coup...
+
+## text
+🤬 MàJ compliquées
+> ...les mises à jour sont compliquées.
+> Heureusement, pour nous faciliter la vie...
+
+## definition
+* : Angular <img src="src/img/logo-angular.svg">
+* : Ember <img src="src/img/logo-ember.svg">
+* : React <img src="src/img/logo-react.svg">
+* : Svelte <img src="src/img/logo-svelte.svg">
+* : Vue <img src="src/img/logo-vue.svg">
+> ...la plupart des frameworks JS proposent leur propre ligne de commande ou des templates de projets pre-configurés.
+> C'est bien hein.
+> C'est d'ailleurs pour ça qu'on choisit un framework, pour qu'il fasse des choix à notre place et...
+
+## text
+⏱️ Gagner du temps
+> ...gagner du temps.
+> Par contre, en faisant ça, forcément, on va...
+
+## text
+🙈 Limiter le contrôle
+> ...limiter le contrôle qu'on a sur ce qu'il se passe et...
+
+## text
+🖇️ Renforcer le couplage
+<!-- 🔒 Renforcer le couplage code/outils -->
+> ...renforcer le couplage entre notre code et les outils.
+> À tel point qu'aujourd'hui, le code JSX d'un projet React ne fonctionne pas dans un navigateur sans avoir été transformé par un outil comme Babel.
+
+<!-- ça va plus loin que ça -->
+<!-- transition vers les autres dev -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## definition
+* : Node.js <img src="src/img/logo-nodejs.svg">
+* : npm <img src="src/img/logo-npm.svg">
+* : nvm/volta <img>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## definition
+* : Rome <img src="src/img/logo-rome.svg">
+
+## media
+<img src="src/img/screenshot-xkcd-927.jpg" screenshot-url="https://xkcd.com/927/" style="transform: scale(1.5); transform-origin: top center;">
+
+## media
+<img src="src/img/screenshot-lea-verou-failed-promise-of-web-components.jpg" screenshot-url="https://lea.verou.me/2020/09/the-failed-promise-of-web-components/">
+
+> ça rend le dev frontend moins accesibles au nouveaux
+> et encore si c'était que pour les utilisateurs de fmk JS tant pis pour eux mais ça impacte les autres
+> amener à la réflexion sur l'installation de dépendances
+
+> D'un côté oui, à l'époque jQuery, comme je le disais en intro, pour ajouter une dépendance, c'était simple.
+> Beaucoup plus simple que ce qu'on doit avoir comme stack quand on ajouter un composant React qu'on a trouvé en ligne.
+> De l'autre côté, on vient de voir avec le guide de survie que les fonctionnalités qu'apportent ces outils améliorent les performances et nous facilitent la vie en tant que dev.
+
+> Cette fatigue, elle est venue des frameworks JS de SPA mais aussi est surtout des outils qui sont arrivés avec.
+> Et si c'était qu'une histoire de "Je sors de formation, c'est mon premier job et j'y comprends rien à cette jungle", à la rigueur, bon.
+> Mais là, ça touche tout le monde.
+> C'est outil sont arrivés
+> mais on vient de voir comment ces outils sont arrivés et à quoi servent leur fonctionnalités
+
+## todo
+
+Mais du coup, est-ce que c'était mieux avant ?
+
+Constats des avantages/inconvénients :
+
+* Une partie de ces évolutions avait pour but d'améliorer l'expérience utilisateur (perf + rapide tout cela)
+** minification, concaténation/bundling, treeshaking
+* Une partie de ces évolutions avait pour but d'améliorer l'expérience développeur
+** npm, transpilation (babel, JSX, TS), nvm, modules
+* Certaines de ces évolutions sont arrivées pour compenser les déteriorations d'UX amenées par des améliorations de DX
+** SSR+hydratation, bundling (si on réfléchit en mode on pourrait tout coder dans le même fichier), code splitting (point de vue je passe ma logique de routing côté client)
+* Cette diversité et cette complexité d'outils peut amener un couplage/dépendance/adhérence fort entre notre code et les outils qui nous permettent de mettre tout ça en prod
+** Maintenance long terme difficile intégration difficile ?
+* Cette galaxie d'outils est très difficile à comprendre, à utiliser, à brancher/interconnecter, à suivre...
+** Difficile d'accès pour les débutants, c'est pas le Web dont j'ai envie
+** Difficile d'accès pour les devs qui ne baignent pas dans cet écosystème très JS/SPA (intégrateurs HTML/CSS et devs PHP, Ruby, Python, Java...)
+
+=> En fait, c'est pas du tout une question qui amène une réponse binaire "oui/non".
+
+=> It depends :tm:
+
+En fait, il y a deux questions qui m'intéressent beaucoup plus :
+
+?? (1) comment réduire la dépendance à nos outils ?
+// comment faire pour que son propre code source dépende le moins possible d'outils de build qu'il utilise ?
+
+* système custom non standard
+** import de CSS ou d'image dans les bundlers avec les loaders à la webpack
+** se reposer sur process.env via des plugins
+** toutes les spécificités liées au framework (Angular, Vue, Svelte)
+
+=> exemple de la vision du minifieur qui prend du JS standard et sort du JS standard
+=> pièce de puzzle compatibles/incompatibles
+=> quand vous avez des outils qui parsent le JS en AST dans votre chaine, les syntaxes et features possible du langage ne sont plus le navigateur que vous ciblez mais les outils que vous utilisez
+
+?? (2) comment rendre tout ceci plus accessible ?
+=> ou plutôt, est-ce qu'on peut proposer une expérience qui s'approche de ce qu'on avait avant et à quel point ?
+
+
+
+
+## blank
 > Alors, on pourrait qualifier mon intro de caricature de boomer, un peu trop exagérée en mode :
 > #Voix gnagnagna#
 > "Oui-ennn, mais c'était mieux avant, jQuery gna gna gna gna gna..."
@@ -514,7 +1062,8 @@ C'était mieux avant ?
 > En vrai, ça serait pas super constructif.
 > Moi j'crois qu'c'est important de se poser vraiment la question.
 > Par exemple, pour Indiana Jones ou Lost, sans déconner, y'a pas débat. C'était mieux avant.
-> #Attendre, lever la main pour inciter le public à le faire. Ah lui, il est d'accord avec moi.#
+> $Attendre, lever la main pour inciter le public à le faire.$
+> Ah lui, il est d'accord avec moi.
 > Pour c'qui concerne le monde du dev frontend, c'est un vrai sujet.
 > Ce constat de complexité, on est très nombreux à l'avoir fait et à le faire encore régulièrement.
 > On compte plus les articles parlant de "JavaScript fatigue".
@@ -545,6 +1094,11 @@ C'était mieux avant ?
 
 ## blank
 
+
+<!-- Use this when we do the REX -->
+<!-- ## media logo -->
+<!-- <img src="src/img/logo-clever-cloud.svg"> -->
+
 ## section
 <!-- Un nouvel espoir... -->
 <!-- Retour d'expérience -->
@@ -554,6 +1108,12 @@ Retour aux sources ?
 
 ## todo
 Les composants chez Clever Cloud
+
+## demo-html
+```html
+<cc-input-text value="my s3cr3t" secret clipboard></cc-input-text>
+```
+<cc-input-text value="my s3cr3t" secret clipboard style="font-size: 2em; width: 14em"></cc-input-text>
 > contexte Clever Cloud: web components, besoins internes divers, besoins externes
 
 ## media
@@ -723,3 +1283,7 @@ Sons :
 * Marimba note : https://www.youtube.com/watch?v=8FJMTJmuoU8
 * Horn sound effect : https://www.youtube.com/watch?v=gKz1X2rn3CQ
 * Forest sound : https://www.youtube.com/watch?v=IsPBplWLImI
+
+Liens :
+
+* https://fr.wikibooks.org/wiki/Code_de_la_route/Liste_des_panneaux

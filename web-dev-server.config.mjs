@@ -1,4 +1,5 @@
 import { transformSlides } from './src/slides-transformer.mjs';
+// import { hmrPlugin, presets } from '@open-wc/dev-server-hmr';
 import fs from 'fs';
 
 export default {

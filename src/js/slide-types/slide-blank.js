@@ -22,6 +22,7 @@ defineSlideType('slide-blank', {
     :host {
       background-image: radial-gradient(transparent, transparent 0%, #000 80%), url('/src/img/jungle.svg');
       background-size: cover;
+      background-position: center center;
     }
 
     :host([animation]) {

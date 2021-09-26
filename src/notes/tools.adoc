@@ -1,0 +1,63 @@
+= History of tools
+
+<!-- https://www.swyx.io/js-third-age/ -->
+
+* 2007 Dojo https://github.com/google/closure-compiler
+* 2009 Closure compiler https://github.com/google/closure-compiler
+* 2009 Node.js https://github.com/nodejs/node
+* 2009 npm
+* 2011 Uglify https://github.com/mishoo/UglifyJS
+* 2011: Browserify https://github.com/browserify/browserify
+* 2012 bower https://github.com/bower/bower
+* 2012: Brunch https://github.com/brunch/brunch
+* 2012: Grunt https://github.com/gruntjs/grunt
+* 2013: Gulp https://github.com/gulpjs/gulp
+* 2014: Broccoli https://github.com/broccolijs/broccoli
+* 2014: Webpack https://github.com/webpack/webpack
+* 2014: Traceur https://github.com/google/traceur-compiler
+* 2014: TypeScript https://github.com/microsoft/TypeScript
+* 2014: Babel (6-to-5) https://github.com/babel/babel/
+* 2016: Rollup https://github.com/rollup/rollup
+* 2016: fuse-box https://github.com/fuse-box/fuse-box
+* 2018: terser https://github.com/terser/terser
+* 2018: parcel https://github.com/parcel-bundler/parcel
+* 2019: swc
+* 2020: deno
+* 2020: rome
+* 2020: Web Dev Server https://modern-web.dev/docs/dev-server/overview/
+* 2020: esbuild https://github.com/evanw/esbuild
+* autoprefixer
+* eslint https://github.com/eslint/eslint
+* less
+* postcss
+* prettier
+* sass
+* snowpack
+* vitejs
+* yarn
+* yeoman https://github.com/yeoman/yo
+
+* slimer https://github.com/laurentj/slimerjs
+* https://github.com/lerna/lerna
+* https://github.com/microsoft/playwright
+* https://github.com/standard/standard
+* https://github.com/mochajs/mocha
+* https://github.com/avajs/ava
+* https://github.com/svg/svgo
+* https://github.com/jasmine/jasmine
+* https://github.com/facebook/prepack
+* https://github.com/karma-runner/karma
+* https://github.com/uncss/uncss
+* https://github.com/sinonjs/sinon
+* https://github.com/jshint/jshint
+* https://github.com/puppeteer/puppeteer/
+* unpkg
+
+== fwk cli
+
+* https://github.com/yeoman/yo
+* https://github.com/ember-cli/ember-cli
+* https://github.com/facebook/create-react-app
+* https://github.com/angular/angular-cli
+* https://github.com/vuejs/vue-cli => https://github.com/vitejs/vite
+* https://github.com/sveltejs/template

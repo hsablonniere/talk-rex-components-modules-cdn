@@ -28,7 +28,7 @@ defineSlideType('slide-media', {
           <figcaption class="url">
             <a href="${mediaAttrs.screenshotUrl}" target="_blank" rel="noopener">${mediaAttrs.screenshotUrl}</a>
           </figcaption>
-          <img class="element" src="${mediaAttrs.src}" alt="">
+          ${unsafeHTML(media)}
         </div>
       ` : ''}
       ${mediaAttrs.screenshotUrl == null ? html`
@@ -116,11 +116,10 @@ defineSlideType('slide-media', {
       text-decoration: underline;
     }
 
-    .browser .element {
+    .browser img {
       border-top: 1px solid #ccc;
       object-fit: cover;
       object-position: center top;
     }
-
   `,
 });

@@ -15,6 +15,7 @@ export function transformSlides (pseudoMarkdown) {
 
   let currentSlide;
   const allSlides = [];
+  const documentScripts = [];
 
   lines
     .forEach((line, lineIndex) => {
@@ -39,6 +40,10 @@ export function transformSlides (pseudoMarkdown) {
         return;
       }
       if (comment) {
+        return;
+      }
+      if (line.startsWith('<script ') && title === '') {
+        documentScripts.push(line);
         return;
       }
       if (line.startsWith('# ') && title === '') {
@@ -92,6 +97,7 @@ export function transformSlides (pseudoMarkdown) {
     ``,
     `<script src="src/js/slide-deck.js" type="module"></script>`,
     ...slideTypesScripts,
+    ...documentScripts,
     `</head>`,
     `<body>`,
     ``,
