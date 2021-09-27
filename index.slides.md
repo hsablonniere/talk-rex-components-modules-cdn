@@ -201,6 +201,7 @@ De plus, ça resservira dans la deuxième partie.
 -->
 ## section
 Guide de survie
+> @00:03:10@
 > ...petit guide de termes à connaitre pour survivre en milieu outils JavaScript.
 > Dans les années 2000, quand on voulait améliorer les performances d'une page Web qui charge du JS, on faisait appel à la...
 
@@ -567,11 +568,11 @@ Code splitting
 * Meilleure utilisation du cache
 
 ## definition logo
-Tree shaking
+Code splitting
 <img src="/src/img/sign-limit-code.svg">
 
 ## definition logo
-Tree shaking
+Code splitting
 <img src="/src/img/sign-obligation-cache.svg">
 
 ## definition animation
@@ -748,6 +749,7 @@ Cette section sert à :
   * Les performances des outils configurés aux max
 -->
 ## blank black fade-to
+> @00:14:00@
 > #Pause#
 > #Gestes des mains de la tête qui explose#
 > J'sais pas vous mais quand j'vois tous ces outils et ces termes, j'ai une p'tite voix d'boomer dans ma tête qui fait :
@@ -981,6 +983,7 @@ Cette section sert à présenter ce qu'on a mis en place chez Clever :
 * DIY / PnP
 -->
 ## section
+> @00:28:30@
 Retour à la simplicité...
 
 ## media logo
@@ -1064,7 +1067,7 @@ taille du méga bundle
 <img src="src/img/screenshot-skypack.jpg" screenshot-url="https://www.skypack.dev/">
 
 ## text
-😎 Notre propre smart CDN
+😎 Créons notre propre smart CDN
 > Idée => faire notre propre système
 > on build nos fichiers aux ptits oignons avec rollup
 
@@ -1083,60 +1086,26 @@ https://components.clever-cloud.com/load.js
 ```
 <!-- montrer le target avec la balise script et les params version/lang/components -->
 
+## media
+<img src="src/img/screenshot-demo-components-example-foo.jpg" screenshot-url="https://demo-components.example-foo.com/">
+
+## media
+<img src="src/img/screenshot-demo-components-example-foo-simple.jpg" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/simple.html">
+
+## media
+<img src="src/img/screenshot-demo-components-example-foo-multiple-one.jpg" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/multiple.html#one">
+
+## media
+<img src="src/img/screenshot-demo-components-example-foo-multiple-two.jpg" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/multiple.html#two">
+
+## media
+<img src="src/img/screenshot-demo-components-example-foo-multiple-three.jpg" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/multiple.html#three">
+
 ## todo
 expliquer la démarche de test avec les différentes variantes
 > le seul truc non standard dans notre code source, c'est des bare import specifier
 
-## media contain
-<video src="src/videos/wpt-custom-config-split-raw-multiple-three.mp4" controls></video>
-
 ## todo
-on part de quasi la source (avec les modules resolved)
-
-## todo
-Minify JavaScript
-
-## todo
-Minify inlined HTML templates and CSS
-
-## todo
-Minify SVG
-
-## todo
-Enable treeshaking
-
-## todo
-Shim unused stuffs from 3rd parties
-
-## todo
-Enable gzip
-
-## todo
-Enable brotli
-
-## todo
-Enable HTTP/2
-
-## todo
-Code splitting (chunks)
-
-## todo
-Code splitting (manual chunks)
-
-## todo
-Hoist imports (rollup system)
-
-## todo
-Hoist imports (JS depcache reverse order)
-
-## todo
-Hoist imports (JS depcache reverse order dynamic import)
-
-## todo
-Hoist imports (JS depcache reverse order dynamic import + preload SVG)
-
-## todo
-ne pas oublier de parler de DIY vs PnP
 
 ## todo
 Montrer le rendu du script directement dans le browser avec plusieurs exemples
@@ -1159,7 +1128,10 @@ montrer le peu de différences entre plusieurs versions
 
 ## media
 <img src="src/img/screenshot-cc-components-ui.png" browser-url="https://components.clever-cloud.com/">
-> Montrer la UI de sélection
+> Montrer la UI de sélection et faire une démo avec JSBin
+
+## todo
+> système magique
 
 ## text
 👩‍🔧 Admin (Play/Scala)
@@ -1180,6 +1152,7 @@ montrer le peu de différences entre plusieurs versions
 > Montrer des exemples de la doc du nouveau site de clever
 
 ## section
+> @00:43:00@
 Et après ?
 > en fait, de la même manière qu'avec notre plateforme Cloud, on essaye de convaincre les gens de pas se prendre la tête avec les serveurs, les mises à jour, la sécu tout ça et de nous le déléguer car on sait faire
 > ici on vient déplacer la connaissance et la complexité de "prodification" de l'app qui consomme à celui qui expose un lib de composants
