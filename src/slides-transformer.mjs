@@ -131,10 +131,10 @@ function getSlideLines (slide) {
   const contentLinesWithCode = contentLines
     .join('\n')
     .replace(/```(.*?)\n(.*?)\n```/gs, (_, header, rawCode) => {
-      const [lang, ...rawAttrs] = header.split(' ');
+      const [language, ...rawAttrs] = header.split(' ');
       const attrs = rawAttrs.join(' ');
-      const code = hljs.highlight(lang, rawCode).value;
-      return `<pre data-lang="${lang}" ${rawAttrs}>${code}</pre>`;
+      const code = hljs.highlight(rawCode, { language }).value;
+      return `<pre data-lang="${language}" ${attrs}>${code}</pre>`;
     })
     .split('\n');
 

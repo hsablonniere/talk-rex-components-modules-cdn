@@ -22,16 +22,20 @@ defineSlideType('slide-media', {
 
     const mediaAttrs = getAttributes(media);
 
+    const browserUrl = mediaAttrs.screenshotUrl
+      ?? mediaAttrs.browserUrl
+      ?? null;
+
     return html`
-      ${mediaAttrs.screenshotUrl != null ? html`
+      ${browserUrl != null ? html`
         <div class="browser">
           <figcaption class="url">
-            <a href="${mediaAttrs.screenshotUrl}" target="_blank" rel="noopener">${mediaAttrs.screenshotUrl}</a>
+            <a href="${browserUrl}" target="_blank" rel="noopener">${browserUrl}</a>
           </figcaption>
           ${unsafeHTML(media)}
         </div>
       ` : ''}
-      ${mediaAttrs.screenshotUrl == null ? html`
+      ${browserUrl == null ? html`
         ${unsafeHTML(media)}
       ` : ''}
     `;
@@ -68,8 +72,10 @@ defineSlideType('slide-media', {
 
     :host([logo]) img,
     :host([logo]) video {
-      left: 30%;
-      width: 40%;
+      top: 30%;
+      left: 25%;
+      height: 40%;
+      width: 50%;
     }
 
     :host([top]) img,

@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs-extra');
-let puppeteer
+let puppeteer;
 puppeteer = require('puppeteer');
 
 const defaultViewport = {
@@ -19,7 +19,7 @@ function wait (delay) {
 async function takeScreenshot (url, filename, customViewport, force = false) {
 
   if (puppeteer == null) {
-    return Promise.resolve()
+    return Promise.resolve();
   }
 
   const viewport = Object.assign({}, defaultViewport);
@@ -75,6 +75,10 @@ async function takeScreenshot (url, filename, customViewport, force = false) {
     await element.screenshot({ path: filename });
   }
   else {
+    // LOOOOOOOOOOOOOOOOOOOOL
+    if (url.startsWith('https://www.clever-cloud.com/doc/clever-components/')) {
+      await wait(15000);
+    }
     await wait(3000);
     await page.screenshot({ path: filename });
   }

@@ -64,7 +64,7 @@ export const codeBlocksStyles = css`
   pre[small] {
     font-size: 0.8rem;
   }
-
+  
   pre[invisible] {
     opacity: 0;
   }

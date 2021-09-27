@@ -7,11 +7,9 @@ import { markup } from '../utils.mjs';
 defineSlideType('slide-text', {
   render ({ content, attrs }) {
 
-    const htmlContent = (attrs.noEmoji != null)
-      ? markup(content)
-      : twemoji.parse(markup(content), (icon, options, variant) => {
-        return '/src/emoji/' + icon + '.svg';
-      });
+    const htmlContent = twemoji.parse(markup(content), (icon, options, variant) => {
+      return '/src/emoji/' + icon + '.svg';
+    });
 
     return html`
       <div class="text">${unsafeHTML(htmlContent)}</div>
@@ -30,6 +28,11 @@ defineSlideType('slide-text', {
       text-align: center;
       font-family: 'Yanone Kaffeesatz', sans-serif;
       font-size: 5.5rem;
+      font-weight: bold;
+    }
+
+    sup {
+      color: #0082ff;
       font-weight: bold;
     }
 

@@ -1,0 +1,29 @@
+= TODO
+
+== Intro
+
+== Guide de survie
+
+* trouver un moyen de surligner le code
+* terminer d'écrire le discours
+* faire les schémas au propre (avec étapes)
+* faire les panneaux en mode dessin
+* décider si on affiche les panneaux du code de la route ou pas
+* ajouter un récap des techniques
+* chronométrer le tout
+* si besoin on peut virer le scope hoisting
+* si besoin on peut virer le import hoisting
+* pas besoin d'insister sur le transpiling
+
+== C'était mieux avant
+
+* trouver un moyen de faire plus court
+* chronométrer à nouveau
+
+== Retour à la simplicité
+
+* attaquer le sujet sérieusement
+
+== Conclusion
+
+* écrire

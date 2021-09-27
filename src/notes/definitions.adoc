@@ -17,7 +17,7 @@
 ** USR (-) STAIR
 * Content hashing
 ** USR (+) CACHE
-* Transpiling
-** DEV          
 * Module resolution
+** DEV          
+* Transpiling
 ** DEV          

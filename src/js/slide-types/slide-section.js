@@ -5,7 +5,6 @@ import { markup } from '../utils.mjs';
 
 defineSlideType('slide-section', {
   render ({ content }) {
-    console.log({ content })
     return html`
       <audio id="marimba" src="/src/music/marimba.ogg"></audio>
       <div class="sign-wrapper">

@@ -82,3 +82,5 @@
 * https://web.archive.org/web/20080214082325/http://yuiblog.com/blog/2008/02/11/helping-the-yui-compressor/
 * https://web.archive.org/web/20080315031621/http://dojotoolkit.org/docs/shrinksafe
 * https://web.archive.org/web/20040603075422/http://dean.edwards.name/packer/
+* https://github.com/date-fns/date-fns/issues/1780
+* https://github.com/jsdelivr/jsdelivr/issues/18263

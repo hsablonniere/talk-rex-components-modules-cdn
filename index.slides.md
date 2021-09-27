@@ -225,10 +225,6 @@ Minification
 > #Pause#
 > C'est une sorte de compression avec perte de données.
 
-## definition logo
-Minification
-<img src="/src/img/sign-limit-code.svg">
-
 ## definition
 Minification
 * Moins de code
@@ -236,6 +232,10 @@ Minification
 > *LE BUT :* reduire la quantité de code que le navigateur va : charger, parser et exécuter.
 > #Pause#
 > C'est pas nouveau du tout hein.
+
+## definition logo
+Minification
+<img src="/src/img/sign-limit-code.svg">
 
 <!-- https://www.fusioncharts.com/blog/5-excellent-javascript-minification-tools-to-improve-your-code-performance/ -->
 ## definition
@@ -337,16 +337,16 @@ Concaténation
 <img src="/src/img/definition-concatenation.png">
 > *L'IDÉE :* on prend plusieurs fichiers et on les assemble en un seul fichier en respectant l'ordre.
 
-## definition logo
-Concaténation
-<img src="/src/img/sign-limit-request.svg">
-
 ## definition
 Concaténation
 * Moins de requêtes HTTP
 > *LE BUT :* reduire le nombre de requêtes HTTP.
 > Avec HTTP 1.1, un navigateur ne peut pas faire + de 6 requêtes en parallèle vers le même site.
 > Pour automatiser ça, on a commencé à dégainer des...
+
+## definition logo
+Concaténation
+<img src="/src/img/sign-limit-request.svg">
 
 ## definition
 Task runners / Pipeline
@@ -374,16 +374,16 @@ Bundling
 > *L'IDÉE :* on prend un fichier source, on analyse les dépendances et on les assemble dans le bon ordre, dans un seul fichier et avec un peu de glue pour que ça continue à fonctionner.
 > C'est une sorte de concaténation ++ qui connait le système de modules et qui se base sur le graphe de dépendances.
 
-## definition logo
-Concaténation
-<img src="/src/img/sign-limit-request.svg">
-
 ## definition
 Bundling
 * Moins de requêtes HTTP
 > *LE BUT :* toujours réduire le nombre de requêtes HTTP.
 > Le graphe de dépendances se limite pas à JavaScript, certains outils sont capables d'analyser les dépendances entres des fichiers HTML, des CSS, des images, des polices, etc.
 <!-- logo cjs/esm https://github.com/wessberg/cjstoesm -->
+
+## definition logo
+Concaténation
+<img src="/src/img/sign-limit-request.svg">
 
 <!-- https://github.com/google/closure-compiler/blob/7ff6e25843097791416d1544c88dc8711f6be64a/src/com/google/javascript/jscomp/deps/DepsGenerator.java -->
 ## definition
@@ -397,7 +397,6 @@ Bundling (précurseurs)
 > et ensuite une bonne partie de la communauté a opté pour le système CommonJS (polularisé par Node.js).
 > C'est avec l'arrivée de...
 
-<!-- https://github.com/google/closure-compiler/blob/7ff6e25843097791416d1544c88dc8711f6be64a/src/com/google/javascript/jscomp/deps/DepsGenerator.java -->
 ## definition
 Bundling
 * 2014: Webpack <img src="src/img/logo-webpack.svg">
@@ -408,8 +407,8 @@ Bundling
 > Rollup est le seul qui sait exporter du format ESM, ECMAScript module,
 > et Parcel se vante d'être zéro config.
 
-<!-- peut-être à la fin -->
-## media todo
+<!-- TODO peut-être à la fin -->
+## media
 https://bundlers.tooling.report/
 <img src="src/img/screenshot-bundlers-tooling-report.jpg" screenshot-url="https://bundlers.tooling.report/#overview">
 > Si vous voulez en savoir plus sur ces outils, les équipes devrel de Google on fait un site comparatif avec des tableaux de qui sait faire quoi.
@@ -475,7 +474,7 @@ console.log(add(1, 2));
 console.log(add(2, 3));
 ```
 
-## definition
+## definition todo
 Scope hoisting
 ```js small
 // bundle.js - Webpack 4 SANS import hoisting
@@ -487,7 +486,7 @@ Scope hoisting
 ]);
 ```
 
-## definition
+## definition todo
 Scope hoisting
 ```js small
 // bundle.js - Webpack 4 AVEC import hoisting
@@ -527,7 +526,7 @@ Scope hoisting
 Tree shaking
 <!-- il faut une vidéo de moi qui secoue un arbre -->
 
-## definition
+## definition todo
 Tree shaking
 <img src="/src/img/definition-tree-shaking.png">
 > ...le tree shaking
@@ -627,8 +626,44 @@ Content hashing
 > Ici on vient améliorer l'expérience des visites répétées.
 
 ## definition logo
-Import hoisting
+Content hashing
 <img src="/src/img/sign-obligation-cache.svg">
+
+## definition animation
+Module resolution
+> ...de la résolution de module.
+> Directement ou via un plugin.
+
+## definition
+Module resolution
+```js
+// "bare import specifier" :
+import { createStore } from 'redux';
+```
+```js invisible
+// import relatif :
+import { createStore } from '../node_modules/redux/lib/redux.js';
+```
+> *L'IDÉE :* transformer ce qu'on appelle un `bare import specifier`, un import tout nu avec juste le nom npm,
+
+## definition
+Module resolution
+```js
+// "bare import specifier" :
+import { createStore } from 'redux';
+```
+```js
+// import relatif :
+import { createStore } from '../node_modules/redux/lib/redux.js';
+```
+> en un chemin relatif qui pointe vers un vrai fichier.
+> *LE BUT :* référencer directement une dépendance sans se soucier de savoir où la trouver.
+> Le plus compliqué que ça en a l'air.
+> Un navigateur sait faire une requête vers une URL absolue ou relative mais pas vers un simple nom de packet npm.
+
+## definition
+Module resolution
+* Faciliter la vie des devs
 
 <!-- confort du dev -->
 ## definition animation
@@ -646,7 +681,7 @@ Transpiling
 
 ## definition
 Transpiling
-* Facilite la vie des devs
+* Faciliter la vie des devs
 
 ## definition
 Transpiling
@@ -663,38 +698,6 @@ Transpiling (nouvelle génération)
 
 ## blank white
 > Tout ces outils qui font du bundling sont capable de faire...
-
-## definition animation
-Module resolution
-> ...de la résolution de module.
-> Directement ou via un plugin.
-
-## definition
-Module resolution
-```js
-// bare import specifier :
-import { createStore } from 'redux';
-```
-```js invisible
-// import relatif :
-import { createStore } from '../node_modules/redux/lib/redux.js';
-```
-> *L'IDÉE :* transformer ce qu'on appelle un `bare import specifier`, un import tout nu avec juste le nom npm,
-
-## definition
-Module resolution
-```js
-// bare import specifier :
-import { createStore } from 'redux';
-```
-```js
-// import relatif :
-import { createStore } from '../node_modules/redux/lib/redux.js';
-```
-> en un chemin relatif qui pointe vers un vrai fichier.
-> *LE BUT :* référencer directement une dépendance sans se soucier de savoir où la trouver.
-> Le plus compliqué que ça en a l'air.
-> Un navigateur sait faire une requête vers une URL absolue ou relative mais pas vers un simple nom de packet npm.
 
 <!-- recap -->
 ## todo fade-from
@@ -731,23 +734,19 @@ Côté serveur
  -->
 
 <!--
-Cette section sert à...
-* la comlexité des outils (JavaScript) existe
-  * trop de choix
-  * difficile à brancher entre eux
-  * ça rend le dev frontend moins accesibles au nouveaux
-* ces outils sont arrivées via le monde des fwk JS et SPA (le full front)
-  * cela force les autres dev frontend à adopter Node.js + npm ...
-* pour autant les fonctionnalités apportés par ces outils ont une utilité
-> * Est-ce que c'était mieux avant ? : digression sur l'utilité et l'impact de ces évolutions
-> ** On constate les avantages et inconvénients
-> * ?? (1) comment réduire la dépendance à nos outils ?
-> ** Apporter un début de piste
-> * ?? (2) comment rendre tout ceci plus accessible ?
-> ** Différents cas de figures auxquels on pourrait s'intéresser pour simplifier l'expérience de dev mais ici on va se pencher sur :
-> * analogie des pizzas
+Cette section sert à :
+* OUI, c'était mieux avant
+  * les outils sont trop compliqués
+  * les frameworks font gagner du temps mais vérouillent
+  * du coup, on s'enferme dans le Node.js+npm+Webpack
+  * Quand tu fais des WC, c'est pour tout les devs Web,
+  * On peut pas imposer Node.js+npm+Webpack à tout le monde
+* NON, c'était PAS mieux avant
+  * Ces outils apportent des vraies améliorations de perf pour les utilisateurs
+* Ça dépend, est-ce que c'est possible d'avoir les avantages sans les inconvénients ?
+  * L'accesibilité et la simplicité de la balise CDN
+  * Les performances des outils configurés aux max
 -->
-
 ## blank black fade-to
 > #Pause#
 > #Gestes des mains de la tête qui explose#
@@ -800,12 +799,6 @@ C'était mieux avant
 > C'est bien hein.
 > C'est d'ailleurs pour ça qu'on choisit un framework, pour qu'il fasse des choix à notre place et...
 
-<!-- ## definition
-* : Rome <img src="src/img/logo-rome.svg">
-
-## media
-<img src="src/img/screenshot-xkcd-927.jpg" screenshot-url="https://xkcd.com/927/" style="transform: scale(1.5); transform-origin: top center;"> -->
-
 ## text
 ⏱️ Gagner du temps
 > ...gagner du temps.
@@ -820,24 +813,27 @@ C'était mieux avant
 🔒 Couplage code/outils fort
 > un couplage fort entre notre code et les outils.
 > À tel point qu'aujourd'hui, plusieurs de ces frameworks ne peuvent pas être utilisés sans la suite d'outils qui va avec.
-<!-- Le premier qui me dit, bah si tu peux faire du React sans JSX -->
+> (Le premier qui me dit, bah si tu peux faire du React sans JSX)
 <!-- > D'ailleurs, si on regarde les dépendances proposées par les communautés respectives de ces frameworks (plugins, composants...), -->
 <!-- > la quasi totalité des projets ne proposent qu'une seule méthode d'installation : `npm install` + bundler. -->
 <!-- détailler la méthode d'installation -->
 
 ## blank white
 > Au fur et à mesure des années, je me suis habitué aux règles de cette bulle JavaScript.
-> Du coup, quand on a commencé nôtre bibliothèque de composants chez Clever,
-> j'étais un peu du genre :
+> Du coup, quand on a commencé notre bibliothèque de composants chez Clever,
+> la solution évidente, c'était :
 > "Tu veux utiliser nos composants ?"
 
 ## definition
 * : Node.js <img src="src/img/logo-nodejs.svg">
 * : npm <img src="src/img/logo-npm.svg">
 * : Webpack <img src="src/img/logo-webpack.svg">
-> C'est sur npm, débrouille toi avec ton bundler.
+> Bah t'installe Node.js,
+> Tu fais un npm install,
+> et après tu te débrouilles avec ton bundler.
 
-## blank white
+## definition
+* : Web Components <img src="src/img/logo-webcomponents.svg">
 > La détail important, c'est qu'on a fait le choix d'exposer des Web Components.
 > Un standard du Web qui permet de dire :
 
@@ -867,7 +863,7 @@ customElements.define('my-component', MyComponent);
 ```html invisible
 <my-component></my-component>
 ```
-> J'associe cette classe à une balise HTML spécifique,
+> J'associe cette classe à un nom de balise HTML spécifique,
 
 ## code
 ```js dim
@@ -918,39 +914,52 @@ customElements.define('my-component', MyComponent);
 ## text
 😍 Web Components partout !
 > Bref, ça marche partout quoi.
-<!-- > Il n'y a pas que le JavaScript dans la vie. (je répète) -->
 > Du coup, c'est un peu culotté d'imposer cette...
+
+<!-- ## text
+🚽 WC partout ! -->
 
 <!-- ## definition
 * : Node.js <img src="src/img/logo-nodejs.svg">
 * : npm <img src="src/img/logo-npm.svg">
 * : Webpack <img src="src/img/logo-webpack.svg"> -->
 > ...taxe "Node.js + npm + bundler" à des professionnels du Web dont le socle ne tourne pas autour de JavaScript.
+<!-- > Il n'y a pas que le JavaScript dans la vie. (je répète) -->
 
 ## code
 ```html
 <script src="https://code.jquery.com/jquery-1.2.6.min.js"></script>
 ```
-> Donc oui, d'une certaines manière, c'était mieux avant quand on mettais juste une balise vers le CDN de jQuery.
+> Donc oui, d'une certaines manière, c'était mieux avant quand on mettait juste une balise vers le CDN de jQuery.
 <!-- > C'est d'ailleurs ce que font la majorité des bilbiothèques : moment, charts.js,  -->
+
+## blank white
+> De l'autre côté ... quand j'vois les gains de perf qu'apportent tous ces outils, j'ai envie de répondre...
 
 ## text
 👎
 <!-- 👎 Non -->
-> De l'autre côté ... quand je regarde les gains de perf qu'apportent tous ces outils, j'ai envie de répondre non, c'était *pas* mieux avant.
+> ...non, c'était *pas* mieux avant.
 <!-- jquery terser -->
-> Ma bibliothèque de composants, c'est pas juste une seule fichier.
-> Si une personne veut utiliser uniquement le composant `<cc-input-text>`, en français,
+> Ma bibliothèque de composants, c'est pas juste un seul fichier.
+> Si une personne veut utiliser uniquement le composant `&lt;cc-input-text>`, en français,
 > son bundler va appliquer toutes les techniques qu'on a évoqué pour produire le plus petit morceau de code possible et assurer les meilleurs perfs pour l'utilisateur.
 > En mode CDN, je fais quoi ?
+> J'ignore complètement le contexte dans lequel le composant va être utilisé.
 > #Pause#
-> Je vais être obligé de dire :
-> "Tiens, voici un méga fichier avec tous les composants, toutes leurs dépendances et toutes les langues. Amuse toi bien !".
-> Les perfs vont être nulles.
-> En plus, quand cette personne passera sur une nouvelle version, il y aura des nouveaux composants, ça sera encore plus lourd.
+> Du coup, je vais être obligé de dire :
+> "Tiens navigateur, charge moi ce méga fichier JS avec tous les composants, toutes leurs dépendances et toutes les langues. Amuse toi bien !".
 
-## text no-emoji
-Ça dépend <sup>™️</sup>
+## image-grid
+<img src="/src/img/sign-limit-code.svg">
+<img src="/src/img/sign-limit-request.svg">
+<img src="/src/img/sign-obligation-cache.svg">
+<img src="/src/img/sign-danger-stairs.svg">
+> Les perfs vont être nulles.
+> En plus, à chaque nouvelle version qui ajoute un composant, le bundle sera encore plus lourd.
+
+## text
+🤷‍♂️ Ça dépend <sup>TM</sup>
 > En fait, elle est relou cette question.
 > Nous ce qu'on veut savoir, c'est :
 > est-ce que c'est possible de retrouver...
@@ -963,67 +972,90 @@ customElements.define('my-component', MyComponent);
 👨‍🍳 Performances
 > mais avec les mêmes performances que si on avait utilisé un bundler et tous ces machins.
 > C'est ce qu'on a essayé de faire chez Clever Cloud, petit retour d'expérience
-<!-- > => DIY / PnP -->
 
+<!--
+Cette section sert à présenter ce qu'on a mis en place chez Clever :
+* démarche de réflexion, contexte, choix...
+* démarche d'analyse et de mesure
+* conclusions
+* DIY / PnP
+-->
 ## section
-<!-- Un nouvel espoir... -->
-<!-- Retour d'expérience -->
-<!-- Vers la simplicité<br>et au delà ? -->
 Retour à la simplicité...
 
 ## media logo
 <img src="src/img/logo-clever-cloud.svg">
+> contexte clever cloud
 
-## todo
-Les composants chez Clever Cloud
-
-## demo-html
-```html
-<cc-input-text value="my s3cr3t" secret clipboard></cc-input-text>
-```
-<cc-input-text value="my s3cr3t" secret clipboard style="font-size: 2em; width: 14em"></cc-input-text>
-> contexte Clever Cloud: web components, besoins internes divers, besoins externes
-
-## media
-<img src="src/img/screenshot-clever-components-storybook.jpg" screenshot-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%8F%A0-home-readme--page">
+## text
+🎉 On recrute !!
 
 ## media
 <img src="src/img/screenshot-clever-components-github.jpg" screenshot-url="https://github.com/CleverCloud/clever-components">
+> on a décidé de construite une bibliothèque de composants dans un projet à part
+> pour dans un premier temps les utiliser nous dans notre console d'admin
+> SPA legacy, jquery, lodash, bacon...
+
+## definition
+* : JavaScript <img src="src/img/logo-javascript.svg">
+* : Lit <img src="src/img/logo-lit.svg">
+> Composants codés en JS (module ESM) + Lit (LitElement) pour faire des WC
+
+## media
+<img src="src/img/screenshot-cc-storybook.png" browser-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%8F%A0-home-readme--page">
+> storybook clever
+
+## media
+<img src="src/img/screenshot-cc-storybook-input-text.png" browser-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%A7%AC-atoms-cc-input-text--clipboard-and-secret">
+> composants bas niveau (input text)
+
+## media
+<img src="src/img/screenshot-cc-storybook-tile-requests.png" browser-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%9B%A0-overview-cc-tile-requests--default-story">
+> composants haut niveau (graph)
+
+## media
+<img src="src/img/screenshot-cc-storybook-logsmap.png" browser-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%9B%A0-maps-cc-logsmap--default-story">
+> composants haut niveau (la carte peut-être)
+
+## text
+🧐 CDN existants ?
+> Contexte des CDN existants
+> quand on s'est demandé comment on pourrait mettre nos composants en mode CDN
+> on a regardé ce qui se faisait
 
 ## todo
-> Pour les utiliser dans la console, une SPA, il faut : (lister toutes les étapes avec node.js machin)
-> parler aussi des étapes de mise en prod :
-> compression, header de cache, h1/h2/h3...
+Fonctionnalités de cdnjs, jsdelivr, unpkg, jspm et skypack (avantages/inconvénients)
+• bundle pas comme je veux
+• auto minif ?? pas suffisant
+• lib tierces à part
+• cascade lourde :-(
+• bcp de redirs :-(
+• auto polyfill :-)
+• semverr :-)
+• ils appliquent un build et on a pas la main dessus :-(
+• origine tierce :-(
+• pas de support d'image :-(
+• un fichier par composant
+• setup des langues
+
+## media
+<img src="src/img/screenshot-cdnjs.png" screenshot-url="https://cdnjs.com/libraries">
+<!-- https://github.com/date-fns/date-fns/issues/1780 -->
+<!-- https://github.com/cdnjs/packages/blob/master/packages/m/moment.js.json -->
 
 ## todo
-> on veut utiliser nos composant ailleurs que dans des SPA
-> MPA Play/Scala, Wordpress, site statique
-> on veut que des clients ou des partenaires puisse les utiliser le plus facilement possible
+taille du méga bundle
 
-## todo
-DIY vs Plug-and-Play
-> explication du DIY (je sais ce que je fais, je veux la maitrise)
-> explication du Plug-and-play (je veux pas prendre cette complexité à ma charge, ça ne vaut pas le coup, donne moi le meilleur résultat possible)
-> analogie pizza
+## media
+<img src="src/img/screenshot-jsdelivr.jpg" screenshot-url="https://www.jsdelivr.com/">
 
-## todo
-> ici le DIY, c'est ce qu'on a déjà évoqué
-> le plug-and-play, finalement, ça serait plutôt une approche à la jQuery avec juste des balises script
-
-## todo
-> précisons qu'il n'y a rien de bien nouveau
-> on avait déjà des CDN publics avant
-> ce qui a changé, c'est qu'aujourd'hui, certains d'entre eux sont un peu plus smart
-> ils ont une connaissance de npm
-> resolution des bare imports
-> semver
-> polyfill
-> compression
-> jspm, unpkg, skypack
-> l'autre truc qui a changé, c'est qu'on ne peut plus se reposer sur le cache partagé d'un CDN
+## media
+<img src="src/img/screenshot-jsdelivr-esm-run.jpg" screenshot-url="https://www.jsdelivr.com/esm">
+<!-- https://github.com/jsdelivr/jsdelivr/issues/18263 -->
 
 ## media
 <img src="src/img/screenshot-jspm.jpg" screenshot-url="https://jspm.org/">
+<!-- https://github.com/guybedford -->
 
 ## media
 <img src="src/img/screenshot-unpkg.jpg" screenshot-url="https://unpkg.com/">
@@ -1031,83 +1063,100 @@ DIY vs Plug-and-Play
 ## media
 <img src="src/img/screenshot-skypack.jpg" screenshot-url="https://www.skypack.dev/">
 
-## todo
-> mais du coup, qu'est ce que ça implique dans notre cas particulier ce mode plug and play ?
-> expliquer qu'on utilise ESM et on publie sur npm en ESM
-> maintenant c'est supporté dans les browsers
-> du coup, ça marche sans rien faire
-
-<!-- https://modernizr.com/download?ambientlight-audio-batteryapi-setclasses -->
-
-## definition
-Exemple support
-* 89: Chrome <img src="src/img/logo-chrome.svg">
-* 89: Firefox <img src="src/img/logo-firefox.svg">
-* 89: Safari <img src="src/img/logo-safari.svg">
+## text
+😎 Notre propre smart CDN
+> Idée => faire notre propre système
+> on build nos fichiers aux ptits oignons avec rollup
 
 ## todo
-> par contre, on doit quant même demander à nos utilisateurs de mettre une balise script par composant
-> en plus c'est pas minifié à 100% (CSS, JS)
-> ça ne gère pas tjs les images (SVG et sans oublier la minification)
-> + le i18n avec le boilerplate de setup de langue (si c'est nécessaire)
+schéma, object storage + endpoint dynamique derrière un CDN
+
+## code
+```html
+<script type="module" src="https://components.clever-cloud.com/load.js?version=7.2.0&lang=fr&components=cc-input-text,cc-toggle"></script>
+```
+```text
+https://components.clever-cloud.com/load.js
+  version=7.2.0
+  lang=fr
+  components=cc-input-text,cc-toggle
+```
+<!-- montrer le target avec la balise script et les params version/lang/components -->
 
 ## todo
-> idée, est-ce qu'on ne pourrait pas faire notre propre smart CDN
-> et avoir une seule balise script pour les gouverner tous
+expliquer la démarche de test
+
+> le seul truc non standard dans notre code source, c'est des bare import specifier
 
 ## todo
-> allez, c'est parti
-> on va commencer par le pire cas possible
-> et on va mesurer
+ne pas oublier de parler de DIY vs PnP
 
 ## todo
-> Source individual ES modules (raw unminified)
-> Minify JavaScript
-> Minify inlined HTML templates and CSS
-> Minify SVG
-> Enable treeshaking
-> Shim unused stuffs from 3rd parties
-> Enable gzip
-> Enable brotli
-<!-- > Keep alive TODO?? -->
-<!-- > domain sharding TODO?? -->
-<!-- > Enable HTTP/2 TODO?? -->
-<!-- > Enable HTTP/3 TODO?? -->
-> Code splitting (chunks)
-> Code splitting (manual chunks)
-> Hoist imports (rollup system)
-> Hoist imports (JS depcache reverse order)
-> Hoist imports (JS depcache reverse order dynamic import)
-> Hoist imports (JS depcache reverse order dynamic import + preload SVG)
-<!-- > Preload with Link header TODO?? -->
-<!-- > HTTP/2 push TODO?? -->
-> comparer à tout dans le bundle
-> comparer à un bundle sélectif
+Montrer le rendu du script directement dans le browser avec plusieurs exemples
 
 ## todo
-> la cerise sur le gateau
-> c'est l'auto i18n au besoin
-> la bonne gestion du cache entre versions
-> (pourrait mieux faire avec les import maps)
- 
-## todo
-> serveiller les import maps
-> serveiller les web bundles / resource bundles https://github.com/WICG/resource-bundles
+montrer des exemples sans i18n
 
 ## todo
-> expliquer la mise en place du Cellar + endpoint dynamique chez CF
+montrer des exemples AVEC i18n
+
+## todo
+montrer plusieurs niveau de cascade
+
+## todo
+montrer le peu de différences entre plusieurs versions
+
+## media
+<img src="src/img/screenshot-jakearchibald-multiple-versions-same-time.jpg" screenshot-url="https://jakearchibald.com/2020/multiple-versions-same-time/">
+<!-- Avantage d'avoir toutes les versions (article jake) -->
+
+## media
+<img src="src/img/screenshot-cc-components-ui.png" browser-url="https://components.clever-cloud.com/">
+> Montrer la UI de sélection
+
+## text
+👩‍🔧 Admin (Play/Scala)
+<!-- Contexte Clever après : maintenant, on utilise ce smart CDN sur le site WP, la doc Hugo et une app interne Play/Scala -->
+
+## text
+🎓 Documentation (Hugo)
+
+## media
+<img src="src/img/screenshot-cc-doc-cellar.png" browser-url="https://www.clever-cloud.com/doc/deploy/addon/cellar/">
+> Montrer des exemples de la doc ou du site de clever
+
+## text
+🧮 Page tarifs (WordPress)
+
+## media
+<img src="src/img/screenshot-cc-site-pricing-cellar.png" browser-url="https://www.clever-cloud.com/en/pricing">
+> Montrer des exemples de la doc du nouveau site de clever
 
 ## section
 Et après ?
 > en fait, de la même manière qu'avec notre plateforme Cloud, on essaye de convaincre les gens de pas se prendre la tête avec les serveurs, les mises à jour, la sécu tout ça et de nous le déléguer car on sait faire
 > ici on vient déplacer la connaissance et la complexité de "prodification" de l'app qui consomme à celui qui expose un lib de composants
 > comme vous l'avez vu, c'est pas forcément la meilleure solution, mais on trouve que dans pas mal de cas, le résultat est sufisant comparer à cout de mise en place et maintenance
-> on espère que ça vous donnera des idées
 > ouverture sur le déplacement de qui own le bundling ? (as a service)
 > ouverture sur web bundles (new name)
 > ouverture sur le bundling à la volée
+> on espère que ça vous donnera des idées
 
-## todo
+> il n'y a pas que des fous du JS dans le frontend
+
+## media
+<img src="src/img/screenshot-import-maps.png" screenshot-url="https://github.com/WICG/import-maps">
+
+## media
+<img src="src/img/screenshot-resource-bundle.png" screenshot-url="https://github.com/WICG/resource-bundles">
+
+## text
+💡 Donner des idées
+
+## text
+⚗️ Envie d'expérimenter
+
+<!-- ## todo
 conclusion
 > Le monde du JavaScript est devenu un peu fou.
 > Cette jungle d'outils est dense et seuls les plus "veille" peuvent s'y retrouver.
@@ -1117,7 +1166,13 @@ conclusion
 > .à tel point qu'il devient utile de se poser pour faire le point sur ce vaste écosystème.
 > Le Web est bien plus vaste que le petit monde des SPAs codées avec le dernier framework JS à la mode.
 > Le Web c'est pour tout le monde et il n'y a pas de raisons que ça devienne un club réservé à une élite californienne.
-> Il faut faire attention à ne pas trop se reposer sur nos séries d'outils et éviter les "oui mais ça tout le monde connait".
+> Il faut faire attention à ne pas trop se reposer sur nos séries d'outils et éviter les "oui mais ça tout le monde connait". -->
+
+<!-- ## definition
+* : Rome <img src="src/img/logo-rome.svg">
+
+## media
+<img src="src/img/screenshot-xkcd-927.jpg" screenshot-url="https://xkcd.com/927/" style="transform: scale(1.5); transform-origin: top center;"> -->
 
 ## poster
 *Merci beaucoup !* _vous êtes un super public..._
@@ -1132,28 +1187,29 @@ Liens :
 * UI pour sélectionner : https://components.clever-cloud.com/
 * Smart CDN source : https://github.com/CleverCloud/clever-components-cdn
 
+* Références :
+
+* Panneaux code de la route : https://fr.wikibooks.org/wiki/Code_de_la_route/Liste_des_panneaux
+
 Images :
 
 * Fond jungle : https://www.vexels.com/vectors/preview/70035/tropical-frame-styled-jungle-background
 * Calendrier 2021 : https://unsplash.com/photos/F32jPy9SMaw
-* 2021 masques : https://unsplash.com/photos/q5BnGgt2Y_E
-* Fond fête : https://www.vecteezy.com/vector-art/237001-party-crowd
 * Pangolin : https://unsplash.com/photos/mtTpAM2uaRM
 * Antenne : https://unsplash.com/photos/31JqyCVndUM
 * QR code : https://unsplash.com/photos/2HWkORIX3II
+* Fond fête : https://www.vecteezy.com/vector-art/237001-party-crowd
 
 Polices :
 
 * Tintin : https://www.cufonfonts.com/font/tintin
 * PT Sans : https://fonts.google.com/specimen/PT+Sans
 * Anton : https://fonts.google.com/specimen/Anton
+* Yanone Kaffeesatz : https://fonts.google.com/specimen/Yanone+Kaffeesatz
+* Skranji : https://www.fontsc.com/font/skranji
 
 Sons :
 
 * Marimba note : https://www.youtube.com/watch?v=8FJMTJmuoU8
 * Horn sound effect : https://www.youtube.com/watch?v=gKz1X2rn3CQ
 * Forest sound : https://www.youtube.com/watch?v=IsPBplWLImI
-
-Liens :
-
-* https://fr.wikibooks.org/wiki/Code_de_la_route/Liste_des_panneaux
