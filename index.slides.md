@@ -1084,9 +1084,56 @@ https://components.clever-cloud.com/load.js
 <!-- montrer le target avec la balise script et les params version/lang/components -->
 
 ## todo
-expliquer la démarche de test
-
+expliquer la démarche de test avec les différentes variantes
 > le seul truc non standard dans notre code source, c'est des bare import specifier
+
+## media contain
+<video src="src/videos/wpt-custom-config-split-raw-multiple-three.mp4" controls></video>
+
+## todo
+on part de quasi la source (avec les modules resolved)
+
+## todo
+Minify JavaScript
+
+## todo
+Minify inlined HTML templates and CSS
+
+## todo
+Minify SVG
+
+## todo
+Enable treeshaking
+
+## todo
+Shim unused stuffs from 3rd parties
+
+## todo
+Enable gzip
+
+## todo
+Enable brotli
+
+## todo
+Enable HTTP/2
+
+## todo
+Code splitting (chunks)
+
+## todo
+Code splitting (manual chunks)
+
+## todo
+Hoist imports (rollup system)
+
+## todo
+Hoist imports (JS depcache reverse order)
+
+## todo
+Hoist imports (JS depcache reverse order dynamic import)
+
+## todo
+Hoist imports (JS depcache reverse order dynamic import + preload SVG)
 
 ## todo
 ne pas oublier de parler de DIY vs PnP
@@ -1143,6 +1190,7 @@ Et après ?
 > on espère que ça vous donnera des idées
 
 > il n'y a pas que des fous du JS dans le frontend
+> peut-être que c'est là l'idée du DIY/PnP
 
 ## media
 <img src="src/img/screenshot-import-maps.png" screenshot-url="https://github.com/WICG/import-maps">

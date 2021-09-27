@@ -34,8 +34,7 @@ export const defaultSlideStyles = css`
     transform: translateX(-35%) translateY(60%) rotate(-45deg);
   }
 
-  audio,
-  video {
+  audio {
     display: none;
   }
 `;
@@ -113,7 +112,10 @@ export function defineSlideType (slideType, options) {
           if (options.onEnter != null) {
             options.onEnter(elements);
           }
-          $$(this, 'audio, video').forEach((media) => playMedia(media));
+          $$(this.shadowRoot, 'audio, video').forEach((media) => {
+            console.log({media});
+            playMedia(media);
+          });
         }
         if (this.position !== 'current') {
           if (options.onLeave != null) {

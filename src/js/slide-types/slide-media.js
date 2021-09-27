@@ -10,7 +10,7 @@ function getAttributes (elementHtml) {
   return element
     .getAttributeNames()
     .map((name) => [toCamelCase(name), element.getAttribute(name)])
-    .reduce(entriesToObject);
+    .reduce(entriesToObject, {});
 }
 
 defineSlideType('slide-media', {
@@ -21,6 +21,7 @@ defineSlideType('slide-media', {
       .find((line) => line.startsWith('<img ') || line.startsWith('<video '));
 
     const mediaAttrs = getAttributes(media);
+    console.log(mediaAttrs)
 
     const browserUrl = mediaAttrs.screenshotUrl
       ?? mediaAttrs.browserUrl
