@@ -1,11 +1,10 @@
 import { css, LitElement } from 'lit';
 import { $$, entriesToObject, toCamelCase, trim } from '../utils.mjs';
+import { vsCss } from '../vs.css.js';
+import { atomOneLightCss } from '../atom-one-light.css.js';
 
 // language=CSS
 export const defaultSlideStyles = css`
-  @import "/node_modules/highlight.js/styles/atom-one-light.css";
-  @import "/node_modules/highlight.js/styles/vs.css";
-
   .hljs-built_in, .hljs-class .hljs-title, .hljs-title.class_ {
     color: #7b5502;
   }
@@ -60,6 +59,10 @@ export const codeBlocksStyles = css`
     font-family: "Operator Mono Book", monospace;
     font-size: 1.25rem;
     font-weight: bold;
+  }
+
+  pre[small] {
+    font-size: 0.8rem;
   }
 
   pre[invisible] {
@@ -123,6 +126,8 @@ export function defineSlideType (slideType, options) {
 
     static get styles () {
       return [
+        atomOneLightCss,
+        vsCss,
         defaultSlideStyles,
         codeBlocksStyles,
         options.styles ?? '',

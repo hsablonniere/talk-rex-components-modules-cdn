@@ -47,7 +47,7 @@ defineSlideType('slide-image-grid', {
     img {
       opacity: 0;
       height: 100%;
-      max-height: 10rem;
+      max-height: 8rem;
       width: 100%;
       object-fit: contain;
     }

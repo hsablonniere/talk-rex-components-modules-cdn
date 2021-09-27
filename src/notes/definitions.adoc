@@ -1,12 +1,23 @@
 = Définitions
 
 * Minification
+** USR (-) CODE_
 * Concaténation
+** USR (-) RQUST
 * Bundling
+** USR (-) RQUST
 * Scope hoisting
+** USR (-) CODE_
 * Tree shaking
+** USR (-) CODE_
 * Code splitting
+** USR (-) CODE_
+** USR (-) CACHE
 * Import hoisting
+** USR (-) STAIR
 * Content hashing
-* Module resolving
+** USR (+) CACHE
 * Transpiling
+** DEV          
+* Module resolution
+** DEV          

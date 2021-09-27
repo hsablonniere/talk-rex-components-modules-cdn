@@ -96,7 +96,7 @@ defineSlideType('slide-definition', {
           ], {
             easing: 'ease-in-out',
             fill: 'forwards',
-            delay: i * 75 + 500,
+            delay: i * 75 + 200,
             duration: 150,
           }));
         });
@@ -180,6 +180,10 @@ defineSlideType('slide-definition', {
       object-position: center center;
       position: absolute;
       width: 100%;
+    }
+    
+    :host([logo]) .image-wrapper img {
+      transform: scale(0.5);
     }
 
     .fact-list {

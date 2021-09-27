@@ -33,59 +33,82 @@
    guidetolerance="10"
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
-   inkscape:window-width="1338"
-   inkscape:window-height="1475"
+   inkscape:window-width="2688"
+   inkscape:window-height="1478"
    id="namedview39"
    showgrid="false"
    inkscape:zoom="1.3767361"
-   inkscape:cx="289.45271"
+   inkscape:cx="300.34804"
    inkscape:cy="288"
    inkscape:window-x="0"
    inkscape:window-y="0"
-   inkscape:window-maximized="0"
-   inkscape:current-layer="Ebene_1"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="layer3"
    inkscape:document-rotation="0" />
-<circle
-   style="fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"
-   cx="287.969"
-   cy="287.969"
-   r="286.969"
-   id="circle2" />
-<circle
-   style="fill:#FF0000;stroke:#FF0000;stroke-width:0.1764;stroke-linecap:round;stroke-linejoin:round;"
-   cx="287.969"
-   cy="287.969"
-   r="273.982"
-   id="circle4" />
-<circle
-   style="fill:#FFFFFF;stroke:#FF0000;stroke-width:0.1764;stroke-linecap:round;stroke-linejoin:round;"
-   cx="287.969"
-   cy="287.969"
-   r="192.438"
-   id="circle6" />
-<polygon
-   style="fill:none;stroke:#000000;stroke-width:0.1764;stroke-linecap:round;stroke-linejoin:round;"
-   points="  449.084,287.969 479.5,309.266 479.5,287.969 479.5,266.673 "
-   id="polygon8" />
-<polygon
-   style="fill:none;stroke:#000000;stroke-width:0.1764;stroke-linecap:round;stroke-linejoin:round;"
-   points="  127.541,287.969 97.125,309.266 97.125,287.969 97.125,266.673 "
-   id="polygon10" />
-<path
-   d="M479.5,287.969v18.657c-0.08,0.819-0.165,1.642-0.257,2.46l-30.159-21.117l30.159-21.117c0.092,0.819,0.177,1.64,0.257,2.46  V287.969z M127.541,287.969l-30.417,21.297v-21.297v-21.296L127.541,287.969z"
-   id="path12" />
 
 
 
 
-<text
-   xml:space="preserve"
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:91.3135px;line-height:1.25;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-   x="145.87123"
-   y="320.62872"
-   id="text870"><tspan
-     sodipodi:role="line"
-     id="tspan868"
-     x="145.87123"
-     y="320.62872"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:91.3135px;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1">CODE</tspan></text></svg>
+
+
+
+
+
+
+<g
+   inkscape:groupmode="layer"
+   id="layer3"
+   inkscape:label="Layer 1"
+   style="display:inline"><circle
+     style="fill:#ffffff;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"
+     cx="287.96899"
+     cy="287.96899"
+     r="286.96899"
+     id="circle2" /><circle
+     style="fill:#ff0000;stroke:#ff0000;stroke-width:0.1764;stroke-linecap:round;stroke-linejoin:round"
+     cx="287.96899"
+     cy="287.96899"
+     r="273.98199"
+     id="circle4" /><circle
+     style="fill:#ffffff;stroke:#ff0000;stroke-width:0.1764;stroke-linecap:round;stroke-linejoin:round"
+     cx="287.96899"
+     cy="287.96899"
+     r="192.438"
+     id="circle6" /><polygon
+     style="fill:none;stroke:#000000;stroke-width:0.1764;stroke-linecap:round;stroke-linejoin:round"
+     points="479.5,287.969 479.5,266.673 449.084,287.969 479.5,309.266 "
+     id="polygon8" /><polygon
+     style="fill:none;stroke:#000000;stroke-width:0.1764;stroke-linecap:round;stroke-linejoin:round"
+     points="97.125,287.969 97.125,266.673 127.541,287.969 97.125,309.266 "
+     id="polygon10" /><path
+     d="m 479.5,287.969 v 18.657 c -0.08,0.819 -0.165,1.642 -0.257,2.46 l -30.159,-21.117 30.159,-21.117 c 0.092,0.819 0.177,1.64 0.257,2.46 z m -351.959,0 -30.417,21.297 v -21.297 -21.296 z"
+     id="path12" /><g
+     aria-label="CODE"
+     id="text870"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:127.798px;line-height:1.25;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"><path
+       d="m 190.74766,241.13676 q 18.1588,3.12007 23.77492,21.65327 l 0.56162,3.05767 -15.78755,3.30727 q -1.93444,-7.98737 -6.61454,-10.60823 -4.68011,-2.62086 -10.98264,0.49921 -4.1809,3.55688 -6.98896,9.73462 -2.74566,6.17773 -3.61928,16.72356 -0.3744,11.23225 2.93287,19.53163 3.30727,8.23698 7.98737,10.92024 4.74251,2.68326 9.67221,0.74881 4.92971,-1.24802 7.86258,-10.17142 l 15.78754,4.86731 q -3.18247,12.54267 -12.29307,18.1588 -6.67694,4.24329 -15.72514,4.8049 -17.03557,-0.37441 -25.45976,-13.9155 -8.86099,-14.72673 -9.1106,-31.8871 0.12481,-21.46607 9.2354,-35.13197 5.74093,-7.55057 12.85469,-10.42103 5.36651,-2.12164 11.66905,-2.12164 2.05925,0 4.24329,0.2496 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:127.798px;font-family:'Caracteres L1';-inkscape-font-specification:'Caracteres L1, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1"
+       id="path2119" /><path
+       d="m 258.70275,241.13676 q 15.10113,2.30885 22.33969,17.84679 6.17773,11.48185 6.17773,28.20542 v 1.12322 q 0,20.90446 -10.17142,35.56878 -7.23856,9.85942 -20.46765,11.04504 -1.37283,0.12481 -2.68325,0.12481 -13.72831,0 -23.02611,-11.60666 -9.60981,-15.47554 -9.73461,-31.76229 -0.0624,-1.37283 -0.0624,-2.74566 0,-22.02769 9.79701,-36.4424 6.55214,-7.86257 13.6659,-10.04662 4.92971,-1.56003 9.85942,-1.56003 2.18404,0 4.30569,0.2496 z m -4.8049,77.93931 q 7.23855,-0.37441 12.23066,-9.92182 3.61928,-6.36494 4.5553,-18.72041 0.18721,-15.72514 -5.55372,-25.77176 -4.6801,-6.98896 -10.35863,-7.80018 -7.48816,0.37441 -12.48027,9.79702 -3.55688,6.61454 -4.6177,18.97001 -0.1248,15.72515 5.67852,25.70937 4.61771,6.98895 10.54584,7.73777 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:127.798px;font-family:'Caracteres L1';-inkscape-font-specification:'Caracteres L1, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1"
+       id="path2121" /><path
+       d="m 333.02278,241.94798 q 8.98579,1.06082 15.22593,7.17616 6.30254,6.11533 9.1106,14.47711 1.31043,3.68168 1.93444,9.67221 v 28.08062 q -0.93602,14.22751 -8.9858,22.9637 -7.98737,8.73619 -19.46922,9.2978 h -36.19279 l 0.0624,-91.6676 z m -20.46765,73.63361 h 14.60192 q 4.43049,-0.68642 7.55056,-3.24487 3.12007,-2.62086 5.30412,-9.1106 1.18562,-3.99369 0.68641,-29.07904 -2.93286,-12.97948 -13.54109,-14.91392 h -14.60192 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:127.798px;font-family:'Caracteres L1';-inkscape-font-specification:'Caracteres L1, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1"
+       id="path2123" /><path
+       d="m 421.57031,242.32239 v 16.72356 h -37.81523 v 19.96844 h 27.7062 v 16.91077 h -27.7062 v 20.90446 h 39.43766 v 16.91077 h -57.03485 l 0.0624,-91.418 z"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:127.798px;font-family:'Caracteres L1';-inkscape-font-specification:'Caracteres L1, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1"
+       id="path2125" /></g></g><g
+   inkscape:groupmode="layer"
+   id="layer4"
+   inkscape:label="Layer 2"
+   style="display:none"><text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:127.798px;line-height:1.25;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
+     x="149.18835"
+     y="333.74039"
+     id="text870-2"><tspan
+       sodipodi:role="line"
+       id="tspan868-1"
+       x="149.18835"
+       y="333.74039"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:127.798px;font-family:'Caracteres L1';-inkscape-font-specification:'Caracteres L1, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1">CODE</tspan></text></g></svg>
