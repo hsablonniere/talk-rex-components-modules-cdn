@@ -1045,13 +1045,18 @@ Retour à la simplicité...
 > Pour être sur CDNJS, il faut faire une PR par contre si vous avez pas un build avec un seul fichier, c'est mort.
 
 ## text
-💾 656 ko (min)
+💾 646 kio (min)
+> ts les composants en anglais
+> curl -s https://cdn-demo-components.example-foo.com/custom-config-all-bundle-treeshake-english-min-js-html-css-svg/all-bundle.js | human-size
 
 ## text
-🏋️‍♀️ 656 ko (min)
+🏋️‍♀️ 646 kio (min)
 
 ## text
-🏋️‍♀️ 189 ko (min+br)
+🏋️‍♀️ 185 kio (min+gzip)
+
+## text
+🏋️‍♀️ 151 kio (min+brotli)
 
 ## media
 <img src="src/img/screenshot-jsdelivr.jpg" screenshot-url="https://www.jsdelivr.com/">
@@ -1080,6 +1085,7 @@ Retour à la simplicité...
 
 ## media
 <img src="src/img/screenshot-unpkg.jpg" screenshot-url="https://unpkg.com/">
+> C'est pas nouveau
 > gère les images
 > module module ESM avec ?module
 > tjs aucun bundling
@@ -1087,7 +1093,6 @@ Retour à la simplicité...
 ## media
 <img src="src/img/screenshot-jspm.jpg" screenshot-url="https://jspm.org/">
 <!-- https://github.com/guybedford -->
-> C'est pas nouveau
 > Guy Bedford fait des trucs autour de ça avec jspm
 > C'est lui qui est derrière System JS
 > C'est d'ailleurs Monsieur modules dans le monde de JS
@@ -1102,9 +1107,38 @@ Retour à la simplicité...
 ## media
 <img src="src/img/screenshot-skypack-cc-components.jpg" screenshot-url="https://www.skypack.dev/view/@clevercloud/components">
 
+## blank white
+> mais ça fera pas le bundle comme je veux
+> pas évident de tester, il faut republier à chaque fois
+> les lib tierces seront tjs à part
+> cascade assez lourde
+> bcp de redirs
+> je vais pas profiter de la minification (template, CSS)
+> origine tierce :-(
+• pas de support d'image :-(
+• un fichier par composant
+• setup des langues
+
 ## code
 ```html
 <script type="module" src="??"></script>
+```
+
+## code
+```html
+<script type="module">                                                            
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</script>
 ```
 
 ## code
@@ -1153,30 +1187,54 @@ Retour à la simplicité...
 ```
 
 ## text
-😎 Créons notre propre smart CDN
-> Idée => faire notre propre système
-> on build nos fichiers aux ptits oignons avec rollup
+😟 Domaine (origine) tiers
 
-## todo
-schéma, object storage + endpoint dynamique derrière un CDN
+## text
+😎 Créons notre propre smart CDN
 
 ## code
 ```html
-<script type="module" src="https://components.clever-cloud.com/load.js?version=7.2.0&lang=fr&components=cc-input-text,cc-toggle"></script>
+<script src="https://example.com/" type="module"></script>
 ```
-```text
-https://components.clever-cloud.com/load.js
-  version=7.2.0
-  lang=fr
-  components=cc-input-text,cc-toggle
+> notre cible
+
+## code
+```html
+<script src="https://example.com/?components=cc-input-text" type="module"></script>
+```
+
+## code
+```html
+<script src="https://example.com/?components=cc-input-text,cc-toggle" type="module"></script>
+```
+
+## code
+```html
+<script src="https://example.com/?components=cc-input-text,cc-toggle&lang=fr" type="module"></script>
+```
+
+## code
+```html
+<script src="https://example.com/?components=cc-input-text,cc-toggle&lang=fr &version=7" type="module"></script>
 ```
 <!-- montrer le target avec la balise script et les params version/lang/components -->
 
+<!-- > Idée => faire notre propre système
+> on build nos fichiers aux ptits oignons avec rollup -->
+
+## text
+🗃️ Object storage
+> on s'est dit vu qu'on utilise que des standards,
+> on va commencer par mettre nos sources sur un object storage
+> on va itérer la dessus et améliorer les perfs
+<!-- + endpoint dynamique derrière un CDN -->
+
 ## media
-<img src="src/img/screenshot-demo-components-example-foo.jpg" screenshot-url="https://demo-components.example-foo.com/">
+<img src="src/img/screenshot-cc-site-cellar.jpg" screenshot-url="https://www.clever-cloud.com/en/cellar-s3-hosting">
 
 ## media
 <img src="src/img/screenshot-demo-components-example-foo-simple.jpg" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/simple.html">
+> du coup, on a préparé plusieurs pages types
 
 ## media
 <img src="src/img/screenshot-demo-components-example-foo-multiple-one.jpg" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/multiple.html#one">
@@ -1187,14 +1245,74 @@ https://components.clever-cloud.com/load.js
 ## media
 <img src="src/img/screenshot-demo-components-example-foo-multiple-three.jpg" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/multiple.html#three">
 
+## media
+<img src="src/img/screenshot-demo-components-example-foo.jpg" screenshot-url="https://demo-components.example-foo.com/">
+
+## media
+<img src="src/img/screenshot-demo-components-dashboard.jpg" screenshot-url="https://demo-components.example-foo.com/__dashboard__">
+
 ## todo
 expliquer la démarche de test avec les différentes variantes
 > le seul truc non standard dans notre code source, c'est des bare import specifier
 
 ## todo
+comparaison dedicated-bundle raw VS split raw HTTP 1.1 (multi 3)
+> => c'est la cata
 
 ## todo
-Montrer le rendu du script directement dans le browser avec plusieurs exemples
+comparaison split raw HTTP 1.1 vs HTTP/2 (multi 3)
+> depuis qu'HTTP/2 est sorti
+> on parle bcp du multiplexing et du fait qu'on puisse balancer plusieurs requêtes HTTP en même temps sur la même connexion TCP
+> on a a même entendu, le bundling et les sprites, c'est terminé
+> OK, vérifions
+> clairement, ça va pas suffire
+> ah, il reste une technique plutôt réglage serveur
+
+## todo
+comparaison split raw HTTP/2 none/gzip/brotli (multi 3)
+> c'est la compression
+> quantité de donnée à charge (mais même quantité à parser et exécuter)
+
+## todo
+comparaison split raw HTTP/2 brotli : raw/minifié (multi 3)
+> JS
+> HTML/CSS dans les templates
+> SVG, c'est tjs ça de pris
+> quantité de donnée à charge (mais même quantité à parser et exécuter)
+
+## todo
+comparaison split raw HTTP/2 brotli minifié : sans et avec tree shaking (multi 3)
+tree shaking
+> mouais, ça vire pas grand chose dans notre cas précis car on utilise pas
+
+## todo
+comparaison split raw HTTP/2 brotli minifié : sans et avec shim (multi 3)
+> mouais, ça vire pas grand chose dans notre cas précis car on utilise pas
+
+## todo
+comparaison split raw HTTP/2 brotli minifié treeshaké : sans et avec code splitting (multi 3)
+> en fait on va bundler
+> on va même forcer les chunks
+> avec ça on commence à être pas mal
+
+## todo
+comparaison split raw HTTP/2 brotli minifié treeshaké : sans et avec code splitting (multi 3)
+import hoisting
+> statique
+> dynamique
+> pour faire ça, on va devoir analyser les dépendances
+
+## todo
+comparer avec le bundle custom du début
+
+## todo
+https://github.com/CleverCloud/clever-components/blob/master/rollup/rollup-plugin-deps-manifest.js
+
+## todo
+https://github.com/CleverCloud/clever-components-cdn/
+
+## todo
+montrer un manifest
 
 ## todo
 montrer des exemples sans i18n
@@ -1203,10 +1321,14 @@ montrer des exemples sans i18n
 montrer des exemples AVEC i18n
 
 ## todo
-montrer plusieurs niveau de cascade
+montrer le semvert
 
 ## todo
-montrer le peu de différences entre plusieurs versions
+expliquer la subtilité ne pas avoir la version dans les chemins
+
+## todo
+chaque fichier est servis avec un cache
+> y compris le load.js quand c'est possible
 
 ## media
 <img src="src/img/screenshot-jakearchibald-multiple-versions-same-time.jpg" screenshot-url="https://jakearchibald.com/2020/multiple-versions-same-time/">
