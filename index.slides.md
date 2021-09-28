@@ -215,7 +215,7 @@ Guide de survie
 Minification
 > ...minification.
 
-## definition todo
+## definition
 Minification
 <!-- TODO en étapes et en mettant en évidence des lignes bleues, des commentaires en gris et des espaces en blank -->
 <img src="/src/img/definition-minification.png">
@@ -332,7 +332,7 @@ console.log("NOOOO, Harrison Ford is too old!");
 Concaténation
 > ...Concaténation.
 
-## definition todo
+## definition
 Concaténation
 <!-- TODO en étapes et en mettant en évidence des lignes dans les fichiers -->
 <img src="/src/img/definition-concatenation.png">
@@ -368,7 +368,7 @@ Task runners / Pipeline
 Bundling
 > ...le bundling.
 
-## definition todo
+## definition
 Bundling
 <!-- TODO en étapes et en mettant en évidence des lignes dans les fichiers et les imports, ajouter de la glue en jaune -->
 <img src="/src/img/definition-bundling.png">
@@ -430,7 +430,7 @@ Bundling (nouvelle génération)
 <!-- > C'est tellement performant qu'on a vu arriver l'année dernière... -->
 
 <!-- TODO cette partie, ça va pas -->
-<!-- ## definition todo
+<!-- ## definition
 Serveurs de dev
 * 2020: WDS <img src="src/img/logo-modernweb.svg">
 * 01/2020: Snowpack <img src="src/img/logo-snowpack.svg">
@@ -475,7 +475,7 @@ console.log(add(1, 2));
 console.log(add(2, 3));
 ```
 
-## definition todo
+## definition
 Scope hoisting
 ```js small
 // bundle.js - Webpack 4 SANS import hoisting
@@ -487,7 +487,7 @@ Scope hoisting
 ]);
 ```
 
-## definition todo
+## definition
 Scope hoisting
 ```js small
 // bundle.js - Webpack 4 AVEC import hoisting
@@ -527,7 +527,7 @@ Scope hoisting
 Tree shaking
 <!-- il faut une vidéo de moi qui secoue un arbre -->
 
-## definition todo
+## definition
 Tree shaking
 <img src="/src/img/definition-tree-shaking.png">
 > ...le tree shaking
@@ -551,7 +551,7 @@ Tree shaking
 Code splitting
 
 <!-- TODO: refaire le schema avec les imports dynamiques -->
-## definition todo
+## definition
 Code splitting
 <img src="/src/img/definition-code-splitting.png">
 > *L'IDÉE :* ne plus produire un seule gros bundle avec tout le code et se servir des imports dynamiques pour faire plusieurs plus petits fichiers.
@@ -559,6 +559,13 @@ Code splitting
 > slash home importe dynamiquement home.js,
 > slash contact importe dynamiquement contact.js
 > et ainsi de suite.
+
+## definition
+Code splitting
+> *LE BUT :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter pour afficher une page.
+> *LE BUT :* se reposer sur le cache pour les morceaux qu'il a déjà.
+* Moins de code au premier chargement
+* &nbsp;
 
 ## definition
 Code splitting
@@ -694,8 +701,8 @@ Transpiling
 ## definition
 Transpiling (nouvelle génération)
 * 2020: esbuild (go) <img src="src/img/logo-esbuild.svg">
-* 2020: SWC (rust) <img src="src/img/logo-swc.svg">
-* 2020/2021: Rome (JS/rust) <img src="src/img/logo-rome.svg">
+* 2020: SWC (Rust) <img src="src/img/logo-swc.svg">
+* 2020/2021: Rome (JS/Rust) <img src="src/img/logo-rome.svg">
 
 ## blank white
 > Tout ces outils qui font du bundling sont capable de faire...
@@ -1004,6 +1011,8 @@ Retour à la simplicité...
 ## definition
 * : JavaScript <img src="src/img/logo-javascript.svg">
 * : Lit <img src="src/img/logo-lit.svg">
+<!-- * : WDS <img src="src/img/logo-modernweb.svg">
+* : Rollup <img src="src/img/logo-rollup.svg"> -->
 > Composants codés en JS + Lit (LitElement) pour faire des WC
 
 ## media
@@ -1182,12 +1191,12 @@ Retour à la simplicité...
   import '@clevercloud/components@7.2.0/dist/overview/cc-title-requests.js';
   
   addTranslations(fr.lang, fr.translations);
-  setLanguage(en.lang);
+  setLanguage(fr.lang);
 </script>
 ```
 
 ## text
-😟 Domaine (origine) tiers
+😟 Domaine/origine tiers
 
 ## text
 😎 Créons notre propre smart CDN
@@ -1252,7 +1261,7 @@ Retour à la simplicité...
 <img src="src/img/screenshot-demo-components-dashboard.jpg" screenshot-url="https://demo-components.example-foo.com/__dashboard__">
 
 ## todo
-expliquer la démarche de test avec les différentes variantes
+<!-- expliquer la démarche de test avec les différentes variantes -->
 > le seul truc non standard dans notre code source, c'est des bare import specifier
 
 ## todo
@@ -1282,7 +1291,7 @@ comparaison split raw HTTP/2 brotli : raw/minifié (multi 3)
 
 ## todo
 comparaison split raw HTTP/2 brotli minifié : sans et avec tree shaking (multi 3)
-tree shaking
+<!-- tree shaking -->
 > mouais, ça vire pas grand chose dans notre cas précis car on utilise pas
 
 ## todo
@@ -1297,7 +1306,7 @@ comparaison split raw HTTP/2 brotli minifié treeshaké : sans et avec code spli
 
 ## todo
 comparaison split raw HTTP/2 brotli minifié treeshaké : sans et avec code splitting (multi 3)
-import hoisting
+<!-- import hoisting -->
 > statique
 > dynamique
 > pour faire ça, on va devoir analyser les dépendances
@@ -1308,11 +1317,54 @@ comparer avec le bundle custom du début
 ## todo
 https://github.com/CleverCloud/clever-components/blob/master/rollup/rollup-plugin-deps-manifest.js
 
-## todo
-https://github.com/CleverCloud/clever-components-cdn/
+## media
+<img src="src/img/screenshot-github-cc-component-cdn.jpg" screenshot-url="https://github.com/CleverCloud/clever-components-cdn/">
 
-## todo
-montrer un manifest
+## code
+```json
+{
+  "manifestVersion": "1",
+  "packageVersion": "7.2.0",
+  "files": [
+    {}
+  ]
+}
+```
+
+## code
+```json
+{
+  "id": "cc-input-text",
+  "path": "cc-input-text-7c6457f7.js",
+  "dependencies": [
+    "vendor-5e139a4e.js",
+    "i18n-446ebe81.js",
+    "default-theme-fead272a.js",
+    "assets/clipboard-bf8d5491.svg",
+    "..."
+  ],
+  "sources": [
+    "src/atoms/cc-input-text.js"
+  ]
+},
+```
+
+## code
+```json
+{
+  "id": "",
+  "path": "vendor-5e139a4e.js",
+  "dependencies": [],
+  "sources": [
+    "node_modules/lit-html/lib/part.js",
+    "node_modules/lit-element/lit-element.js",
+    "...",
+    "src/lib/events.js",
+    "src/styles/skeleton.js",
+    "src/styles/waiting.js"
+  ]
+},
+```
 
 ## todo
 montrer des exemples sans i18n
@@ -1328,6 +1380,7 @@ expliquer la subtilité ne pas avoir la version dans les chemins
 
 ## todo
 chaque fichier est servis avec un cache
+> montrer le cache (via la demo jsbin)
 > y compris le load.js quand c'est possible
 
 ## media
@@ -1338,8 +1391,10 @@ chaque fichier est servis avec un cache
 <img src="src/img/screenshot-cc-components-ui.png" browser-url="https://components.clever-cloud.com/">
 > Montrer la UI de sélection et faire une démo avec JSBin
 
-## todo
-> système magique
+## code
+```html
+<script type="module" src="https://components.clever-cloud.com/load.js?magic-mode=dont-use-this-in-prod"></script>
+```
 
 ## text
 👩‍🔧 Admin (Play/Scala)
@@ -1361,7 +1416,7 @@ chaque fichier est servis avec un cache
 
 ## section
 > @00:43:00@
-Et après ?
+à suivre...
 > en fait, de la même manière qu'avec notre plateforme Cloud, on essaye de convaincre les gens de pas se prendre la tête avec les serveurs, les mises à jour, la sécu tout ça et de nous le déléguer car on sait faire
 > ici on vient déplacer la connaissance et la complexité de "prodification" de l'app qui consomme à celui qui expose un lib de composants
 > comme vous l'avez vu, c'est pas forcément la meilleure solution, mais on trouve que dans pas mal de cas, le résultat est sufisant comparer à cout de mise en place et maintenance

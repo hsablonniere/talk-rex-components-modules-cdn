@@ -17,13 +17,19 @@
 
 == C'était mieux avant
 
-* trouver un moyen de faire plus court
-* chronométrer à nouveau
+* timing pas trop mal
 
 == Retour à la simplicité
 
-* avancer sur la représentation des résultats des mesures
+* mesurer
+* prendre les vidéos de comparaison
+* préparer l'intro des CDNs
+* préparer certaines transitions
+* préparer les exemples du mode dynamique
+* pourquoi pas ajouter les titres de la première partie
+* chronométrer
 
 == Conclusion
 
 * écrire
+* chronométrer
