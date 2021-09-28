@@ -1417,6 +1417,25 @@ chaque fichier est servis avec un cache
 ## section
 > @00:43:00@
 à suivre...
+
+
+<!-- Bon, on va pas s'mentir, cette jungle d'outils est bien installée dans l'écosystème.
+Il y a de l'innovation en terme de perf sur les outils du coup, on est pas sorti du sable.
+Rome
+XKCD
+
+Nous on a fait le choix d'une stack qui dépend moins de tout ces trucs ou en tout cas le moins possible sur les aspects spécifiques.
+
+Conclusion :
+Le bundling n'est pas mort
+Déplacer la complexité vers un service comme ça a beaucoup de sens pour un design système applicatif distribué sur plusieurs applications, même celles qui utilisent des fwk
+Les dépendances en double mais du coup, on a deux approches : PnP vs DIY
+
+Ne prenez pas nos résultats pr tirer des conclusions, faites des mesures adaptées à votre contexte.
+
+Le monde du web, c'est pas que des gens qui font des SPA avec les fwk à la mode
+Il n'y a pas que le JavaScript dans la vie -->
+
 > en fait, de la même manière qu'avec notre plateforme Cloud, on essaye de convaincre les gens de pas se prendre la tête avec les serveurs, les mises à jour, la sécu tout ça et de nous le déléguer car on sait faire
 > ici on vient déplacer la connaissance et la complexité de "prodification" de l'app qui consomme à celui qui expose un lib de composants
 > comme vous l'avez vu, c'est pas forcément la meilleure solution, mais on trouve que dans pas mal de cas, le résultat est sufisant comparer à cout de mise en place et maintenance
