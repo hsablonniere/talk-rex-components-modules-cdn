@@ -996,75 +996,161 @@ Retour à la simplicité...
 ## media
 <img src="src/img/screenshot-clever-components-github.jpg" screenshot-url="https://github.com/CleverCloud/clever-components">
 > on a décidé de construite une bibliothèque de composants dans un projet à part
+> en OSS sur GitHub
 > pour dans un premier temps les utiliser nous dans notre console d'admin
 > SPA legacy, jquery, lodash, bacon...
+> et avec aussi pour but que nos clients et partenaires puissent les utiliser
 
 ## definition
 * : JavaScript <img src="src/img/logo-javascript.svg">
 * : Lit <img src="src/img/logo-lit.svg">
-> Composants codés en JS (module ESM) + Lit (LitElement) pour faire des WC
+> Composants codés en JS + Lit (LitElement) pour faire des WC
 
 ## media
 <img src="src/img/screenshot-cc-storybook.png" browser-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%8F%A0-home-readme--page">
-> storybook clever
+> On expose et on documente nos composants avec Storybook
+> il est dispo publiquement si vous êtes curieux
 
 ## media
 <img src="src/img/screenshot-cc-storybook-input-text.png" browser-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%A7%AC-atoms-cc-input-text--clipboard-and-secret">
-> composants bas niveau (input text)
+> composants bas niveau (input text, button...)
 
 ## media
 <img src="src/img/screenshot-cc-storybook-tile-requests.png" browser-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%9B%A0-overview-cc-tile-requests--default-story">
-> composants haut niveau (graph)
+> composants métier, plus haut niveau (graph)
 
 ## media
 <img src="src/img/screenshot-cc-storybook-logsmap.png" browser-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%9B%A0-maps-cc-logsmap--default-story">
-> composants haut niveau (la carte peut-être)
+> composants métier, plus haut niveau (la carte peut-être)
+
+## blank white
+> Quand on s'est lancé dans cette expérimentation pour mettre à dispo nos composants en mode CDN
 
 ## text
 🧐 CDN existants ?
-> Contexte des CDN existants
-> quand on s'est demandé comment on pourrait mettre nos composants en mode CDN
-> on a regardé ce qui se faisait
-
-## todo
-Fonctionnalités de cdnjs, jsdelivr, unpkg, jspm et skypack (avantages/inconvénients)
-• bundle pas comme je veux
-• auto minif ?? pas suffisant
-• lib tierces à part
-• cascade lourde :-(
-• bcp de redirs :-(
-• auto polyfill :-)
-• semverr :-)
-• ils appliquent un build et on a pas la main dessus :-(
-• origine tierce :-(
-• pas de support d'image :-(
-• un fichier par composant
-• setup des langues
+> on a regardé ce qui se faisait.
+> en fait, j'ai passé bcp temps à dire que tout le monde faisait du Node.js + npm install + bundler
+> clairement, dans le monde fermé des aficionados du JS et des SPA, c'est très vrai
+> mais dès qu'on regarde des bibliothèques plus grand public :
+> moment, leaflet, axios, lodash, d3...
+> ils ont tous une doc d'install/usage via CDN
+> la grosse différence, c'est que c'est principalement des projets qui se distribuent
+> en un seul fichier et qui n'ont pas de dépendances
 
 ## media
 <img src="src/img/screenshot-cdnjs.png" screenshot-url="https://cdnjs.com/libraries">
 <!-- https://github.com/date-fns/date-fns/issues/1780 -->
 <!-- https://github.com/cdnjs/packages/blob/master/packages/m/moment.js.json -->
+> On va retrouver du CDNJS.
+> Pour être sur CDNJS, il faut faire une PR par contre si vous avez pas un build avec un seul fichier, c'est mort.
 
-## todo
-taille du méga bundle
+## text
+💾 656 ko (min)
+
+## text
+🏋️‍♀️ 656 ko (min)
+
+## text
+🏋️‍♀️ 189 ko (min+br)
 
 ## media
 <img src="src/img/screenshot-jsdelivr.jpg" screenshot-url="https://www.jsdelivr.com/">
+> JS delivr, c'est pas mal car ils proposent n'importe quel projet dispo sur npm
+> minification automatique si nécessaire
+> ils gèrent les images
+> il gèrent le semver
+
+## media
+<img src="src/img/screenshot-jsdelivr-cc-file-list.jpg" screenshot-url="https://cdn.jsdelivr.net/npm/@clevercloud/components@7.2.0/dist/">
+> on peut voir les fichiers en mode listing
+
+## media
+<img src="src/img/screenshot-jsdelivr-cc-input-text.jpg" screenshot-url="https://cdn.jsdelivr.net/npm/@clevercloud/components@7.2.0/dist/atoms/cc-input-text.js">
+> pas de module resolving sur les import 'lit-element'
 
 ## media
 <img src="src/img/screenshot-jsdelivr-esm-run.jpg" screenshot-url="https://www.jsdelivr.com/esm">
 <!-- https://github.com/jsdelivr/jsdelivr/issues/18263 -->
 
 ## media
-<img src="src/img/screenshot-jspm.jpg" screenshot-url="https://jspm.org/">
-<!-- https://github.com/guybedford -->
+<img src="src/img/screenshot-jsdelivr-cc-input-text-esm.jpg" screenshot-url="https://cdn.jsdelivr.net/npm/@clevercloud/components@7.2.0/dist/atoms/cc-input-text.js/+esm">
+> fin 2020 annonce d'un mode ESM
+> module resolving
+> aucun bundling
 
 ## media
 <img src="src/img/screenshot-unpkg.jpg" screenshot-url="https://unpkg.com/">
+> gère les images
+> module module ESM avec ?module
+> tjs aucun bundling
+
+## media
+<img src="src/img/screenshot-jspm.jpg" screenshot-url="https://jspm.org/">
+<!-- https://github.com/guybedford -->
+> C'est pas nouveau
+> Guy Bedford fait des trucs autour de ça avec jspm
+> C'est lui qui est derrière System JS
+> C'est d'ailleurs Monsieur modules dans le monde de JS
+> ne gère pas les images
+> d'ailleurs ici, jspm va essayer de regrouper les fichiers en fonction du "exports" de votre package.json
+> pas d'images
 
 ## media
 <img src="src/img/screenshot-skypack.jpg" screenshot-url="https://www.skypack.dev/">
+> auto polyfill
+
+## media
+<img src="src/img/screenshot-skypack-cc-components.jpg" screenshot-url="https://www.skypack.dev/view/@clevercloud/components">
+
+## code
+```html
+<script type="module" src="??"></script>
+```
+
+## code
+```html
+<script type="module">
+  import * as fr from '@clevercloud/components@7.2.0/dist/translations/translations.fr.js';
+  import { addTranslations, setLanguage } from '@clevercloud/components@7.2.0/dist/lib/i18n.js';
+  
+  
+  
+  
+  
+  
+  
+</script>
+```
+
+## code
+```html
+<script type="module">
+  import * as fr from '@clevercloud/components@7.2.0/dist/translations/translations.fr.js';
+  import { addTranslations, setLanguage } from '@clevercloud/components@7.2.0/dist/lib/i18n.js';
+  
+  import '@clevercloud/components@7.2.0/dist/atoms/cc-input-text.js';
+  import '@clevercloud/components@7.2.0/dist/atoms/cc-toggle.js';
+  import '@clevercloud/components@7.2.0/dist/overview/cc-title-requests.js';
+  
+  
+  
+</script>
+```
+
+## code
+```html
+<script type="module">
+  import * as fr from '@clevercloud/components@7.2.0/dist/translations/translations.fr.js';
+  import { addTranslations, setLanguage } from '@clevercloud/components@7.2.0/dist/lib/i18n.js';
+  
+  import '@clevercloud/components@7.2.0/dist/atoms/cc-input-text.js';
+  import '@clevercloud/components@7.2.0/dist/atoms/cc-toggle.js';
+  import '@clevercloud/components@7.2.0/dist/overview/cc-title-requests.js';
+  
+  addTranslations(fr.lang, fr.translations);
+  setLanguage(en.lang);
+</script>
+```
 
 ## text
 😎 Créons notre propre smart CDN
