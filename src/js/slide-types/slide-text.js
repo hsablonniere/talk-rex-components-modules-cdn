@@ -30,6 +30,10 @@ defineSlideType('slide-text', {
       font-size: 5.5rem;
       font-weight: bold;
     }
+    
+    strong {
+      color:#555;
+    }
 
     sup {
       color: #0082ff;

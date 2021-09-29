@@ -217,26 +217,29 @@ Minification
 
 ## definition
 Minification
-<!-- TODO en étapes et en mettant en évidence des lignes bleues, des commentaires en gris et des espaces en blank -->
-<img src="/src/img/definition-minification.png">
+<img src="/src/img/definition-minification-01.svg">
 > *L'IDÉE :* on prend un fichier JS,
+
+## definition
+Minification
+<img src="/src/img/definition-minification-02.svg">
 > on enlève les espaces, les commentaires... bref,
 > tout ce qu'on peut pour que ça continue à fonctionner pareil,
 > mais avec moins de code.
 > #Pause#
 > C'est une sorte de compression avec perte de données.
 
+## definition logo
+Minification
+<img src="/src/img/sign-limit-code.svg">
+> *LE BUT :* reduire la quantité de code que le navigateur va : charger, parser et exécuter.
+
 ## definition
 Minification
 * Moins de code
 * _(charger + parser + exécuter)_
-> *LE BUT :* reduire la quantité de code que le navigateur va : charger, parser et exécuter.
 > #Pause#
 > C'est pas nouveau du tout hein.
-
-## definition logo
-Minification
-<img src="/src/img/sign-limit-code.svg">
 
 <!-- https://www.fusioncharts.com/blog/5-excellent-javascript-minification-tools-to-improve-your-code-performance/ -->
 ## definition
@@ -289,43 +292,10 @@ It's not well known, but whitespace removal and symbol mangling accounts for 95%
 <!-- curl -s https://code.jquery.com/jquery-3.6.0.min.js | human-size -->
 <!-- curl -s https://code.jquery.com/jquery-3.6.0.min.js | terser --compress --mangle | human-size -->
 
-<!-- ## code todo
-```js
-const FORD_NAME = 'Harrison';
-const FORD_YEAR = 1942;
-
-function playIndianaJones (currentYear, name, year) {
-    const age = currentYear - year;
-    if (age > 50) {
-        console.log('NOOOO, ' + name + ' is too old!');
-    }
-    else {
-        console.log('NOOOO, the trilogy is enough.');
-    }
-}
-
-playIndianaJones(2021, FORD_NAME, FORD_YEAR);
-``` -->
-
-<!-- 
-{
-  module: true,
-  compress: {
-    passes: 2,
-  },
-}
--->
-
-<!-- ## code todo
-```js
-console.log("NOOOO, Harrison Ford is too old!");
-``` -->
-
 ## blank white
 > Pour des raisons de confort de dev, on a commencé à séparer nos fichiers.
 > Tant qu'on les chargeait dans le bon ordre,
-> en gros tant qu'on mettait jQuery d'abord et les plugins jQuery ensuite etc...
-> ça se passait bien.
+> en gros tant qu'on mettait jQuery d'abord et les plugins jQuery ensuite etc, ça se passait bien.
 > Du coup, pour pas déteriorer les perfs et l'expérience utilisateur, on a commencé à faire de la...
 
 ## definition animation
@@ -334,20 +304,24 @@ Concaténation
 
 ## definition
 Concaténation
-<!-- TODO en étapes et en mettant en évidence des lignes dans les fichiers -->
-<img src="/src/img/definition-concatenation.png">
-> *L'IDÉE :* on prend plusieurs fichiers et on les assemble en un seul fichier en respectant l'ordre.
+<img src="/src/img/definition-concatenation-01.svg">
+> *L'IDÉE :* on prend plusieurs fichiers et...
 
 ## definition
 Concaténation
-* Moins de requêtes HTTP
-> *LE BUT :* reduire le nombre de requêtes HTTP.
-> Avec HTTP 1.1, un navigateur ne peut pas faire + de 6 requêtes en parallèle vers le même site.
-> Pour automatiser ça, on a commencé à dégainer des...
+<img src="/src/img/definition-concatenation-02.svg">
+> ...on les assemble en un seul fichier en respectant l'ordre.
 
 ## definition logo
 Concaténation
 <img src="/src/img/sign-limit-request.svg">
+> *LE BUT :* reduire le nombre de requêtes HTTP.
+> Avec HTTP 1.1, un navigateur ne peut pas faire + de 6/8 requêtes en parallèle vers le même site.
+> Pour automatiser ça, on a commencé à dégainer des...
+
+<!-- ## definition
+Concaténation
+* Moins de requêtes HTTP -->
 
 ## definition
 Task runners / Pipeline
@@ -359,7 +333,7 @@ Task runners / Pipeline
 > J'ai envie de dire, c'était le bon vieux temps, mais je bosse encore sur une app qui utilise grunt donc bon.
 
 ## blank white
-> Respecter l'odre des fichiers, c'était un peu fragile du coup,
+> Respecter l'ordre des fichiers, c'était un peu fragile du coup,
 > on a commencé utiliser des systèmes de modules pour expliciter les dépendances.
 <!-- > Le module A a besoin de module B qui lui a besoin de module C. -->
 > C'est là qu'on est passé au niveau supérieur de la concaténation...
@@ -370,21 +344,25 @@ Bundling
 
 ## definition
 Bundling
-<!-- TODO en étapes et en mettant en évidence des lignes dans les fichiers et les imports, ajouter de la glue en jaune -->
-<img src="/src/img/definition-bundling.png">
-> *L'IDÉE :* on prend un fichier source, on analyse les dépendances et on les assemble dans le bon ordre, dans un seul fichier et avec un peu de glue pour que ça continue à fonctionner.
-> C'est une sorte de concaténation ++ qui connait le système de modules et qui se base sur le graphe de dépendances.
+<img src="/src/img/definition-bundling-01.svg">
+> *L'IDÉE :* on prend un fichier source, on analyse les dépendances et...
 
 ## definition
 Bundling
-* Moins de requêtes HTTP
-> *LE BUT :* toujours réduire le nombre de requêtes HTTP.
-> Le graphe de dépendances se limite pas à JavaScript, certains outils sont capables d'analyser les dépendances entres des fichiers HTML, des CSS, des images, des polices, etc.
-<!-- logo cjs/esm https://github.com/wessberg/cjstoesm -->
+<img src="/src/img/definition-bundling-02.svg">
+> ...on les assemble dans le bon ordre, dans un seul fichier (et avec un peu de glue pour que ça continue à fonctionner).
+> C'est une sorte de concaténation ++ qui connait le système de modules et qui se base sur le graphe de dépendances.
+> Ce graphe se limite pas à JavaScript, certains outils sont capables d'analyser les dépendances entres des fichiers HTML, des CSS, des images, des polices, etc.
 
 ## definition logo
 Concaténation
 <img src="/src/img/sign-limit-request.svg">
+> *LE BUT :* toujours réduire le nombre de requêtes HTTP.
+
+<!-- ## definition
+Bundling
+* Moins de requêtes HTTP -->
+<!-- logo cjs/esm https://github.com/wessberg/cjstoesm -->
 
 <!-- https://github.com/google/closure-compiler/blob/7ff6e25843097791416d1544c88dc8711f6be64a/src/com/google/javascript/jscomp/deps/DepsGenerator.java -->
 ## definition
@@ -439,10 +417,12 @@ Serveurs de dev
 > et Rollup pour le build de prod un peu plus complexe. -->
 
 ## blank white
-> Au fur et à mesure bla bla on a vu apparaitre différentes techniques dans le bundling.
+> Quand la concurrence des outils c'est intensifié (surtout avec l'arrivée de Rollup),
+> on a vu apparaitre des nouvelles techniques lié au bundling comme...
 
 ## definition animation
 Scope hoisting
+> ...le scope hoisting.
 > *L'IDÉE :* simplifier la glue et l'isolation qui est nécessaire autour de chaque module dans le bundle final.
 
 ## definition
@@ -459,6 +439,7 @@ import { add } from './lib.js';
 console.log(add(1, 2));
 console.log(add(2, 3));
 ```
+> Si j'ai un fichier lib avec une fonction add
 
 ## definition
 Scope hoisting
@@ -474,6 +455,8 @@ import { add } from './lib.js';
 console.log(add(1, 2));
 console.log(add(2, 3));
 ```
+> et un fichier index qui l'importe pour l'utiliser.
+> Ça fait 2 modules.
 
 ## definition
 Scope hoisting
@@ -486,6 +469,8 @@ Scope hoisting
   function(e,t,n){"use strict";n.r(t);var r=n(0);console.log(Object(r.a)(1,2)),console.log(Object(r.a)(2,3))}
 ]);
 ```
+> Sans import hoisting, Webpack 4 va produire ce genre de truc.
+> Une bonne grosse glue au début et ensuite les 2 modules, emballé dans des fonctions.
 
 ## definition
 Scope hoisting
@@ -498,6 +483,8 @@ Scope hoisting
   function(e,t,n){"use strict";function r(e,t){return e+t}n.r(t),console.log(r(1,2)),console.log(r(2,3))}
 ]);
 ```
+> Si on active le scope hoisting, on va venir hisser la fonction add dans le même scope que le fichier index.
+> Dans cet exemple, ça change pas de ouf avec la glue de Webpack mais...
 
 ## definition
 Scope hoisting
@@ -512,78 +499,121 @@ Scope hoisting
   console.log(add(2, 3));
 })();
 ```
-
-## definition
-Scope hoisting
-* Moins de code
-* _(charger + parser + exécuter)_
-> *LE BUT :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
+> Rollup (ou Webpack 5) par exemple sont capables de le faire avec quasi aucun code superflu.
 
 ## definition logo
 Scope hoisting
 <img src="/src/img/sign-limit-code.svg">
+> *LE BUT :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
+> On continue sur les techniques de bundling avec...
 
 ## definition animation
 Tree shaking
 <!-- il faut une vidéo de moi qui secoue un arbre -->
+> ...le tree shaking.
 
 ## definition
 Tree shaking
-<img src="/src/img/definition-tree-shaking.png">
-> ...le tree shaking
-> C'est une technique qu'on applique au moment du bundling.
-> *L'IDÉE :* on prend un fichier source, on analyse ses dépendances et surtout on analyse précisémment ce qu'il importe des dépendances qu'il utilise pour ne garder que ces parties dans le bundle final.
+<img src="/src/img/definition-tree-shaking-01.svg">
+> *L'IDÉE :* on prend un fichier source, on analyse ses dépendances et surtout on analyse précisémment ce qu'il importe des dépendances qu'il utilise
 
 ## definition
 Tree shaking
-* Moins de code
-* _(charger + parser + exécuter)_
-> *LE BUT :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
+<img src="/src/img/definition-tree-shaking-02.svg">
+> pour ne garder que ces parties là dans le bundle final.
 
 ## definition logo
 Tree shaking
 <img src="/src/img/sign-limit-code.svg">
-
-## blank white
-> La transition peut se faire sur le fait qu'on a fait des méga fat bundle avec ça
+> *LE BUT :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter.
+> Autre technique que je trouve assez cool qui est très liée aux SPA et au routing côté client, c'est...
 
 ## definition animation
 Code splitting
-
-<!-- TODO: refaire le schema avec les imports dynamiques -->
-## definition
-Code splitting
-<img src="/src/img/definition-code-splitting.png">
-> *L'IDÉE :* ne plus produire un seule gros bundle avec tout le code et se servir des imports dynamiques pour faire plusieurs plus petits fichiers.
-> On va souvent retrouver cet usage dans la définition des routes d'une app.
-> slash home importe dynamiquement home.js,
-> slash contact importe dynamiquement contact.js
-> et ainsi de suite.
+> ...le code splitting.
 
 ## definition
 Code splitting
-> *LE BUT :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter pour afficher une page.
-> *LE BUT :* se reposer sur le cache pour les morceaux qu'il a déjà.
+<img src="/src/img/definition-code-splitting-a-00.svg">
+> En fait, sans code splitting, quand vous bundle une app, on se retrouver avec tout le code dans un seul bundle.
+> *L'IDÉE :* ne plus produire un seule gros bundle avec le code de toute l'application,
+
+## definition
+Code splitting
+<img src="/src/img/definition-code-splitting-a-01.svg">
+> en se servant des imports dynamique pour...
+
+## definition
+Code splitting
+<img src="/src/img/definition-code-splitting-a-02.svg">
+> ...faire plusieurs plus petits fichiers.
+> Du coup, on se retrouve avec un point d'entrée qui contient la logique de routage et qui va charger le bon module en fonction de l'URL.
+
+## definition
+Code splitting
+<img src="/src/img/definition-code-splitting-b.svg">
+> Si jamais un module est utilisé par plusieurs pages, il est mis à part dans un "chunk".
+
+<!-- ## definition
+Code splitting
 * Moins de code au premier chargement
 * &nbsp;
 
 ## definition
 Code splitting
-> *LE BUT :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter pour afficher une page.
-> *LE BUT :* se reposer sur le cache pour les morceaux qu'il a déjà.
 * Moins de code au premier chargement
-* Meilleure utilisation du cache
+* Meilleure utilisation du cache -->
 
 ## definition logo
 Code splitting
 <img src="/src/img/sign-limit-code.svg">
+> *LE BUT :* reduire à quantité de code que le navigateur doit : charger, parser et exécuter pour afficher une page,
 
 ## definition logo
 Code splitting
 <img src="/src/img/sign-obligation-cache.svg">
+> et se reposer sur le cache pour les morceaux qu'il a déjà.
+> On termin avec une dernière technique de bundling...
 
 ## definition animation
 Import hoisting
+> ...l'import hoisting.
+
+## definition
+Import hoisting
+```js
+// one.js
+export function one () { return 1; }
+```
+```js invisible
+// two.js
+import { one } from './one.js';
+export function two () { return one() + 2; }
+```
+```js invisible
+// index.js
+import { two } from './two.js';
+console.log(two());
+```
+> Si on a un fichier one,
+
+## definition
+Import hoisting
+```js
+// one.js
+export function one () { return 1; }
+```
+```js
+// two.js
+import { one } from './one.js';
+export function two () { return one() + 2; }
+```
+```js invisible
+// index.js
+import { two } from './two.js';
+console.log(two());
+```
+> et un fichier two qui import one,
 
 ## definition
 Import hoisting
@@ -601,26 +631,57 @@ export function two () { return one() + 2; }
 import { two } from './two.js';
 console.log(two());
 ```
+> et un fichier principal qui import two.
+> Si à la fin du bundling, ces 3 fichiers restes séparés.
+> Le navigateur, va charger index, puis two, puis one.
 
-## definition
+## code
+```js
+// index.js
+import './one.js';
+import { two } from './two.js';
+console.log(two());
+```
+> *L'IDÉE :* c'est de remonter l'import vers one vers le haut.
+
+<!-- ## definition
 Import hoisting
-* Réduire effet escalier
+* Réduire effet escalier -->
 
 ## definition logo
 Import hoisting
 <img src="/src/img/sign-danger-stairs.svg">
+> *LE BUT :* Réduire l'effet escalier et déclencher les requêtes plus tôt.
+
+## blank white
+> Dernière technique qui va se baser sur le graphe de dépendances...
 
 ## definition animation
 Content hashing
+> ...le content hashing.
 
 ## definition
 Content hashing
-<img src="/src/img/definition-content-hashing.png">
-> ...le Content hashing.
-> *L'IDÉE :* on prend le contenu de chaque fichier, on calcule un hash et on l'ajoute dans le nom du fichier.
+<img src="/src/img/definition-content-hashing-01.svg">
+> *L'IDÉE :* on prend le contenu de chaque fichier,
 > On a aussi appelé ça du revving à l'époque de grunt/gulp.
 
 ## definition
+Content hashing
+<img src="/src/img/definition-content-hashing-02.svg">
+> on calcule un hash et on l'ajoute dans le nom du fichier.
+
+## definition
+Content hashing
+<img src="/src/img/definition-content-hashing-03.svg">
+> Si le contenu du fichier change,
+
+## definition
+Content hashing
+<img src="/src/img/definition-content-hashing-04.svg">
+> Le nom du fichier change.
+
+<!-- ## definition
 Content hashing
 * Meilleure utilisation du cache
 * &nbsp;
@@ -628,19 +689,21 @@ Content hashing
 ## definition
 Content hashing
 * Meilleure utilisation du cache
-* _(navigateur, proxy, CDN...)_
-> *LE BUT :* Pousser les caches à considérer les fichiers comme immutables
-> Si un navigateur ou un proxy cache voit passer un fichier, il peut théoriquement que tel nom correspondra toujours à tel contenu.
-> Ici on vient améliorer l'expérience des visites répétées.
+* _(navigateur, proxy, CDN...)_ -->
 
 ## definition logo
 Content hashing
 <img src="/src/img/sign-obligation-cache.svg">
+> *LE BUT :* Pousser les caches à considérer les fichiers comme immutables
+> Si un navigateur ou un proxy cache voit passer un fichier, il peut théoriquement que tel nom correspondra toujours à tel contenu.
+> Ici on vient améliorer l'expérience des visites répétées.
+
+## blank white
+> Il reste 2 points que je veux évoquer qui contrairement à ce qu'on a vu depuis le début n'ont pas vraiment d'impact sur les perfs de l'utilisateur final.
 
 ## definition animation
 Module resolution
-> ...de la résolution de module.
-> Directement ou via un plugin.
+> ...la résolution de module.
 
 ## definition
 Module resolution
@@ -681,15 +744,18 @@ Transpiling
 Transpiling
 * Langage (JSX, TS...)
 * &nbsp;
+> *L'IDÉE :* transformer du code qui n'est pas du JavaScript en JavaScript
 
 ## definition
 Transpiling
 * Langage (JSX, TS...)
 * Syntaxes/fonctionnalités JS _"moderne"_
+> ou encore transformer du code moderne en code plus ancien.
 
 ## definition
 Transpiling
 * Faciliter la vie des devs
+> *LE BUT :* utiliser des langages alternatifs ou des fonctionnalités modernes du languages.
 
 ## definition
 Transpiling
@@ -698,17 +764,14 @@ Transpiling
 * 2014: TypeScript <img src="src/img/logo-typescript.svg">
 * 2014: Babel<br>(6-to-5) <img src="src/img/logo-babel.svg">
 
-## definition
+## definition fade-from
 Transpiling (nouvelle génération)
 * 2020: esbuild (go) <img src="src/img/logo-esbuild.svg">
 * 2020: SWC (Rust) <img src="src/img/logo-swc.svg">
 * 2020/2021: Rome (JS/Rust) <img src="src/img/logo-rome.svg">
 
-## blank white
-> Tout ces outils qui font du bundling sont capable de faire...
-
 <!-- recap -->
-## todo fade-from
+<!-- ## todo fade-from
 * Pour l'utilisateur
   * moins de code
     * minification
@@ -724,7 +787,7 @@ Transpiling (nouvelle génération)
   * moins d'escalier
     * import hoisting
 * Pour le développeur
-  * transpiling
+  * transpiling -->
 
 <!-- 
 Côté serveur
@@ -990,7 +1053,7 @@ Cette section sert à présenter ce qu'on a mis en place chez Clever :
 * DIY / PnP
 -->
 ## section
-> @00:28:30@
+> @00:18:30@
 Retour à la simplicité...
 
 ## media logo
@@ -1061,11 +1124,11 @@ Retour à la simplicité...
 ## text
 🏋️‍♀️ 646 kio (min)
 
-## text
+<!-- ## text
 🏋️‍♀️ 185 kio (min+gzip)
 
 ## text
-🏋️‍♀️ 151 kio (min+brotli)
+🏋️‍♀️ 151 kio (min+brotli) -->
 
 ## media
 <img src="src/img/screenshot-jsdelivr.jpg" screenshot-url="https://www.jsdelivr.com/">
@@ -1123,15 +1186,16 @@ Retour à la simplicité...
 > cascade assez lourde
 > bcp de redirs
 > je vais pas profiter de la minification (template, CSS)
-> origine tierce :-(
-• pas de support d'image :-(
-• un fichier par composant
-• setup des langues
+> pas tjs de support d'image :-(
+
+## text
+😟 Domaine/origine tiers
 
 ## code
 ```html
 <script type="module" src="??"></script>
 ```
+> De plus, je vais pas pouvoir retrouver la simplicité de la mono balise...
 
 ## code
 ```html
@@ -1149,6 +1213,8 @@ Retour à la simplicité...
   
 </script>
 ```
+> un fichier par composant
+> setup des langues
 
 ## code
 ```html
@@ -1196,9 +1262,6 @@ Retour à la simplicité...
 ```
 
 ## text
-😟 Domaine/origine tiers
-
-## text
 😎 Créons notre propre smart CDN
 
 ## code
@@ -1226,24 +1289,23 @@ Retour à la simplicité...
 ```html
 <script src="https://example.com/?components=cc-input-text,cc-toggle&lang=fr &version=7" type="module"></script>
 ```
-<!-- montrer le target avec la balise script et les params version/lang/components -->
+> Pour ça, on peut faire un petit endpoint dynamique et l'héberger chez nous.
+> et pour les fichiers, on peut très bien les mettre sur un...
 
-<!-- > Idée => faire notre propre système
-> on build nos fichiers aux ptits oignons avec rollup -->
+## definition
+* : Rollup <img src="src/img/logo-rollup.svg">
 
 ## text
 🗃️ Object storage
-> on s'est dit vu qu'on utilise que des standards,
-> on va commencer par mettre nos sources sur un object storage
-> on va itérer la dessus et améliorer les perfs
-<!-- + endpoint dynamique derrière un CDN -->
 
 ## media
 <img src="src/img/screenshot-cc-site-cellar.jpg" screenshot-url="https://www.clever-cloud.com/en/cellar-s3-hosting">
+> ...object storage
+> et mettre un CDN devant
 
 ## media
 <img src="src/img/screenshot-demo-components-example-foo-simple.jpg" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/simple.html">
-> du coup, on a préparé plusieurs pages types
+> on a préparé plusieurs pages types pour faire des tests
 
 ## media
 <img src="src/img/screenshot-demo-components-example-foo-multiple-one.jpg" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/multiple.html#one">
@@ -1254,21 +1316,50 @@ Retour à la simplicité...
 ## media
 <img src="src/img/screenshot-demo-components-example-foo-multiple-three.jpg" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/multiple.html#three">
 
-## media
-<img src="src/img/screenshot-demo-components-example-foo.jpg" screenshot-url="https://demo-components.example-foo.com/">
-
-## media
-<img src="src/img/screenshot-demo-components-dashboard.jpg" screenshot-url="https://demo-components.example-foo.com/__dashboard__">
-
-## todo
+## blank white
 <!-- expliquer la démarche de test avec les différentes variantes -->
+> on s'est dit vu qu'on utilise que des standards,
+> on va commencer par mettre nos sources sur un object storage
+> on va itérer la dessus et améliorer les perfs
 > le seul truc non standard dans notre code source, c'est des bare import specifier
 
-## todo
-comparaison dedicated-bundle raw VS split raw HTTP 1.1 (multi 3)
+## code
+```js
+// Cette syntaxe est spécifique à un outil de bundling
+import backupSvg from '../assets/backup.svg;
+```
+```js invisible
+// Cette syntaxe fonctionne dans un navigateur sans outil
+const backupSvg = new URL('../assets/backup.svg', import.meta.url).href;
+```
+
+## code
+```js
+// Cette syntaxe est spécifique à un outil de bundling
+import backupSvg from '../assets/backup.svg;
+```
+```js
+// Cette syntaxe fonctionne dans un navigateur sans outil
+const backupSvg = new URL('../assets/backup.svg', import.meta.url).href;
+```
+
+## text
+⚗️ Tester, mesurer, améliorer...
+
+## media
+<img src="src/img/screenshot-web-page-test.jpg" screenshot-url="https://www.webpagetest.org/">
+
+## media contain
+<video src="src/videos/wpt-dedicated-vs-split-raw-h1.mp4" controls></video>
+> => TODO, j'ai pas le dedicated bundle raw
 > => c'est la cata
 
-## todo
+## definition logo
+HTTP/2 (multiplexing)
+<img src="/src/img/sign-danger-stairs.svg">
+
+## media contain
+<video src="src/videos/wpt-split-raw_h1-h2.mp4" controls></video>
 comparaison split raw HTTP 1.1 vs HTTP/2 (multi 3)
 > depuis qu'HTTP/2 est sorti
 > on parle bcp du multiplexing et du fait qu'on puisse balancer plusieurs requêtes HTTP en même temps sur la même connexion TCP
@@ -1277,48 +1368,89 @@ comparaison split raw HTTP 1.1 vs HTTP/2 (multi 3)
 > clairement, ça va pas suffire
 > ah, il reste une technique plutôt réglage serveur
 
-## todo
+## media contain
+<img src="src/img/wpt-split_h1-h2.png">
+
+## definition logo
+Compression (brotli)
+<img src="/src/img/sign-limit-code.svg">
+
+## media contain
+<video src="src/videos/wpt-split-raw-h2_none-brotli.mp4" controls></video>
 comparaison split raw HTTP/2 none/gzip/brotli (multi 3)
 > c'est la compression
 > quantité de donnée à charge (mais même quantité à parser et exécuter)
 
-## todo
-comparaison split raw HTTP/2 brotli : raw/minifié (multi 3)
+## media contain
+<img src="src/img/wpt-split-raw-h2_none-brotli-bytes.png">
+
+## media contain
+<img src="src/img/wpt-split-raw-h2_none-brotli-progress.png">
+
+## definition logo
+Minification
+<img src="/src/img/sign-limit-code.svg">
+
+## media contain
+<video src="src/videos/wpt-split-h2-br_raw-min.mp4" controls></video>
 > JS
 > HTML/CSS dans les templates
 > SVG, c'est tjs ça de pris
 > quantité de donnée à charge (mais même quantité à parser et exécuter)
 
-## todo
-comparaison split raw HTTP/2 brotli minifié : sans et avec tree shaking (multi 3)
-<!-- tree shaking -->
+## media contain
+<img src="src/img/wpt-split-h2-br_raw-min-bytes.png">
+
+## media contain
+<img src="src/img/wpt-split-h2-br_raw-min-progress.png">
+
+## definition logo
+Tree shaking
+<img src="/src/img/sign-limit-code.svg">
+
+## media contain
+<img src="src/img/wpt-min_treeshake-bytes.png">
+
+## media contain
+<img src="src/img/wpt-min_treeshake-progress.png">
 > mouais, ça vire pas grand chose dans notre cas précis car on utilise pas
 
-## todo
-comparaison split raw HTTP/2 brotli minifié : sans et avec shim (multi 3)
-> mouais, ça vire pas grand chose dans notre cas précis car on utilise pas
+## media contain
+<img src="src/img/wpt-min_treeshake-shim-bytes.png">
 
-## todo
-comparaison split raw HTTP/2 brotli minifié treeshaké : sans et avec code splitting (multi 3)
+## media contain
+<img src="src/img/wpt-min_treeshake-shim-progress.png">
+> on gagne un peu plus quand on vire nous même moment et un truc de lit
+
+## definition logo
+Code splitting
+<img src="/src/img/sign-limit-request.svg">
+
+## media contain
+<img src="src/img/wpt-code-plitting-requests.png">
+
+## media contain
+<img src="src/img/wpt-code-plitting-progress.png">
 > en fait on va bundler
 > on va même forcer les chunks
 > avec ça on commence à être pas mal
 
-## todo
-comparaison split raw HTTP/2 brotli minifié treeshaké : sans et avec code splitting (multi 3)
-<!-- import hoisting -->
-> statique
-> dynamique
-> pour faire ça, on va devoir analyser les dépendances
+## definition logo
+Import hoisting
+<img src="/src/img/sign-danger-stairs.svg">
 
-## todo
-comparer avec le bundle custom du début
-
-## todo
-https://github.com/CleverCloud/clever-components/blob/master/rollup/rollup-plugin-deps-manifest.js
+## code
+```js
+// config i18n
+import './i18n.js'
+// import components
+import './component-three.js';
+import './component-two.js';
+import './component-one.js';
+```
 
 ## media
-<img src="src/img/screenshot-github-cc-component-cdn.jpg" screenshot-url="https://github.com/CleverCloud/clever-components-cdn/">
+<img src="src/img/screenshot-github-cc-components-rollup-manifest.jpg" screenshot-url="https://github.com/CleverCloud/clever-components/blob/master/rollup/rollup-plugin-deps-manifest.js">
 
 ## code
 ```json
@@ -1366,20 +1498,56 @@ https://github.com/CleverCloud/clever-components/blob/master/rollup/rollup-plugi
 },
 ```
 
-## todo
-montrer des exemples sans i18n
+## media contain
+<img src="src/img/wpt-import-hoisting-0-1-2-progress.png">
+> statique
+> dynamique
+> pour faire ça, on va devoir analyser les dépendances
 
-## todo
-montrer des exemples AVEC i18n
+## media contain
+<video src="src/videos/wpt-dedicated-vs-split-h2-min-br-hoist2.mp4" controls></video>
 
-## todo
-montrer le semvert
+## code
+```js
+// config i18n
+import './i18n.js'
+// import components (dynamic)
+import('./component-three.js');
+import('./component-two.js');
+import('./component-one.js');
+```
 
-## todo
-expliquer la subtilité ne pas avoir la version dans les chemins
+## media contain
+<video src="src/videos/wpt-dedicated-vs-split-h2-min-br-hoist4.mp4" controls></video>
 
-## todo
-chaque fichier est servis avec un cache
+## media
+<img src="src/img/screenshot-demo-components-example-foo.jpg" screenshot-url="https://demo-components.example-foo.com/">
+
+## media
+<img src="src/img/screenshot-demo-components-dashboard.jpg" screenshot-url="https://demo-components.example-foo.com/__dashboard__">
+
+## white blank
+
+## media
+<img src="src/img/screenshot-github-cc-component-cdn.jpg" screenshot-url="https://github.com/CleverCloud/clever-components-cdn/">
+
+## media
+<img src="src/img/screenshot-cc-components-cdn-script-ex-01.jpg" screenshot-url="https://components.clever-cloud.com/load.js?version=7.2.0&lang=en&components=cc-input-text">
+
+## blank white
+> montrer des exemples sans i18n
+
+## blank white
+> montrer des exemples AVEC i18n
+
+## blank white
+> montrer le semver
+
+## blank white
+> expliquer la subtilité ne pas avoir la version dans les chemins
+
+## blank white
+> chaque fichier est servis avec un cache
 > montrer le cache (via la demo jsbin)
 > y compris le load.js quand c'est possible
 
@@ -1415,43 +1583,72 @@ chaque fichier est servis avec un cache
 > Montrer des exemples de la doc du nouveau site de clever
 
 ## section
-> @00:43:00@
+> @00:42:00@
 à suivre...
+> Détendez vous...
+> Nous sommes toujours en 2021 et clairement, cette jungle d'outils est bien installée.
+> Ça va continuer à bouger car on a encore de l'innovation.
 
-
-<!-- Bon, on va pas s'mentir, cette jungle d'outils est bien installée dans l'écosystème.
-Il y a de l'innovation en terme de perf sur les outils du coup, on est pas sorti du sable.
-Rome
-XKCD
-
-Nous on a fait le choix d'une stack qui dépend moins de tout ces trucs ou en tout cas le moins possible sur les aspects spécifiques.
-
-Conclusion :
-Le bundling n'est pas mort
-Déplacer la complexité vers un service comme ça a beaucoup de sens pour un design système applicatif distribué sur plusieurs applications, même celles qui utilisent des fwk
-Les dépendances en double mais du coup, on a deux approches : PnP vs DIY
-
-Ne prenez pas nos résultats pr tirer des conclusions, faites des mesures adaptées à votre contexte.
-
-Le monde du web, c'est pas que des gens qui font des SPA avec les fwk à la mode
-Il n'y a pas que le JavaScript dans la vie -->
-
-> en fait, de la même manière qu'avec notre plateforme Cloud, on essaye de convaincre les gens de pas se prendre la tête avec les serveurs, les mises à jour, la sécu tout ça et de nous le déléguer car on sait faire
-> ici on vient déplacer la connaissance et la complexité de "prodification" de l'app qui consomme à celui qui expose un lib de composants
-> comme vous l'avez vu, c'est pas forcément la meilleure solution, mais on trouve que dans pas mal de cas, le résultat est sufisant comparer à cout de mise en place et maintenance
-> ouverture sur le déplacement de qui own le bundling ? (as a service)
-> ouverture sur web bundles (new name)
-> ouverture sur le bundling à la volée
-> on espère que ça vous donnera des idées
-
-> il n'y a pas que des fous du JS dans le frontend
-> peut-être que c'est là l'idée du DIY/PnP
-
-## media
+<!-- ## media
 <img src="src/img/screenshot-import-maps.png" screenshot-url="https://github.com/WICG/import-maps">
 
 ## media
-<img src="src/img/screenshot-resource-bundle.png" screenshot-url="https://github.com/WICG/resource-bundles">
+<img src="src/img/screenshot-resource-bundle.png" screenshot-url="https://github.com/WICG/resource-bundles"> -->
+
+## definition
+Serveurs de dev
+* 2020: WDS <img src="src/img/logo-modernweb.svg">
+* 01/2020: Snowpack <img src="src/img/logo-snowpack.svg">
+* 04/2020: Vite <img src="src/img/logo-vitejs.svg">
+> On a vu arriver depuis un peu plus d'un an, des outils qui apportent des grosses différences sur l'expérience de dev,
+> des temps de rechargement en phase de dev quasi instantanés sur des gros projets.
+> esbuild et rust
+> Webpack ne survivra que s'il est continué à être utilisé par les gros frameworks et Vue a déjà dit au revoir.
+
+## definition
+* : Rome <img src="src/img/logo-rome.svg">
+> On a des outils qui promettent de faciliter les choses et de faire tout en un.
+> Sur le papier, c'est cool, surtout depuis qu'ils ont décidé de faire une refonte de zéro en Rust.
+> L'autre truc intriguant, c'est qu'ils ont levé 4.5 millions.
+
+## media
+<img src="src/img/screenshot-rome-tools-inc.jpg" screenshot-url="https://rome.tools/blog/announcing-rome-tools-inc/">
+
+## media
+<img src="src/img/screenshot-xkcd-927.jpg" screenshot-url="https://xkcd.com/927/" style="transform: scale(1.5); transform-origin: top center;">
+> Par contre, ça fait un peu, il y a trop d'outils, c'est compliqué, on va faire un nouvel outil.
+> On peut aussi se demander si cette génération d'outils en go ou Rust va pas freiner un peu les gens comme moi qui font leurs propres outils en JS.
+
+## blank white
+> Pour moi, la méthode la plus résiliente est d'avoir une base de code qui n'est pas trop liée à une suite d'outils.
+> Une base de code qui évite les syntaxes et fonctionnalités spécifiques à un bundler ou autre.
+> C'est une histoire de compromis mais notre projet de Web Components en est un très bon exemple.
+
+## blank white
+> C'est pas simple de s'y retrouver mais *NON*, c'était pas mieux avant.
+> Ces outils apportent des vraies fonctionnalités qui peuvent améliorer les performances de nos utilisateurs.
+
+## blank white
+> Dans le cas de figure que j'ai évoqué :
+> _exposer un design system ou une bibliothèque de composants à plusieurs applications dans un SI par exemple,_
+> ça me parait vraiment intéressant d'essayer de revenir à la simplicité d'une balise unique vers un CDN,
+> c'est une manière de déplacer la complexité et le savoir des outils de build de ceux qui consomment à celui qui expose les composants.
+
+## text
+🍕 Plug-and-Play
+> Une approche Plug and play
+> Donne moi le meilleur truc possible en mode simple et rapide
+
+## text
+👨‍🍳 Performances
+> Do It Yourself
+> Une approche DIY
+> Je sais ce que je fais donne moi le controle
+
+## blank white
+> on peut arriver à des résultats pas trop mal mais il y a des inconvénients.
+> ne me croyez pas, mesurer vous même dans votre propre contexte.
+> non, HTTP/2 n'a pas tué le bundling loin de là...
 
 ## text
 💡 Donner des idées
@@ -1459,27 +1656,16 @@ Il n'y a pas que le JavaScript dans la vie -->
 ## text
 ⚗️ Envie d'expérimenter
 
-<!-- ## todo
-conclusion
-> Le monde du JavaScript est devenu un peu fou.
-> Cette jungle d'outils est dense et seuls les plus "veille" peuvent s'y retrouver.
-> Ça n'est pas une situation acceptable et il faut rester vigilants.
-> Entre ceux qui disent que c'était mieux avant et les drogués aux derniers outils à la mode, il faut trouver un juste milieu.
-> Il faut chercher le bon curseur pour atteindre des bonnes performances pour les utilisateurs tout en
-> .à tel point qu'il devient utile de se poser pour faire le point sur ce vaste écosystème.
-> Le Web est bien plus vaste que le petit monde des SPAs codées avec le dernier framework JS à la mode.
-> Le Web c'est pour tout le monde et il n'y a pas de raisons que ça devienne un club réservé à une élite californienne.
-> Il faut faire attention à ne pas trop se reposer sur nos séries d'outils et éviter les "oui mais ça tout le monde connait". -->
+## blank white
+Le monde du web, c'est pas que des gens qui font des SPA avec les fwk à la mode
+> terminer sur le fait qu'il n'y a pas que JavaScript dans la vie
 
-<!-- ## definition
-* : Rome <img src="src/img/logo-rome.svg">
-
-## media
-<img src="src/img/screenshot-xkcd-927.jpg" screenshot-url="https://xkcd.com/927/" style="transform: scale(1.5); transform-origin: top center;"> -->
+## text
+🚨 Il n'y a pas que le<br>JavaScript dans la vie
+> Et à la fin, ça va bien se passer.
 
 ## poster
 *Merci beaucoup !* _vous êtes un super public..._
-> notes for empty slide (line 1)
 
 ## credits
 

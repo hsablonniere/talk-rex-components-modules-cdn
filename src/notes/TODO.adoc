@@ -6,9 +6,6 @@
 
 * trouver un moyen de surligner le code
 * terminer d'écrire le discours
-* faire les schémas au propre (avec étapes)
-* faire les panneaux en mode dessin
-* décider si on affiche les panneaux du code de la route ou pas
 * ajouter un récap des techniques
 * chronométrer le tout
 * si besoin on peut virer le scope hoisting
@@ -20,6 +17,10 @@
 * timing pas trop mal
 
 == Retour à la simplicité
+
+
+
+---
 
 * mesurer
 * prendre les vidéos de comparaison

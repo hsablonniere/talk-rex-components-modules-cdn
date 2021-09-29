@@ -183,7 +183,7 @@ defineSlideType('slide-definition', {
     }
     
     :host([logo]) .image-wrapper img {
-      transform: scale(0.5);
+      transform: scale(0.6);
     }
 
     .fact-list {
