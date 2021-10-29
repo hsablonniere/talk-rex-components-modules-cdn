@@ -13,10 +13,10 @@ defineSlideType('slide-section', {
     `;
   },
   onEnter ({ marimba }) {
-    // playMedia(marimba, 500);
+    playMedia(marimba, 500);
   },
   onLeave (position, { marimba }) {
-    // stopMedia(marimba);
+    stopMedia(marimba);
   },
   // language=CSS
   styles: css`

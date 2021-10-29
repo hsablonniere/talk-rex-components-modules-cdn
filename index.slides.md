@@ -3,8 +3,8 @@ author: Hubert Sablonnière
 author-twitter: @hsablonniere
 author-company: Clever Cloud
 hashtags: #javascript #tooling #web-components #cdn
-event: Devoxx France
-date: 29 septembre 2021
+event: BBL chez Gravitee
+date: 15 octobre 2021
 ---
 
 <script type="module" src="https://components.clever-cloud.com/load.js?version=7.1.0&lang=en&components=cc-input-text"></script>
@@ -74,7 +74,7 @@ date: 29 septembre 2021
 
 ## media contain
 <!-- music predator ?? https://www.youtube.com/watch?v=oXnAxydhZ8M -->
-<audio src="src/music/horn.ogg">
+<audio class="global" src="src/music/horn.ogg">
 <img src="src/img/calendar-2021.jpg">
 > #Voix grave et diabolique#
 > Vous venez de débarquer en 2021 où le chaos s'est installé :

@@ -112,7 +112,11 @@ export function defineSlideType (slideType, options) {
           if (options.onEnter != null) {
             options.onEnter(elements);
           }
-          $$(this.shadowRoot, 'audio, video').forEach((media) => {
+          $$(this.shadowRoot, 'audio.global, video').forEach((media) => {
+            console.log({media});
+            playMedia(media);
+          });
+          $$(this, 'audio.global').forEach((media) => {
             console.log({media});
             playMedia(media);
           });

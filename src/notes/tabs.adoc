@@ -1,0 +1,7 @@
+* https://components.clever-cloud.com/load.js?version=7&lang=en&components=cc-toggle
+* https://components.clever-cloud.com/load.js?version=7&lang=en&components=cc-input-text
+* https://components.clever-cloud.com/load.js?version=7.3.0&lang=en&components=cc-input-text
+* https://jsbin.com/yaqunixafa/edit?html,output
+* https://www.clever-cloud.com/doc/clever-components/?path=/docs/%F0%9F%9B%A0-pricing-cc-pricing-product--data-loaded-with-runtime-node
+* https://www.clever-cloud.com/doc/clever-components/?path=/docs/%F0%9F%9B%A0-pricing-cc-pricing-product-%F0%9F%92%A1-smart-runtime--page
+* https://components.clever-cloud.com/
