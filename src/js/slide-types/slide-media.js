@@ -21,7 +21,6 @@ defineSlideType('slide-media', {
       .find((line) => line.startsWith('<img ') || line.startsWith('<video '));
 
     const mediaAttrs = getAttributes(media);
-    console.log(mediaAttrs)
 
     const browserUrl = mediaAttrs.screenshotUrl
       ?? mediaAttrs.browserUrl

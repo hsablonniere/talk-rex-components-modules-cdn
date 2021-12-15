@@ -32,7 +32,7 @@ defineSlideType('slide-text', {
     }
     
     strong {
-      color:#555;
+      color: #0082ff;
     }
 
     sup {

@@ -136,7 +136,7 @@ defineSlideType('slide-definition', {
       position: relative;
       padding: 0 1rem;
       /*margin: 3rem 0 0;*/
-      margin: 2rem 0;
+      margin: 1rem 0;
       font-family: skranji, sans-serif;
       font-size: 3.5rem;
       font-weight: bold;

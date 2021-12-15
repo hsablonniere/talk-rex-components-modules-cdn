@@ -8,6 +8,10 @@ export const defaultSlideStyles = css`
   .hljs-built_in, .hljs-class .hljs-title, .hljs-title.class_ {
     color: #7b5502;
   }
+  
+  .hljs-attr {
+    color: #aa0000;
+  }
 
   :host {
     display: block;
@@ -60,8 +64,20 @@ export const codeBlocksStyles = css`
     font-weight: bold;
   }
 
+  pre[big] {
+    font-size: 1.5rem;
+  }
+
+  pre[medium] {
+    font-size: 1.1rem;
+  }
+
   pre[small] {
     font-size: 0.8rem;
+  }
+
+  pre[tiny] {
+    font-size: 0.7rem;
   }
   
   pre[invisible] {
