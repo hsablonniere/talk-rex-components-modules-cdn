@@ -85,7 +85,6 @@ defineSlideType('slide-definition', {
   },
   onEnter ({ stabilo, timeline }) {
     playMedia(stabilo, 500);
-    console.log(timeline.classList);
     if (timeline != null) {
       timeline.__animations = [];
       $$(timeline, '.timeline-item').forEach((item, i) => {

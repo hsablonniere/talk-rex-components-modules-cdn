@@ -8,7 +8,7 @@ export const defaultSlideStyles = css`
   .hljs-built_in, .hljs-class .hljs-title, .hljs-title.class_ {
     color: #7b5502;
   }
-  
+
   .hljs-attr {
     color: #aa0000;
   }
@@ -79,7 +79,7 @@ export const codeBlocksStyles = css`
   pre[tiny] {
     font-size: 0.7rem;
   }
-  
+
   pre[invisible] {
     opacity: 0;
   }
@@ -129,11 +129,11 @@ export function defineSlideType (slideType, options) {
             options.onEnter(elements);
           }
           $$(this.shadowRoot, 'audio.global, video').forEach((media) => {
-            console.log({media});
+            console.log({ media });
             playMedia(media);
           });
           $$(this, 'audio.global').forEach((media) => {
-            console.log({media});
+            console.log({ media });
             playMedia(media);
           });
         }
@@ -165,9 +165,14 @@ export function playMedia (media, delay = 0) {
     return;
   }
   const id = setTimeout(() => {
-    media.pause();
-    media.currentTime = 0;
-    media.play();
+    try {
+      media.pause();
+      media.currentTime = 0;
+      media.play();
+    }
+    catch (e) {
+      console.log(e);
+    }
   }, delay);
   timeoutIds.set(media, id);
 }

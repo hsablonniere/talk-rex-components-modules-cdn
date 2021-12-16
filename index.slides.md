@@ -4,7 +4,7 @@ author-twitter: @hsablonniere
 author-company: Clever Cloud
 hashtags: #cdn #javascript #tooling #web-components
 event: WeLoveSpeed
-date: 16 novembre 2021
+date: 16 décembre 2021
 ---
 
 <script type="module" src="https://components.clever-cloud.com/load.js?version=7.1.0&lang=fr&components=cc-input-text"></script>
@@ -157,12 +157,12 @@ setLanguage(fr.lang);
 
 ## code
 ```html
-<cc-input-text value="s3cr3t" secret clipboard></cc-input-text>
+<cc-input-text value="WeLoveSpeed" secret clipboard></cc-input-text>
 ```
 > tu peux enfin t'servir des composants dans tes templates.
 
 ## demo-html style="font-family: Arial, sans-serif; font-size: 2em"
-<cc-input-text value="s3cr3t" secret clipboard style="width: 10em"></cc-input-text>
+<cc-input-text value="WeLoveSpeed" secret clipboard style="width: 12em"></cc-input-text>
 > et admirer le résultat.
 
 ## text
@@ -230,10 +230,7 @@ Le contexte...
 ↗️ Mise à jour progressive
 > mais plutôt de faire une mise à jour progressive.
 
-## media
-<img src="src/img/screenshot-clever-components-github.jpg" screenshot-url="https://github.com/CleverCloud/clever-components">
-> Du coup, on a on a créé une bibliothèque de composants dans un projet à part (en public sur GitHub).
-
+<!--
 ## text
 🧱 Nouveau socle technique
 > On a défini un nouveau socle technique,
@@ -243,14 +240,12 @@ Le contexte...
 * : Lit <img src="src/img/logo-lit.svg">
 > C'est des Web Components développés avec la bibliothèque Lit.
 
-<!--
 ## definition
 * : HTML <img src="src/img/logo-html.svg">
 * : CSS <img src="src/img/logo-css.svg">
 * : JavaScript <img src="src/img/logo-javascript.svg">
 * : SVG <img src="src/img/logo-svg.svg">
 > ça nous permet de rester très proche des standards du Web.
--->
 
 ## text
 🎨 Nouvelle interface
@@ -270,34 +265,39 @@ Le contexte...
 > Mais on a aussi des composants plus haut niveau, liés à notre métier,
 > comme le graph qui résume le nombre de requêtes HTTP sur la journée,
 
-<!--
 ## media
 <img src="src/img/screenshot-cc-storybook-logsmap.png" browser-url="https://www.clever-cloud.com/doc/clever-components/?path=/story/%F0%9F%9B%A0-maps-cc-logsmap--default-story">
 > ou encore un carte qui affiche la répartition géographique des requêtes.
 -->
 
-## blank white
-
-## media white
+## media white contain
 <img src="src/img/schema-components-console-01.svg">
 
-## media white
+## media white contain
 <img src="src/img/schema-components-console-02.svg">
 
-## media white
+## media white contain
 <img src="src/img/schema-components-console-03.svg">
 
-## media white
+## media
+<img src="src/img/screenshot-clever-components-github.jpg" screenshot-url="https://github.com/CleverCloud/clever-components">
+> Du coup, on a on a créé une bibliothèque de composants dans un projet à part (en public sur GitHub).
+
+## media white contain
+<img src="src/img/schema-components-console-03.svg">
+
+## media white contain
 <img src="src/img/schema-components-console-04.svg">
 
-## media white
+## media white contain
 <img src="src/img/schema-components-console-05.svg">
 
-## media white
+## media white contain
 <img src="src/img/schema-components-console-06.svg">
 
 ## definition
 * : Web Components <img src="src/img/logo-webcomponents.svg">
+<!--* : Lit <img src="src/img/logo-lit.svg">-->
 > Le détail important, c'est qu'on a fait le choix d'exposer des Web Components.
 > Un standard du Web qui permet de dire :
 
@@ -346,25 +346,26 @@ customElements.define('cc-input-text', CcInputText);
 ## text
 😍 Web Components partout !
 
-## media white
+## media white contain
 <img src="src/img/schema-components-console-06.svg">
 
-## media white
+## media white contain
 <img src="src/img/schema-components-console-07.svg">
 
-## media white
+## media white contain
 <img src="src/img/schema-components-console-08.svg">
 
-## media white
+## media white contain
 <img src="src/img/schema-components-console-09.svg">
 
 ## section
 Le challenge
-> @00:06:00@
+> @00:04:30@
 > avoir les meilleures perfs possible avec juste une balise script
 
 ## text
-⚖️ npm install *vs.* CDN
+⚖️ npm trucs... *vs.* CDN
+> ⚖️ npm install... *vs.* CDN
 > les bénéfices du mode DIY où on configure le bundler aux petits oignons avec que les composants dont on a besoin etc...
 > mais avec la simplificé Plug & Play d'une simple balise script vers un CDN
 > la question c'est à quel point on peut se rapprocher des mêmes perfs
@@ -430,6 +431,7 @@ legend: "bundle dédié (même origine)", "bundle tout-en-un (CDN tiers)"
 bytes: 189610, 189190
 requests: 1, 1
 time: 7.8, 9.1
+> WPT-SUMMARY
 > On notera que sans la compression, le mega bundle fait 645 KB alors que le custom fait 623 KB
 > Brotli 4 => 188.8KB / 188.4KB
 > Brotli 11 => 154 KB / 151 KB
@@ -443,16 +445,16 @@ legend: "bundle dédié (même origine)", "bundle tout-en-un (CDN tiers)"
 bytes: 10430, 189190
 requests: 1, 1
 time: 3.0, 8.2
+> WPT-SUMMARY
 
-## blank white
-> le truc, c'est qu'une bibliothèque de composant, c'est pas comme jQuery
-> on ne sait pas quels composants vont être utiles à l'utilisateur
-> si on fait un bundle avec tout
-> potentiellement, on charge beaucoup trop de choses
-> a chaque nouveau composant le bundle augmente
-> on ne bénéficie pas du cache
-> expliquer qu'on paie l'init de la connexion au CDN
-> ...
+## text
+👎 Bundle *tout-en-un*
+> Le truc, c'est qu'une bibliothèque de composant, c'est pas comme jQuery
+> On ne sait pas quels composants vont être utiles à l'utilisateur
+> Si on fait un bundle avec tout : 
+> * potentiellement, on charge beaucoup trop de choses
+> * à chaque nouveau composant le bundle augmente
+> * on ne bénéficie pas du cache
 
 ## text
 🤨 *Sans* bundling ?
@@ -464,6 +466,15 @@ time: 3.0, 8.2
 🙏 Fichiers *à la demande*
 > on part des sources brutes telle quelles + dépendances et on améliore
 > Pire cas possible (sources brutes)
+
+## media contain white
+<img src="src/img/schema-source-cdn-01.svg">
+
+## media contain white
+<img src="src/img/schema-source-cdn-02.svg">
+
+## media contain white
+<img src="src/img/schema-source-cdn-03.svg">
 
 <!--
 ## code
@@ -556,6 +567,7 @@ legend: "bundle dédié *", "fichiers à la demande **"
 bytes: 189610, 1560000
 requests: 1, 64
 time: 7.8, 42.9
+> WPT-SUMMARY
 > Bon les perfs sont dégeu,
 > mais j'ai fait exprès de prendre le pire cas possible pour qu'on voit l'impact de chaque étape
 > préciser le build rollup pour transformer les bare imports
@@ -566,6 +578,7 @@ legend: "bundle dédié (réglages optimisés)", "fichiers à la demande (pires 
 bytes: 189610, 1560000
 requests: 1, 64
 time: 7.8, 42.9
+> WPT-SUMMARY
 
 ## blank white
 
@@ -583,11 +596,13 @@ legend: "HTTP 1.1", "HTTP/2"
 bytes: 1560000, 1560000
 requests: 64, 64
 time: 42.9, 40.0
+> WPT-SUMMARY
 
 ## media contain
 <img src="src/img/wpt-slow3g-m3-raw-h2-cenone.png">
 
-## blank white
+## text
+😐
 
 ## definition animation
 Compression
@@ -602,6 +617,7 @@ legend: "sans compression", "compression brotli (level ~4)"
 bytes: 1560000, 461380
 requests: 64, 64
 time: 40.0, 14.5
+> WPT-SUMMARY
 
 ## definition animation
 Minification
@@ -616,6 +632,7 @@ legend: "sans minification", "JS minifié"
 bytes: 461380, 263380
 requests: 64, 64
 time: 14.5, 10.7
+> WPT-SUMMARY
 
 ## wpt-summary
 Minification
@@ -623,8 +640,10 @@ legend: "sans minification", "JS minifié", "HTML+CSS+JS+SVG minifié"
 bytes: 461380, 263380, 259070
 requests: 64, 64, 64
 time: 14.5, 10.7, 10.6
+> WPT-SUMMARY
 
 ## section
+> @00:13:00@
 Le challenge : level 2
 
 ## definition animation
@@ -634,12 +653,26 @@ Tree shaking
 Tree shaking
 <img src="/src/img/sign-limit-code.svg">
 
+## definition
+Tree shaking
+<img src="/src/img/definition-tree-shaking-01.svg">
+> *L'IDÉE :* on prend un fichier source, on analyse ses dépendances et surtout on analyse précisémment ce qu'il importe des dépendances qu'il utilise
+
+## definition
+Tree shaking
+<img src="/src/img/definition-tree-shaking-02.svg">
+> pour ne garder que ces parties là dans le bundle final.
+
 ## wpt-summary
 Tree shaking
 legend: "sans treeshaking", "treeshaking"
 bytes: 259070, 255190
 requests: 64, 60
 time: 10.6, 10.5
+> WPT-SUMMARY
+
+## text
+🪦 moment.js
 
 ## wpt-summary
 Tree shaking
@@ -647,6 +680,7 @@ legend: "sans treeshaking", "treeshaking", "treeshaking + shim"
 bytes: 259070, 255190, 232220
 requests: 64, 60, 58
 time: 10.6, 10.5, 10.0
+> WPT-SUMMARY
 
 ## definition animation
 Code splitting (chunks)
@@ -662,6 +696,7 @@ legend: "sans chunk", "chunks auto"
 bytes: 232220, 203420
 requests: 58, 30
 time: 10.0, 9.4
+> WPT-SUMMARY
 
 ## wpt-summary
 Code splitting (chunks)
@@ -670,11 +705,12 @@ legend: "sans chunk", "chunks auto", "chunks manuels"
 bytes: 232220, 203420, 199350
 requests: 58, 30, 26
 time: 10.0, 9.4, 9.5
+> WPT-SUMMARY
 
 ## blank white
 
 ## text
-⚖️ npm install *vs.* CDN
+⚖️ npm install... *vs.* CDN
 > @00:19:00@
 
 ## media
@@ -686,6 +722,7 @@ legend: "bundle dédié", "fichiers à la demande"
 bytes: 189610, 199350
 requests: 1, 26
 time: 7.8, 9.5
+> WPT-SUMMARY
 
 ## media
 <img src="src/img/screenshot-demo-components-example-foo-multiple-one.png" screenshot-url="https://demo-components.example-foo.com/custom-config-dedicated-bundle-treeshake-english-min-js-html-css-svg/multiple.html#one">
@@ -696,6 +733,7 @@ legend: "bundle dédié", "fichiers à la demande"
 bytes: 10430, 13740
 requests: 1, 5
 time: 3, 5.3
+> WPT-SUMMARY
 
 ## text
 📶 Réseau *non bridé*
@@ -706,6 +744,7 @@ legend: "bundle dédié (réseau non bridé)", "fichiers à la demande (réseau 
 bytes: 189610, 199350
 requests: 1, 26
 time: 0.7, 1.2
+> WPT-SUMMARY
 
 ## wpt-summary
 Fichiers à la demande (m1)
@@ -713,12 +752,14 @@ legend: "bundle dédié (réseau non bridé)", "fichiers à la demande (réseau 
 bytes: 10430, 13740
 requests: 1, 5
 time: 0.2, 0.3
+> WPT-SUMMARY
 
 ## text
-😑 Mouais...
+🤷 Mouais...
 > Moi j'crois qu'on peut encore faire mieux
 
 ## section
+> @00:17:00@
 Le challenge : Tokyo Drift
 
 ## media contain
@@ -800,6 +841,7 @@ legend: "pas d'import hoisting", "import hoisting via Rollup"
 bytes: 199350, 199350
 requests: 26, 26
 time: 9.5, 9.7
+> WPT-SUMMARY
 
 ## code
 ```html medium
@@ -886,12 +928,12 @@ legend: "pas d'import hoisting", "import hoisting via Rollup", "import hoisting 
 bytes: 199350, 199350, 199350
 requests: 26, 26, 26
 time: 9.5, 9.7, 9.5
-
-## todo
-video fichier à la demande hoist2
+> WPT-SUMMARY
 
 ## media contain
 <video src="src/videos/wpt-bilan-m3-custom-vs-a-la-demande.mp4" controls></video>
+> bundle dédié vs à la demande hoist 2
+
 
 ## code
 ```html tiny
@@ -900,6 +942,8 @@ video fichier à la demande hoist2
       import 'https://cdn.../1.2.3/i18n-sanitize.js';
       import 'https://cdn.../1.2.3/translations.en.js';
   import 'https://cdn.../1.2.3/setup-english.js';
+
+                                                                              
       import 'https://cdn.../1.2.3/vendor.js';
       import 'https://cdn.../1.2.3/cc-loader.js';
       import 'https://cdn.../1.2.3/cc-expand.js';
@@ -908,7 +952,7 @@ video fichier à la demande hoist2
       import 'https://cdn.../1.2.3/info-tiles.js';
   import 'https://cdn.../1.2.3/cc-tile-instances.js';
   import 'https://cdn.../1.2.3/cc-tile-scalability.js';
-      import 'https://cdn.../1.2.3/cc-datetime-relative.js'; 
+      import 'https://cdn.../1.2.3/cc-datetime-relative.js';
   import 'https://cdn.../1.2.3/cc-tile-deployments.js';
   import 'https://cdn.../1.2.3/cc-tile-consumption.js';
       import 'https://cdn.../1.2.3/_commonjsHelpers.js';
@@ -931,6 +975,8 @@ video fichier à la demande hoist2
       import('https://cdn.../1.2.3/i18n-sanitize.js');
       import('https://cdn.../1.2.3/translations.en.js');
   import('https://cdn.../1.2.3/setup-english.js');
+
+                                                                              
       import('https://cdn.../1.2.3/vendor.js');
       import('https://cdn.../1.2.3/cc-loader.js');
       import('https://cdn.../1.2.3/cc-expand.js');
@@ -955,24 +1001,243 @@ video fichier à la demande hoist2
 </script>
 ```
 
-## todo
-mesures hoist 3
+## code
+```html tiny
+<script type="module">
+  import { addTranslations, setLanguage } from 'https://cdn.../1.2.3/i18n.js';
+  import 'https://cdn.../1.2.3/i18n-sanitize.js';
+  import * as en from 'https://cdn.../1.2.3/translations.en.js';
+  addTranslations(en.lang, en.translations);
+  setLanguage(en.lang);
 
-## todo
-escalier hoist 3 (browser)
+      import('https://cdn.../1.2.3/vendor.js');
+      import('https://cdn.../1.2.3/cc-loader.js');
+      import('https://cdn.../1.2.3/cc-expand.js');
+      import('https://cdn.../1.2.3/cc-button.js');
+      import('https://cdn.../1.2.3/cc-error.js');
+      import('https://cdn.../1.2.3/info-tiles.js');
+  import('https://cdn.../1.2.3/cc-tile-instances.js');
+  import('https://cdn.../1.2.3/cc-tile-scalability.js');
+      import('https://cdn.../1.2.3/cc-datetime-relative.js');
+  import('https://cdn.../1.2.3/cc-tile-deployments.js');
+  import('https://cdn.../1.2.3/cc-tile-consumption.js');
+      import('https://cdn.../1.2.3/_commonjsHelpers.js');
+      import('https://cdn.../1.2.3/with-resize-observer.js');
+      import('https://cdn.../1.2.3/Chart.js');
+  import('https://cdn.../1.2.3/cc-tile-requests.js');
+  import('https://cdn.../1.2.3/cc-tile-status-codes.js');
+      import('https://cdn.../1.2.3/repeat.js');
+      import('https://cdn.../1.2.3/cc-toggle.js');
+      import('https://cdn.../1.2.3/cc-map-marker-dot.js');
+      import('https://cdn.../1.2.3/cc-map.js');
+  import('https://cdn.../1.2.3/cc-logsmap.js');
+</script>
+```
 
-## todo
-vidéo dédié vs hoist 3
+## wpt-summary
+Import hoisting
+legend: "import hoisting statique", "import hoisting dynamique"
+bytes: 199350, 199350
+requests: 26, 26
+time: 9.5, 9.3
+> WPT-SUMMARY
+
+## media contain
+<img src="src/img/wpt-slow3g-m3-raw-h2-cebr-minall-treeshake-shim-chunksauto-hoist3.png">
 
 ## text
-tada !!
+🥁
+
+## media contain
+<!-- https://www.webpagetest.org/video/view.php?end=visual&tests=211214_BiDcAW_91073a52cab62e9f0ba5a32a540f6179-l:bundle%20dedie%2C211213_AiDc7Y_dc46784f9022bc615798b51818e2c1af-l:fichiers%20a%20la%20demande&bg=000000&text=ffffff&loc=London%2C+UK+-+EC2+-+Chrome+-+3GSlow -->
+<video src="src/videos/wpt-bilan-m3-custom-vs-a-la-demande-hoist3.mp4" controls></video>
+
+## text
+😊 Mini-victoire !
+
+## code
+```html tiny
+<script type="module">
+  import { addTranslations, setLanguage } from 'https://cdn.../1.2.3/i18n.js';
+  import 'https://cdn.../1.2.3/i18n-sanitize.js';
+  import * as en from 'https://cdn.../1.2.3/translations.en.js';
+  addTranslations(en.lang, en.translations);
+  setLanguage(en.lang);
+
+      import('https://cdn.../1.2.3/vendor.js');
+      import('https://cdn.../1.2.3/cc-loader.js');
+      import('https://cdn.../1.2.3/cc-expand.js');
+      import('https://cdn.../1.2.3/cc-button.js');
+      import('https://cdn.../1.2.3/cc-error.js');
+      import('https://cdn.../1.2.3/info-tiles.js');
+  import('https://cdn.../1.2.3/cc-tile-instances.js');
+  import('https://cdn.../1.2.3/cc-tile-scalability.js');
+      import('https://cdn.../1.2.3/cc-datetime-relative.js');
+  import('https://cdn.../1.2.3/cc-tile-deployments.js');
+  import('https://cdn.../1.2.3/cc-tile-consumption.js');
+      import('https://cdn.../1.2.3/_commonjsHelpers.js');
+      import('https://cdn.../1.2.3/with-resize-observer.js');
+      import('https://cdn.../1.2.3/Chart.js');
+  import('https://cdn.../1.2.3/cc-tile-requests.js');
+  import('https://cdn.../1.2.3/cc-tile-status-codes.js');
+      import('https://cdn.../1.2.3/repeat.js');
+      import('https://cdn.../1.2.3/cc-toggle.js');
+      import('https://cdn.../1.2.3/cc-map-marker-dot.js');
+      import('https://cdn.../1.2.3/cc-map.js');
+  import('https://cdn.../1.2.3/cc-logsmap.js');
+</script>
+```
 
 ## code
 ```html
 <script
   type="module"
-  src=" https//cdn.../load.js
-    ? version = 1.2.3
+  src="https://components.clever-cloud.com/load.js
+
+
+
+
+
+
+
+
+
+  "
+></script>
+```
+
+## code
+```html
+<script
+  type="module"
+  src="https://components.clever-cloud.com/load.js
+    ? version = 7.5.0
+
+
+
+
+
+
+
+
+  "
+></script>
+```
+
+## code
+```html
+<script
+  type="module"
+  src="https://components.clever-cloud.com/load.js
+    ? version = 7
+
+
+
+
+
+
+
+
+  "
+></script>
+```
+
+## code
+```html
+<script
+  type="module"
+  src="https://components.clever-cloud.com/load.js
+    ? version = 7
+    & lang = fr
+
+
+
+
+
+
+
+  "
+></script>
+```
+
+## code
+```html
+<script
+  type="module"
+  src="https://components.clever-cloud.com/load.js
+    ? version = 7
+    & lang = en
+
+
+
+
+
+
+
+  "
+></script>
+```
+
+## code
+```html
+<script
+  type="module"
+  src="https://components.clever-cloud.com/load.js
+    ? version = 7
+    & lang = en
+    & components = cc-tile-instances
+
+
+
+
+
+
+  "
+></script>
+```
+
+## code
+```html
+<script
+  type="module"
+  src="https://components.clever-cloud.com/load.js
+    ? version = 7
+    & lang = en
+    & components = cc-tile-instances,
+                   cc-tile-scalability
+
+
+
+
+
+  "
+></script>
+```
+
+## code
+```html
+<script
+  type="module"
+  src="https://components.clever-cloud.com/load.js
+    ? version = 7
+    & lang = en
+    & components = cc-tile-instances,
+                   cc-tile-scalability,
+                   cc-tile-deployments
+
+
+
+
+  "
+></script>
+```
+
+## code
+```html
+<script
+  type="module"
+  src="https://components.clever-cloud.com/load.js
+    ? version = 7
     & lang = en
     & components = cc-tile-instances,
                    cc-tile-scalability,
@@ -985,128 +1250,59 @@ tada !!
 ></script>
 ```
 
-## todo
-TODO
-parler du cache
-expliquer le endpoint dynamique
-expliquer le plugin rollup + manifest
-montrer la UI de sélection
-montrer une démo copier/coller
+## code
+```html
+<script type="module" src="https://components.clever-cloud.com/load.js?version=7&lang=en&components=cc-tile-instances,cc-tile-scalability,cc-tile-deployments,cc-tile-consumption,cc-tile-requests,cc-tile-status-codes,cc-logsmap"></script>
+```
 
 ## media
-<img src="src/img/screenshot-github-cc-components-rollup-manifest.jpg" screenshot-url="https://github.com/CleverCloud/clever-components/blob/master/rollup/rollup-plugin-deps-manifest.js">
-
-## code
-```json
-{
-  "manifestVersion": "1",
-  "packageVersion": "7.2.0",
-  "files": [
-    {}
-  ]
-}
-```
-
-## code
-```json
-{
-  "id": "cc-input-text",
-  "path": "cc-input-text-7c6457f7.js",
-  "dependencies": [
-    "vendor-5e139a4e.js",
-    "i18n-446ebe81.js",
-    "default-theme-fead272a.js",
-    "assets/clipboard-bf8d5491.svg",
-    "..."
-  ],
-  "sources": [
-    "src/atoms/cc-input-text.js"
-  ]
-},
-```
-
-## code
-```json
-{
-  "id": "",
-  "path": "vendor-5e139a4e.js",
-  "dependencies": [],
-  "sources": [
-    "node_modules/lit-html/lib/part.js",
-    "node_modules/lit-element/lit-element.js",
-    "...",
-    "src/lib/events.js",
-    "src/styles/skeleton.js",
-    "src/styles/waiting.js"
-  ]
-},
-```
-
-## media contain
-<img src="src/img/wpt-import-hoisting-0-1-2-progress.png">
-> statique
-> dynamique
-> pour faire ça, on va devoir analyser les dépendances
-
-## media contain
-<video src="src/videos/wpt-dedicated-vs-split-h2-min-br-hoist2.mp4" controls></video>
-
-## code
-```js
-// config i18n
-import './i18n.js'
-// import components (dynamic)
-import('./component-three.js');
-import('./component-two.js');
-import('./component-one.js');
-```
-
-## media contain
-<video src="src/videos/wpt-dedicated-vs-split-h2-min-br-hoist4.mp4" controls></video>
-
-## media
-<img src="src/img/screenshot-demo-components-example-foo.jpg" screenshot-url="https://demo-components.example-foo.com/">
-
-## media
-<img src="src/img/screenshot-demo-components-dashboard.jpg" screenshot-url="https://demo-components.example-foo.com/__dashboard__">
-
-## white blank
+<img src="src/img/screenshot-cc-components-cdn-script-ex-m3.jpg" screenshot-url="https://components.clever-cloud.com/load.js?version=7&lang=en&components=cc-tile-instances,cc-tile-scalability,cc-tile-deployments,cc-tile-consumption,cc-tile-requests,cc-tile-status-codes,cc-logsmap">
 
 ## media
 <img src="src/img/screenshot-github-cc-component-cdn.jpg" screenshot-url="https://github.com/CleverCloud/clever-components-cdn/">
 
 ## media
-<img src="src/img/screenshot-cc-components-cdn-script-ex-01.jpg" screenshot-url="https://components.clever-cloud.com/load.js?version=7.2.0&lang=en&components=cc-input-text">
+<img src="src/img/screenshot-github-cc-components-rollup-manifest.jpg" screenshot-url="https://github.com/CleverCloud/clever-components/blob/master/rollup/rollup-plugin-deps-manifest.js">
 
-## blank white
-> montrer des exemples sans i18n
+## definition animation
+Content hashing
 
-## blank white
-> montrer des exemples AVEC i18n
+## definition logo
+Content hashing
+<img src="/src/img/sign-obligation-cache.svg">
 
-## blank white
-> montrer le semver
-
-## blank white
-> expliquer la subtilité ne pas avoir la version dans les chemins
-
-## blank white
-> chaque fichier est servis avec un cache
-> montrer le cache (via la demo jsbin)
-> y compris le load.js quand c'est possible
+## code
+```http
+GET /cc-tile-instances-6006c855.js
+cache-control: public, max-age=31536000, immutable
+etag: "d318032d0c1ed44e74f29247c3b5d5e6"
+```
 
 ## media
-<img src="src/img/screenshot-jakearchibald-multiple-versions-same-time.jpg" screenshot-url="https://jakearchibald.com/2020/multiple-versions-same-time/">
-<!-- Avantage d'avoir toutes les versions (article jake) -->
+<img src="src/img/screenshot-cc-components-cdn-script-ex-m3_7.6.0.jpg" screenshot-url="https://components.clever-cloud.com/load.js?version=7.6.0&lang=en&components=cc-tile-instances,cc-tile-scalability,cc-tile-deployments,cc-tile-consumption,cc-tile-requests,cc-tile-status-codes,cc-logsmap">
+
+## media
+<img src="src/img/screenshot-cc-components-cdn-script-ex-m3_7.5.0.jpg" screenshot-url="https://components.clever-cloud.com/load.js?version=7.5.0&lang=en&components=cc-tile-instances,cc-tile-scalability,cc-tile-deployments,cc-tile-consumption,cc-tile-requests,cc-tile-status-codes,cc-logsmap">
 
 ## media
 <img src="src/img/screenshot-cc-components-ui.png" browser-url="https://components.clever-cloud.com/">
 > Montrer la UI de sélection et faire une démo avec JSBin
 
+## todo
+montrer une démo copier/coller
+
+<!--
 ## code
 ```html
 <script type="module" src="https://components.clever-cloud.com/load.js?magic-mode=dont-use-this-in-prod"></script>
 ```
+-->
+
+## text
+🤩 Avantages
+> C'est simple au possible à utiliser
+> C'est hyper pertinent sur des projets qui n'ont pas de package.json ni de build JavaScript
+> Avec le semver, on peut déployer des correctifs en une seule fois
 
 ## text
 👩‍🔧 Admin (Play/Scala)
@@ -1126,8 +1322,16 @@ import('./component-one.js');
 <img src="src/img/screenshot-cc-site-pricing-cellar.png" browser-url="https://www.clever-cloud.com/en/pricing">
 > Montrer des exemples de la doc du nouveau site de clever
 
+## blank white
+
+<!--
+## media
+<img src="src/img/screenshot-jakearchibald-multiple-versions-same-time.jpg" screenshot-url="https://jakearchibald.com/2020/multiple-versions-same-time/">
+> Avantage d'avoir toutes les versions (article jake)
+-->
+
 ## text
-inconvénients
+😬 Inconvénients
 > + lent avec une mauvaise connexion
 > risque de doublons si usage de lit, charts.js, leaflet...
 > (mais bon 4 fois lodash)
@@ -1147,11 +1351,18 @@ Conclusion
 > Remise en contexte des techniques WebPerf JS
 
 ## text
-🧰️ Design system<br>bibliothèque composants
+🧰️ Bibliothèque composants
 > Remise en contexte des techniques WebPerf JS
 
-## todo
-schéma déplacement responsabilité
+## text
+🧰️ Design system
+> Remise en contexte des techniques WebPerf JS
+
+## media white
+<img src="src/img/schema-components-responsabilite-build-a.svg">
+
+## media white
+<img src="src/img/schema-components-responsabilite-build-b.svg">
 
 ## text
 🚨️ Il n'y a pas que <br>le JavaScript dans la vie
@@ -1167,22 +1378,16 @@ schéma déplacement responsabilité
 Liens :
 
 * Source des composants : https://github.com/CleverCloud/clever-components
-* Storybook des composants : https://www.clever-cloud.com/doc/clever-components/
-* UI pour sélectionner : https://components.clever-cloud.com/
 * Smart CDN source : https://github.com/CleverCloud/clever-components-cdn
+* UI pour sélectionner : https://components.clever-cloud.com/
 
-* Références :
+Références :
 
 * Panneaux code de la route : https://fr.wikibooks.org/wiki/Code_de_la_route/Liste_des_panneaux
 
 Images :
 
 * Fond jungle : https://www.vexels.com/vectors/preview/70035/tropical-frame-styled-jungle-background
-* Calendrier 2021 : https://unsplash.com/photos/F32jPy9SMaw
-* Pangolin : https://unsplash.com/photos/mtTpAM2uaRM
-* Antenne : https://unsplash.com/photos/31JqyCVndUM
-* QR code : https://unsplash.com/photos/2HWkORIX3II
-* Fond fête : https://www.vecteezy.com/vector-art/237001-party-crowd
 
 Polices :
 
@@ -1195,8 +1400,12 @@ Polices :
 Sons :
 
 * Marimba note : https://www.youtube.com/watch?v=8FJMTJmuoU8
-* Horn sound effect : https://www.youtube.com/watch?v=gKz1X2rn3CQ
-* Forest sound : https://www.youtube.com/watch?v=IsPBplWLImI
+
+## media
+<img src="src/img/screenshot-demo-components-example-foo.jpg" screenshot-url="https://demo-components.example-foo.com/">
+
+## media
+<img src="src/img/screenshot-demo-components-dashboard.jpg" screenshot-url="https://demo-components.example-foo.com/__dashboard__">
 
 ## text
 🧐 CDN existants ?
